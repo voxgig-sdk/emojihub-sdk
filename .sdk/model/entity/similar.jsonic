@@ -1,0 +1,80 @@
+# Entity: similar
+
+main: kit: entity: similar: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "category"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "group"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "html_code"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "unicode"
+      req: true
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "similar"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "cat"
+                kind: "param"
+                name: "id"
+                orig: "name"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/similar/{name}"
+          parts: [
+            "similar"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              name: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

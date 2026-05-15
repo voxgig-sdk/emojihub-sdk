@@ -1,0 +1,505 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "EmojiHub",
+    "description": "Get random emojis or access the entire emoji database by category or group. Easily retrieve html codes to use in web applications.",
+    "version": "2.1.0",
+    "contact": {
+      "url": "https://github.com/cheatsnake/emojihub"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/cheatsnake/emojihub/blob/master/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://emojihub.yurace.pro/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/random": {
+      "get": {
+        "summary": "Get a random emoji",
+        "description": "Returns a single random emoji from the entire database",
+        "operationId": "getRandomEmoji",
+        "tags": [
+          "Emojis"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Emoji"
+                },
+                "example": {
+                  "name": "hugging face",
+                  "category": "smileys and people",
+                  "group": "face positive",
+                  "htmlCode": [
+                    "&#129303;"
+                  ],
+                  "unicode": [
+                    "U+1F917"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/random/category/{category-name}": {
+      "get": {
+        "summary": "Get a random emoji from a specific category",
+        "description": "Returns a single random emoji from the specified category",
+        "operationId": "getRandomEmojiByCategory",
+        "tags": [
+          "Emojis"
+        ],
+        "parameters": [
+          {
+            "name": "category-name",
+            "in": "path",
+            "required": true,
+            "description": "The category name (e.g., 'food-and-drink', 'smileys-and-people')",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "smileys-and-people",
+                "animals-and-nature",
+                "food-and-drink",
+                "travel-and-places",
+                "activities",
+                "objects",
+                "symbols",
+                "flags"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Emoji"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Category not found"
+          }
+        }
+      }
+    },
+    "/random/group/{group-name}": {
+      "get": {
+        "summary": "Get a random emoji from a specific group",
+        "description": "Returns a single random emoji from the specified group",
+        "operationId": "getRandomEmojiByGroup",
+        "tags": [
+          "Emojis"
+        ],
+        "parameters": [
+          {
+            "name": "group-name",
+            "in": "path",
+            "required": true,
+            "description": "The group name (e.g., 'face-positive', 'animal-bird')",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Emoji"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Group not found"
+          }
+        }
+      }
+    },
+    "/all": {
+      "get": {
+        "summary": "Get all emojis",
+        "description": "Returns an array of all emojis in the database (1791 objects)",
+        "operationId": "getAllEmojis",
+        "tags": [
+          "Emojis"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Emoji"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/all/category/{category-name}": {
+      "get": {
+        "summary": "Get all emojis from a specific category",
+        "description": "Returns an array of all emojis from the specified category",
+        "operationId": "getAllEmojisByCategory",
+        "tags": [
+          "Emojis"
+        ],
+        "parameters": [
+          {
+            "name": "category-name",
+            "in": "path",
+            "required": true,
+            "description": "The category name (e.g., 'food-and-drink', 'smileys-and-people')",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "smileys-and-people",
+                "animals-and-nature",
+                "food-and-drink",
+                "travel-and-places",
+                "activities",
+                "objects",
+                "symbols",
+                "flags"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Emoji"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Category not found"
+          }
+        }
+      }
+    },
+    "/all/group/{group-name}": {
+      "get": {
+        "summary": "Get all emojis from a specific group",
+        "description": "Returns an array of all emojis from the specified group",
+        "operationId": "getAllEmojisByGroup",
+        "tags": [
+          "Emojis"
+        ],
+        "parameters": [
+          {
+            "name": "group-name",
+            "in": "path",
+            "required": true,
+            "description": "The group name (e.g., 'face-positive', 'animal-bird')",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Emoji"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Group not found"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "Get all available categories",
+        "description": "Returns an array of all available emoji categories",
+        "operationId": "getCategories",
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "example": [
+                  "smileys and people",
+                  "animals and nature",
+                  "food and drink",
+                  "travel and places",
+                  "activities",
+                  "objects",
+                  "symbols",
+                  "flags"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups": {
+      "get": {
+        "summary": "Get all available groups",
+        "description": "Returns an array of all available emoji groups",
+        "operationId": "getGroups",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "example": [
+                  "face positive",
+                  "face neutral",
+                  "face negative",
+                  "face role",
+                  "face sick",
+                  "creature face"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "summary": "Search emojis by name",
+        "description": "Returns an array of emojis matching the search query",
+        "operationId": "searchEmojis",
+        "tags": [
+          "Search"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "The search query string",
+            "schema": {
+              "type": "string"
+            },
+            "example": "smile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Emoji"
+                  }
+                },
+                "example": [
+                  {
+                    "name": "cat face with wry smile",
+                    "category": "smileys and people",
+                    "group": "cat face",
+                    "htmlCode": [
+                      "&#128572;"
+                    ],
+                    "unicode": [
+                      "U+1F63C"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query parameter"
+          }
+        }
+      }
+    },
+    "/similar/{name}": {
+      "get": {
+        "summary": "Get similar emojis by name",
+        "description": "Returns an array of emojis similar to the specified name",
+        "operationId": "getSimilarEmojis",
+        "tags": [
+          "Search"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "description": "The emoji name to find similar emojis for",
+            "schema": {
+              "type": "string"
+            },
+            "example": "cat"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Emoji"
+                  }
+                },
+                "example": [
+                  {
+                    "name": "grinning face",
+                    "category": "smileys and people",
+                    "group": "face positive",
+                    "htmlCode": [
+                      "&#128512;"
+                    ],
+                    "unicode": [
+                      "U+1F600"
+                    ]
+                  },
+                  {
+                    "name": "smiling face with smiling eyes",
+                    "category": "smileys and people",
+                    "group": "face positive",
+                    "htmlCode": [
+                      "&#128513;"
+                    ],
+                    "unicode": [
+                      "U+1F601"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "No similar emojis found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Emoji": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the emoji",
+            "example": "hugging face"
+          },
+          "category": {
+            "type": "string",
+            "description": "The category the emoji belongs to",
+            "example": "smileys and people"
+          },
+          "group": {
+            "type": "string",
+            "description": "The group the emoji belongs to",
+            "example": "face positive"
+          },
+          "htmlCode": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of HTML entity codes for the emoji",
+            "example": [
+              "&#129303;"
+            ]
+          },
+          "unicode": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of Unicode code points for the emoji",
+            "example": [
+              "U+1F917"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "category",
+          "group",
+          "htmlCode",
+          "unicode"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Emojis",
+      "description": "Operations for retrieving emoji data"
+    },
+    {
+      "name": "Categories",
+      "description": "Operations for retrieving emoji categories"
+    },
+    {
+      "name": "Groups",
+      "description": "Operations for retrieving emoji groups"
+    },
+    {
+      "name": "Search",
+      "description": "Operations for searching and finding similar emojis"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Flows
+
+@"BasicAllFlow.jsonic"
+@"BasicCategoryFlow.jsonic"
+@"BasicGroupFlow.jsonic"
+@"BasicRandomFlow.jsonic"
+@"BasicSearchFlow.jsonic"
+@"BasicSimilarFlow.jsonic"

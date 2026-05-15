@@ -1,0 +1,32 @@
+# BasicSimilarFlow
+
+main: kit: flow: BasicSimilarFlow:
+{
+  entity: "similar",
+  kind: "basic",
+  name: "BasicSimilarFlow",
+  step: [
+    {
+      input: {
+        ref: "similar_ref01",
+        srcdatavar: "similar_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "similar01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-similar_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSimilarFlow"
+}

@@ -1,0 +1,74 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "category"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "group"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "html_code"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "unicode"
+      req: true
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "smile"
+                kind: "query"
+                name: "q"
+                orig: "q"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/search"
+          parts: [
+            "search"
+          ]
+          select: {
+            exist: [
+              "q"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

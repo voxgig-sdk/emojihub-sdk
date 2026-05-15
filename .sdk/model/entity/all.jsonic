@@ -1,0 +1,57 @@
+# Entity: all
+
+main: kit: entity: all: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "category"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "group"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "html_code"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "unicode"
+      req: true
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "all"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/all"
+          parts: [
+            "all"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

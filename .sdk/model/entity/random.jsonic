@@ -1,0 +1,57 @@
+# Entity: random
+
+main: kit: entity: random: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "category"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "group"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "html_code"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "unicode"
+      req: true
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "random"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/random"
+          parts: [
+            "random"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,63 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 6
+  metrics: count: path: 10
+  metrics: count: method: 10
+
+  entity: all: {
+    path: "/all": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: category: {
+    path: "/all/category/{category-name}": {
+      rename: param: "category-name": *"id"
+      op: load: method: *GET
+    }
+    path: "/categories": {
+      op: list: method: *GET
+    }
+    path: "/random/category/{category-name}": {
+      rename: param: "category-name": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.category`")|top
+    }
+  }
+
+  entity: group: {
+    path: "/all/group/{group-name}": {
+      rename: param: "group-name": *"id"
+      op: load: method: *GET
+    }
+    path: "/groups": {
+      op: list: method: *GET
+    }
+    path: "/random/group/{group-name}": {
+      rename: param: "group-name": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.group`")|top
+    }
+  }
+
+  entity: random: {
+    path: "/random": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: search: {
+    path: "/search": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: similar: {
+    path: "/similar/{name}": {
+      rename: param: "name": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}

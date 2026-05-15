@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/cheatsnake/emojihub"
+      }
+      description: "Get random emojis or access the entire emoji database by category or group. Easily retrieve html codes to use in web applications."
+      license: {
+        name: "MIT"
+        url: "https://github.com/cheatsnake/emojihub/blob/master/LICENSE"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://emojihub.yurace.pro/api"
+        }
+      ]
+      title: "EmojiHub"
+      version: "2.1.0"
+    }
+  }
+}
+
+}
