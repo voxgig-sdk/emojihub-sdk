@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/emojihub-sdk/core"
+	"github.com/voxgig-sdk/emojihub-sdk/go/core"
 )
 
 type LogFeature struct {

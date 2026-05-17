@@ -1,10 +1,10 @@
 package voxgigemojihubsdk
 
 import (
-	"github.com/voxgig-sdk/emojihub-sdk/core"
-	"github.com/voxgig-sdk/emojihub-sdk/entity"
-	"github.com/voxgig-sdk/emojihub-sdk/feature"
-	_ "github.com/voxgig-sdk/emojihub-sdk/utility"
+	"github.com/voxgig-sdk/emojihub-sdk/go/core"
+	"github.com/voxgig-sdk/emojihub-sdk/go/entity"
+	"github.com/voxgig-sdk/emojihub-sdk/go/feature"
+	_ "github.com/voxgig-sdk/emojihub-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

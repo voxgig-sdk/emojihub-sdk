@@ -6,21 +6,24 @@
         "group": "s33",
         "html_code": [],
         "name": "s35",
-        "unicode": []
+        "unicode": [],
+        "id": "SIMILAR00"
       },
       "SIMILAR01": {
         "category": "s64",
         "group": "s65",
         "html_code": [],
         "name": "s67",
-        "unicode": []
+        "unicode": [],
+        "id": "SIMILAR01"
       },
       "SIMILAR02": {
         "category": "s96",
         "group": "s97",
         "html_code": [],
         "name": "s99",
-        "unicode": []
+        "unicode": [],
+        "id": "SIMILAR02"
       }
     }
   },

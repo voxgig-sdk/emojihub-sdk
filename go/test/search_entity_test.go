@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/emojihub-sdk"
-	"github.com/voxgig-sdk/emojihub-sdk/core"
+	sdk "github.com/voxgig-sdk/emojihub-sdk/go"
+	"github.com/voxgig-sdk/emojihub-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/emojihub-sdk/go/utility/struct"
 )
 
 func TestSearchEntity(t *testing.T) {

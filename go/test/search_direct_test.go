@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/emojihub-sdk"
-	"github.com/voxgig-sdk/emojihub-sdk/core"
+	sdk "github.com/voxgig-sdk/emojihub-sdk/go"
+	"github.com/voxgig-sdk/emojihub-sdk/go/core"
 )
 
 func TestSearchDirect(t *testing.T) {

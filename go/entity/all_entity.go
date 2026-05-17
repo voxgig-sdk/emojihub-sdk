@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/emojihub-sdk/core"
+	"github.com/voxgig-sdk/emojihub-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/emojihub-sdk/go/utility/struct"
 )
 
 type AllEntity struct {
