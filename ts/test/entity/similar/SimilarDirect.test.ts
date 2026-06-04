@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'EMOJIHUB_TEST_SIMILAR_ENTID': {},
     'EMOJIHUB_TEST_LIVE': 'FALSE',
-    'EMOJIHUB_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.EMOJIHUB_TEST_LIVE
 
   if (live) {
     const client = new EmojihubSDK({
-      apikey: env.EMOJIHUB_APIKEY,
     })
 
     let idmap: any = env['EMOJIHUB_TEST_SIMILAR_ENTID']

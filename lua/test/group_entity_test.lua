@@ -98,7 +98,6 @@ function group_basic_setup(extra)
     ["EMOJIHUB_TEST_GROUP_ENTID"] = idmap,
     ["EMOJIHUB_TEST_LIVE"] = "FALSE",
     ["EMOJIHUB_TEST_EXPLAIN"] = "FALSE",
-    ["EMOJIHUB_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -110,7 +109,6 @@ function group_basic_setup(extra)
   if env["EMOJIHUB_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["EMOJIHUB_APIKEY"],
       },
       extra or {},
     })

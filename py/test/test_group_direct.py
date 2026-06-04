@@ -109,14 +109,12 @@ def _group_direct_setup(mockres):
     env = runner.env_override({
         "EMOJIHUB_TEST_GROUP_ENTID": {},
         "EMOJIHUB_TEST_LIVE": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     live = env.get("EMOJIHUB_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("EMOJIHUB_APIKEY"),
         }
         client = EmojihubSDK(merged_opts)
         return {

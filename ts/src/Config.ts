@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://emojihub.yurace.pro/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

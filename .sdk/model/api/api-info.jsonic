@@ -20,8 +20,33 @@ main: {
       ]
       title: "EmojiHub"
       version: "2.1.0"
+      tagline: "Fetch random emojis or browse the full emoji database by category or group"
+      homepage: "https://emojihub.yurace.pro"
+      docs_url: "https://github.com/cheatsnake/emojihub"
+      license_short: "MIT License"
+      license_md: `- Licensed under the MIT License.
+- Source and documentation are maintained on [GitHub](https://github.com/cheatsnake/emojihub) by [cheatsnake](https://github.com/cheatsnake).
+- Attribution is appreciated when redistributing the emoji dataset.`
+      about_md: `[EmojiHub](https://emojihub.yurace.pro) is a small, free HTTP API that serves a curated database of emojis with their names, HTML codes, and Unicode values. It is maintained as an open-source project by [cheatsnake](https://github.com/cheatsnake) on GitHub.
+
+What you get from the API:
+
+- A random emoji from the full set or from a chosen category/group
+- The complete emoji database (~1,791 entries) as JSON
+- Filtering by category (smileys-and-people, animals-and-nature, food-and-drink, travel-and-places, activities, objects, symbols, flags)
+- Filtering by finer-grained groups (face-positive, cat-face, body, clothing, animal-bird, food-fruit, and others)
+- Each entry contains \`name\`, \`category\`, \`group\`, an \`htmlCode\` array, and a \`unicode\` array suitable for dropping into HTML or other text
+
+The API requires no authentication and no API key. Note that CORS is disabled on all endpoints, so browser-side calls typically need a proxy. Responses are plain JSON returned over HTTPS.`
+      entity_desc: {
+        all: "The full emoji dataset, served from `/api/all` and filterable via `/api/all/category/{name}` or `/api/all/group/{name}`."
+        category: "High-level emoji categories such as smileys-and-people, animals-and-nature, food-and-drink, travel-and-places, activities, objects, symbols, and flags, accessed via `/api/all/category/{name}` or `/api/random/category/{name}`."
+        group: "Finer-grained groupings within categories (for example face-positive, cat-face, animal-bird, food-fruit), accessed via `/api/all/group/{name}` or `/api/random/group/{name}`."
+        random: "A single random emoji object, served from `/api/random`, with optional category/group scoping via `/api/random/category/{name}` and `/api/random/group/{name}`."
+        search: "Lookup of emojis by name or keyword."
+        similar: "Emojis related to a given emoji name, useful for suggesting alternatives."
+      }
+      auth: false
     }
   }
-}
-
 }
