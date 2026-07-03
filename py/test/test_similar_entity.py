@@ -91,6 +91,7 @@ def _similar_basic_setup(extra):
         "EMOJIHUB_TEST_SIMILAR_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
+        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -101,6 +102,7 @@ def _similar_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

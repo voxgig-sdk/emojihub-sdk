@@ -15,6 +15,9 @@ module EmojihubConfig
       },
       "options" => {
         "base" => "https://emojihub.yurace.pro/api",
+        "auth" => {
+          "prefix" => "Bearer",
+        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -31,63 +34,63 @@ module EmojihubConfig
         "all" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "all",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
+                  "args" => {},
                   "method" => "GET",
                   "orig" => "/all",
                   "parts" => [
                     "all",
                   ],
+                  "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
-                  "args" => {},
-                  "select" => {},
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
           },
@@ -98,78 +101,80 @@ module EmojihubConfig
         "category" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "category",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
+                  "args" => {},
                   "method" => "GET",
                   "orig" => "/categories",
                   "parts" => [
                     "categories",
                   ],
+                  "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
-                  "args" => {},
-                  "select" => {},
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "category_name",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -194,19 +199,19 @@ module EmojihubConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "category_name",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -229,13 +234,11 @@ module EmojihubConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.category`",
                   },
-                  "active" => true,
                   "index$" => 1,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },
@@ -246,78 +249,80 @@ module EmojihubConfig
         "group" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "group",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
+                  "args" => {},
                   "method" => "GET",
                   "orig" => "/groups",
                   "parts" => [
                     "groups",
                   ],
+                  "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
-                  "args" => {},
-                  "select" => {},
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "group_name",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -342,19 +347,19 @@ module EmojihubConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "group_name",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -377,13 +382,11 @@ module EmojihubConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.group`",
                   },
-                  "active" => true,
                   "index$" => 1,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },
@@ -394,63 +397,63 @@ module EmojihubConfig
         "random" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "random",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
+                  "args" => {},
                   "method" => "GET",
                   "orig" => "/random",
                   "parts" => [
                     "random",
                   ],
+                  "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
-                  "args" => {},
-                  "select" => {},
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
           },
@@ -461,57 +464,59 @@ module EmojihubConfig
         "search" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "search",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "smile",
                         "kind" => "query",
                         "name" => "q",
                         "orig" => "q",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -529,11 +534,9 @@ module EmojihubConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
           },
@@ -544,57 +547,59 @@ module EmojihubConfig
         "similar" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "category",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "group",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "html_code",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "name",
               "req" => true,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "unicode",
               "req" => true,
               "type" => "`$ARRAY`",
-              "active" => true,
               "index$" => 4,
             },
           ],
           "name" => "similar",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "example" => "cat",
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "name",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -618,11 +623,9 @@ module EmojihubConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },

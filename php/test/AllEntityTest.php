@@ -86,6 +86,7 @@ function all_basic_setup($extra)
         "EMOJIHUB_TEST_ALL_ENTID" => $idmap,
         "EMOJIHUB_TEST_LIVE" => "FALSE",
         "EMOJIHUB_TEST_EXPLAIN" => "FALSE",
+        "EMOJIHUB_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function all_basic_setup($extra)
     if ($env["EMOJIHUB_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["EMOJIHUB_APIKEY"],
             ],
             $extra ?? [],
         ]);

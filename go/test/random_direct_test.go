@@ -93,12 +93,14 @@ func randomDirectSetup(mockres any) *randomDirectSetupResult {
 	env := envOverride(map[string]any{
 		"EMOJIHUB_TEST_RANDOM_ENTID": map[string]any{},
 		"EMOJIHUB_TEST_LIVE":    "FALSE",
+		"EMOJIHUB_APIKEY":       "NONE",
 	})
 
 	live := env["EMOJIHUB_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["EMOJIHUB_APIKEY"],
 		}
 		client := sdk.NewEmojihubSDK(mergedOpts)
 

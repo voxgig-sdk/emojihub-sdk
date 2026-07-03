@@ -70,12 +70,14 @@ function similar_direct_setup(mockres)
   local env = runner.env_override({
     ["EMOJIHUB_TEST_SIMILAR_ENTID"] = {},
     ["EMOJIHUB_TEST_LIVE"] = "FALSE",
+    ["EMOJIHUB_APIKEY"] = "NONE",
   })
 
   local live = env["EMOJIHUB_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["EMOJIHUB_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

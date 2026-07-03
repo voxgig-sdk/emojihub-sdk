@@ -1,22 +1,8 @@
 # Emojihub SDK
 
-Fetch random emojis or browse the full emoji database by category or group
+EmojiHub client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About EmojiHub
-
-[EmojiHub](https://emojihub.yurace.pro) is a small, free HTTP API that serves a curated database of emojis with their names, HTML codes, and Unicode values. It is maintained as an open-source project by [cheatsnake](https://github.com/cheatsnake) on GitHub.
-
-What you get from the API:
-
-- A random emoji from the full set or from a chosen category/group
-- The complete emoji database (~1,791 entries) as JSON
-- Filtering by category (smileys-and-people, animals-and-nature, food-and-drink, travel-and-places, activities, objects, symbols, flags)
-- Filtering by finer-grained groups (face-positive, cat-face, body, clothing, animal-bird, food-fruit, and others)
-- Each entry contains `name`, `category`, `group`, an `htmlCode` array, and a `unicode` array suitable for dropping into HTML or other text
-
-The API requires no authentication and no API key. Note that CORS is disabled on all endpoints, so browser-side calls typically need a proxy. Responses are plain JSON returned over HTTPS.
 
 ## Try it
 
@@ -50,29 +36,31 @@ gem install emojihub-sdk
 luarocks install emojihub-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { EmojihubSDK } from 'emojihub'
 
-const client = new EmojihubSDK({})
+const client = new EmojihubSDK({
+  apikey: process.env.EMOJIHUB_APIKEY,
+})
 
 // List all alls
 const alls = await client.All().list()
+console.log(alls.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -102,12 +90,12 @@ The API exposes 6 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **All** | The full emoji dataset, served from `/api/all` and filterable via `/api/all/category/{name}` or `/api/all/group/{name}`. | `/all` |
-| **Category** | High-level emoji categories such as smileys-and-people, animals-and-nature, food-and-drink, travel-and-places, activities, objects, symbols, and flags, accessed via `/api/all/category/{name}` or `/api/random/category/{name}`. | `/categories` |
-| **Group** | Finer-grained groupings within categories (for example face-positive, cat-face, animal-bird, food-fruit), accessed via `/api/all/group/{name}` or `/api/random/group/{name}`. | `/groups` |
-| **Random** | A single random emoji object, served from `/api/random`, with optional category/group scoping via `/api/random/category/{name}` and `/api/random/group/{name}`. | `/random` |
-| **Search** | Lookup of emojis by name or keyword. | `/search` |
-| **Similar** | Emojis related to a given emoji name, useful for suggesting alternatives. | `/similar/{name}` |
+| **All** |  | `/all` |
+| **Category** |  | `/categories` |
+| **Group** |  | `/groups` |
+| **Random** |  | `/random` |
+| **Search** |  | `/search` |
+| **Similar** |  | `/similar/{name}` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -117,12 +105,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from emojihub_sdk import EmojihubSDK
 
-client = EmojihubSDK({})
+client = EmojihubSDK({
+    "apikey": os.environ.get("EMOJIHUB_APIKEY"),
+})
 
 # List all alls
-alls, err = client.All(None).list(None, None)
+alls, err = client.All().list()
+print(alls)
 ```
 
 ### PHP
@@ -131,10 +123,13 @@ alls, err = client.All(None).list(None, None)
 <?php
 require_once 'emojihub_sdk.php';
 
-$client = new EmojihubSDK([]);
+$client = new EmojihubSDK([
+    "apikey" => getenv("EMOJIHUB_APIKEY"),
+]);
 
 // List all alls
-[$alls, $err] = $client->All(null)->list(null, null);
+[$alls, $err] = $client->All()->list();
+print_r($alls);
 ```
 
 ### Golang
@@ -142,10 +137,13 @@ $client = new EmojihubSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/emojihub-sdk/go"
 
-client := sdk.NewEmojihubSDK(map[string]any{})
+client := sdk.NewEmojihubSDK(map[string]any{
+    "apikey": os.Getenv("EMOJIHUB_APIKEY"),
+})
 
 // List all alls
 alls, err := client.All(nil).List(nil, nil)
+fmt.Println(alls)
 ```
 
 ### Ruby
@@ -153,10 +151,13 @@ alls, err := client.All(nil).List(nil, nil)
 ```ruby
 require_relative "Emojihub_sdk"
 
-client = EmojihubSDK.new({})
+client = EmojihubSDK.new({
+  "apikey" => ENV["EMOJIHUB_APIKEY"],
+})
 
 # List all alls
-alls, err = client.All(nil).list(nil, nil)
+alls, err = client.All().list
+puts alls
 ```
 
 ### Lua
@@ -164,10 +165,13 @@ alls, err = client.All(nil).list(nil, nil)
 ```lua
 local sdk = require("emojihub_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("EMOJIHUB_APIKEY"),
+})
 
 -- List all alls
-local alls, err = client:All(nil):list(nil, nil)
+local alls, err = client:All():list()
+print(alls)
 ```
 
 ## Unit testing in offline mode
@@ -186,25 +190,21 @@ const result = await client.All().load({ id: 'test01' })
 ### Python
 
 ```python
-client = EmojihubSDK.test(None, None)
-result, err = client.All(None).load(
-    {"id": "test01"}, None
-)
+client = EmojihubSDK.test()
+result, err = client.All().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = EmojihubSDK::test(null, null);
-[$result, $err] = $client->All(null)->load(
-    ["id" => "test01"], null
-);
+$client = EmojihubSDK::test();
+[$result, $err] = $client->All()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.All(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -213,19 +213,15 @@ result, err := client.All(nil).Load(
 ### Ruby
 
 ```ruby
-client = EmojihubSDK.test(nil, nil)
-result, err = client.All(nil).load(
-  { "id" => "test01" }, nil
-)
+client = EmojihubSDK.test
+result, err = client.All().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:All(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:All():load({ id = "test01" })
 ```
 
 ## How it works
@@ -329,15 +325,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the EmojiHub
-
-- Upstream: [https://emojihub.yurace.pro](https://emojihub.yurace.pro)
-- API docs: [https://github.com/cheatsnake/emojihub](https://github.com/cheatsnake/emojihub)
-
-- Licensed under the MIT License.
-- Source and documentation are maintained on [GitHub](https://github.com/cheatsnake/emojihub) by [cheatsnake](https://github.com/cheatsnake).
-- Attribution is appreciated when redistributing the emoji dataset.
 
 ---
 

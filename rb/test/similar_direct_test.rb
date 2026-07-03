@@ -69,12 +69,14 @@ def similar_direct_setup(mockres)
   env = Runner.env_override({
     "EMOJIHUB_TEST_SIMILAR_ENTID" => {},
     "EMOJIHUB_TEST_LIVE" => "FALSE",
+    "EMOJIHUB_APIKEY" => "NONE",
   })
 
   live = env["EMOJIHUB_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["EMOJIHUB_APIKEY"],
     }
     client = EmojihubSDK.new(merged_opts)
     return {

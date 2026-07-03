@@ -117,6 +117,7 @@ func similarBasicSetup(extra map[string]any) *entityTestSetup {
 		"EMOJIHUB_TEST_SIMILAR_ENTID": idmap,
 		"EMOJIHUB_TEST_LIVE":      "FALSE",
 		"EMOJIHUB_TEST_EXPLAIN":   "FALSE",
+		"EMOJIHUB_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["EMOJIHUB_TEST_SIMILAR_ENTID"])
@@ -127,6 +128,7 @@ func similarBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["EMOJIHUB_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["EMOJIHUB_APIKEY"],
 			},
 			extra,
 		})

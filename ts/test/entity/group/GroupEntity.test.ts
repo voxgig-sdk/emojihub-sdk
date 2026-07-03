@@ -114,6 +114,7 @@ function basicSetup(extra?: any) {
     'EMOJIHUB_TEST_GROUP_ENTID': idmap,
     'EMOJIHUB_TEST_LIVE': 'FALSE',
     'EMOJIHUB_TEST_EXPLAIN': 'FALSE',
+    'EMOJIHUB_APIKEY': 'NONE',
   })
 
   idmap = env['EMOJIHUB_TEST_GROUP_ENTID']
@@ -123,6 +124,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new EmojihubSDK(merge([
       {
+        apikey: env.EMOJIHUB_APIKEY,
       },
       extra
     ]))
