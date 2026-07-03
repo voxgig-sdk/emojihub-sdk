@@ -10,7 +10,7 @@ The PHP SDK for the Emojihub API — an entity-oriented client using PHP convent
 
 ## Install
 ```bash
-composer require voxgig/emojihub-sdk
+composer require voxgig-sdk/emojihub
 ```
 
 

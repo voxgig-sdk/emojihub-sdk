@@ -10,7 +10,7 @@ The Lua SDK for the Emojihub API — an entity-oriented client using Lua convent
 
 ## Install
 ```bash
-luarocks install emojihub-sdk
+luarocks install voxgig-sdk-emojihub
 ```
 
 If the module is not yet published, add the source directory to

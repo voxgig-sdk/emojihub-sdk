@@ -10,13 +10,13 @@ The Ruby SDK for the Emojihub API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install emojihub-sdk
+gem install voxgig-sdk-emojihub
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "emojihub-sdk"
+gem "voxgig-sdk-emojihub"
 ```
 
 Then run:

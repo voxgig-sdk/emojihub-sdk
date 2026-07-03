@@ -10,7 +10,7 @@ The TypeScript SDK for the Emojihub API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install emojihub
+npm install @voxgig-sdk/emojihub
 ```
 ## Tutorial: your first API call
 

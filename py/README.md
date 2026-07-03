@@ -10,7 +10,7 @@ The Python SDK for the Emojihub API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install emojihub-sdk
+pip install voxgig-sdk-emojihub
 ```
 
 Or install from source:
