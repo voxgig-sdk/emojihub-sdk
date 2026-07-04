@@ -50,8 +50,7 @@ class RandomEntityTest extends TestCase
         $random_ref01_ent = $client->Random(null);
         $random_ref01_match = [];
 
-        [$random_ref01_list_result, $err] = $random_ref01_ent->list($random_ref01_match, null);
-        $this->assertNull($err);
+        $random_ref01_list_result = $random_ref01_ent->list($random_ref01_match, null);
         $this->assertIsArray($random_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function random_basic_setup($extra)
         "EMOJIHUB_TEST_RANDOM_ENTID" => $idmap,
         "EMOJIHUB_TEST_LIVE" => "FALSE",
         "EMOJIHUB_TEST_EXPLAIN" => "FALSE",
-        "EMOJIHUB_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function random_basic_setup($extra)
     if ($env["EMOJIHUB_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["EMOJIHUB_APIKEY"],
             ],
             $extra ?? [],
         ]);

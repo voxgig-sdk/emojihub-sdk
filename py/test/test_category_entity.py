@@ -50,14 +50,12 @@ class TestCategoryEntity:
         category_ref01_ent = client.Category(None)
         category_ref01_match = {}
 
-        category_ref01_list_result, err = category_ref01_ent.list(category_ref01_match, None)
-        assert err is None
+        category_ref01_list_result = category_ref01_ent.list(category_ref01_match, None)
         assert isinstance(category_ref01_list_result, list)
 
         # LOAD
         category_ref01_match_dt0 = {}
-        category_ref01_data_dt0_loaded, err = category_ref01_ent.load(category_ref01_match_dt0, None)
-        assert err is None
+        category_ref01_data_dt0_loaded = category_ref01_ent.load(category_ref01_match_dt0, None)
         assert category_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _category_basic_setup(extra):
         "EMOJIHUB_TEST_CATEGORY_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _category_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

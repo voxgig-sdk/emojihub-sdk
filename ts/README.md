@@ -9,9 +9,12 @@ The TypeScript SDK for the Emojihub API — a type-safe, entity-oriented client 
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/emojihub
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/emojihub-sdk/releases](https://github.com/voxgig-sdk/emojihub-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { EmojihubSDK } from 'emojihub'
+import { EmojihubSDK } from '@voxgig-sdk/emojihub'
 
-const client = new EmojihubSDK({
-  apikey: process.env.EMOJIHUB_APIKEY,
-})
+const client = new EmojihubSDK()
 ```
 
 ### 2. List alls
 
 ```ts
-const result = await client.All().list()
+const result = await client.all.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = EmojihubSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.all.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new EmojihubSDK({ apikey: '...' })
+const client = new EmojihubSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.all
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new EmojihubSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -136,7 +136,6 @@ Create a `.env.local` file at the project root:
 
 ```
 EMOJIHUB_TEST_LIVE=TRUE
-EMOJIHUB_APIKEY=<your-key>
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new EmojihubSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new EmojihubSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -347,7 +344,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.All()`
+Create an instance: `const all = client.all`
 
 #### Operations
 
@@ -368,13 +365,13 @@ Create an instance: `const all = client.All()`
 #### Example: List
 
 ```ts
-const alls = await client.All().list()
+const alls = await client.all.list()
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.Category()`
+Create an instance: `const category = client.category`
 
 #### Operations
 
@@ -396,19 +393,19 @@ Create an instance: `const category = client.Category()`
 #### Example: Load
 
 ```ts
-const category = await client.Category().load({ id: 'category_id' })
+const category = await client.category.load({ id: 'category_id' })
 ```
 
 #### Example: List
 
 ```ts
-const categorys = await client.Category().list()
+const categorys = await client.category.list()
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.Group()`
+Create an instance: `const group = client.group`
 
 #### Operations
 
@@ -430,19 +427,19 @@ Create an instance: `const group = client.Group()`
 #### Example: Load
 
 ```ts
-const group = await client.Group().load({ id: 'group_id' })
+const group = await client.group.load({ id: 'group_id' })
 ```
 
 #### Example: List
 
 ```ts
-const groups = await client.Group().list()
+const groups = await client.group.list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.Random()`
+Create an instance: `const random = client.random`
 
 #### Operations
 
@@ -463,13 +460,13 @@ Create an instance: `const random = client.Random()`
 #### Example: List
 
 ```ts
-const randoms = await client.Random().list()
+const randoms = await client.random.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -490,13 +487,13 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.Similar()`
+Create an instance: `const similar = client.similar`
 
 #### Operations
 
@@ -517,7 +514,7 @@ Create an instance: `const similar = client.Similar()`
 #### Example: Load
 
 ```ts
-const similar = await client.Similar().load({ id: 'similar_id' })
+const similar = await client.similar.load({ id: 'similar_id' })
 ```
 
 
@@ -578,7 +575,7 @@ emojihub/
 Import the SDK from the package root:
 
 ```ts
-import { EmojihubSDK } from 'emojihub'
+import { EmojihubSDK } from '@voxgig-sdk/emojihub'
 ```
 
 ### Entity state
@@ -588,11 +585,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const all = client.all
+await all.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// all.data() now returns the loaded all data
+// all.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

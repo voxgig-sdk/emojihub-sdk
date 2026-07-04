@@ -7,6 +7,8 @@ import { RandomEntity } from './entity/RandomEntity'
 import { SearchEntity } from './entity/SearchEntity'
 import { SimilarEntity } from './entity/SimilarEntity'
 
+export type * from './EmojihubTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -207,36 +209,84 @@ class EmojihubSDK {
 
 
 
+  _all?: AllEntity
+
+  // Idiomatic facade: `client.all.list()` / `client.all.load({ id })`.
+  get all(): AllEntity {
+    return (this._all ??= new AllEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.all` instead. */
   All(data?: any) {
     const self = this
     return new AllEntity(self,data)
   }
 
 
+  _category?: CategoryEntity
+
+  // Idiomatic facade: `client.category.list()` / `client.category.load({ id })`.
+  get category(): CategoryEntity {
+    return (this._category ??= new CategoryEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.category` instead. */
   Category(data?: any) {
     const self = this
     return new CategoryEntity(self,data)
   }
 
 
+  _group?: GroupEntity
+
+  // Idiomatic facade: `client.group.list()` / `client.group.load({ id })`.
+  get group(): GroupEntity {
+    return (this._group ??= new GroupEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.group` instead. */
   Group(data?: any) {
     const self = this
     return new GroupEntity(self,data)
   }
 
 
+  _random?: RandomEntity
+
+  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
+  get random(): RandomEntity {
+    return (this._random ??= new RandomEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.random` instead. */
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)
   }
 
 
+  _search?: SearchEntity
+
+  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
+  get search(): SearchEntity {
+    return (this._search ??= new SearchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.search` instead. */
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)
   }
 
 
+  _similar?: SimilarEntity
+
+  // Idiomatic facade: `client.similar.list()` / `client.similar.load({ id })`.
+  get similar(): SimilarEntity {
+    return (this._similar ??= new SimilarEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.similar` instead. */
   Similar(data?: any) {
     const self = this
     return new SimilarEntity(self,data)

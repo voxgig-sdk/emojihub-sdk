@@ -43,14 +43,12 @@ class CategoryEntityTest < Minitest::Test
     category_ref01_ent = client.Category(nil)
     category_ref01_match = {}
 
-    category_ref01_list_result, err = category_ref01_ent.list(category_ref01_match, nil)
-    assert_nil err
+    category_ref01_list_result = category_ref01_ent.list(category_ref01_match, nil)
     assert category_ref01_list_result.is_a?(Array)
 
     # LOAD
     category_ref01_match_dt0 = {}
-    category_ref01_data_dt0_loaded, err = category_ref01_ent.load(category_ref01_match_dt0, nil)
-    assert_nil err
+    category_ref01_data_dt0_loaded = category_ref01_ent.load(category_ref01_match_dt0, nil)
     assert !category_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def category_basic_setup(extra)
     "EMOJIHUB_TEST_CATEGORY_ENTID" => idmap,
     "EMOJIHUB_TEST_LIVE" => "FALSE",
     "EMOJIHUB_TEST_EXPLAIN" => "FALSE",
-    "EMOJIHUB_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def category_basic_setup(extra)
   if env["EMOJIHUB_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["EMOJIHUB_APIKEY"],
       },
       extra || {},
     ])

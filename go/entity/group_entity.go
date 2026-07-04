@@ -85,6 +85,27 @@ func (e *GroupEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Group; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *GroupEntity) DataTyped(data ...Group) Group {
+	if len(data) > 0 {
+		return typedFrom[Group](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Group](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Group (all fields
+// optional at the wire level).
+func (e *GroupEntity) MatchTyped(match ...Group) Group {
+	if len(match) > 0 {
+		return typedFrom[Group](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Group](e.Match())
+}
+
 
 func (e *GroupEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -111,6 +132,17 @@ func (e *GroupEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, e
 	})
 }
 
+// LoadTyped is the statically-typed variant of Load: it takes an
+// GroupLoadMatch and returns an Group. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *GroupEntity) LoadTyped(reqmatch GroupLoadMatch, ctrl map[string]any) (Group, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Group{}, err
+	}
+	return typedFrom[Group](res), nil
+}
+
 
 
 
@@ -131,6 +163,17 @@ func (e *GroupEntity) List(reqmatch map[string]any, ctrl map[string]any) (any, e
 			}
 		}
 	})
+}
+
+// ListTyped is the statically-typed variant of List: it takes an
+// GroupListMatch and returns []Group. It delegates to the untyped
+// List (identical runtime) and converts at the typed boundary.
+func (e *GroupEntity) ListTyped(reqmatch GroupListMatch, ctrl map[string]any) ([]Group, error) {
+	res, err := e.List(asMap(reqmatch), ctrl)
+	if err != nil {
+		return nil, err
+	}
+	return typedSliceFrom[Group](res), nil
 }
 
 

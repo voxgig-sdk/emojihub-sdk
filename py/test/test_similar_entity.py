@@ -49,8 +49,7 @@ class TestSimilarEntity:
         # LOAD
         similar_ref01_ent = client.Similar(None)
         similar_ref01_match_dt0 = {}
-        similar_ref01_data_dt0_loaded, err = similar_ref01_ent.load(similar_ref01_match_dt0, None)
-        assert err is None
+        similar_ref01_data_dt0_loaded = similar_ref01_ent.load(similar_ref01_match_dt0, None)
         assert similar_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _similar_basic_setup(extra):
         "EMOJIHUB_TEST_SIMILAR_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _similar_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

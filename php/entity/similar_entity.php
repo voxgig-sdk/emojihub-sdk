@@ -55,6 +55,9 @@ class SimilarEntity
         return new SimilarEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Similar|array $args Similar data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class SimilarEntity
         }
     }
 
+    /**
+     * @return Similar|array The current Similar data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Similar fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class SimilarEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Similar fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -84,7 +96,16 @@ class SimilarEntity
     }
 
     
-    public function load($reqmatch, $ctrl = null): array
+    /**
+     * Load a single Similar.
+     *
+     * @param SimilarLoadMatch|array|null $reqmatch Match criteria (id/query
+     *   fields) as an assoc-array; a typed SimilarLoadMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Similar|array The loaded Similar as an assoc-array at the
+     *   SDK boundary; throws EmojihubError on failure (item-5 convention).
+     */
+    public function load(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -117,7 +138,7 @@ class SimilarEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

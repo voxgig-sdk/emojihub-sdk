@@ -9,12 +9,9 @@ The Lua SDK for the Emojihub API — an entity-oriented client using Lua convent
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-emojihub
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/emojihub-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("emojihub_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("EMOJIHUB_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List alls
 
 ```lua
-local result, err = client:All():list()
+local result, err = client:all():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Emojihub():load({ id = "test01" })
+local result, err = client:all():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -127,7 +122,6 @@ Create a `.env.local` file at the project root:
 
 ```
 EMOJIHUB_TEST_LIVE=TRUE
-EMOJIHUB_APIKEY=<your-key>
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -306,7 +299,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.All()`
+Create an instance: `const all = client.all`
 
 #### Operations
 
@@ -327,13 +320,13 @@ Create an instance: `const all = client.All()`
 #### Example: List
 
 ```ts
-const alls = await client.All().list()
+const alls = await client.all.list()
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.Category()`
+Create an instance: `const category = client.category`
 
 #### Operations
 
@@ -355,19 +348,19 @@ Create an instance: `const category = client.Category()`
 #### Example: Load
 
 ```ts
-const category = await client.Category().load({ id: 'category_id' })
+const category = await client.category.load({ id: 'category_id' })
 ```
 
 #### Example: List
 
 ```ts
-const categorys = await client.Category().list()
+const categorys = await client.category.list()
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.Group()`
+Create an instance: `const group = client.group`
 
 #### Operations
 
@@ -389,19 +382,19 @@ Create an instance: `const group = client.Group()`
 #### Example: Load
 
 ```ts
-const group = await client.Group().load({ id: 'group_id' })
+const group = await client.group.load({ id: 'group_id' })
 ```
 
 #### Example: List
 
 ```ts
-const groups = await client.Group().list()
+const groups = await client.group.list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.Random()`
+Create an instance: `const random = client.random`
 
 #### Operations
 
@@ -422,13 +415,13 @@ Create an instance: `const random = client.Random()`
 #### Example: List
 
 ```ts
-const randoms = await client.Random().list()
+const randoms = await client.random.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -449,13 +442,13 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.Similar()`
+Create an instance: `const similar = client.similar`
 
 #### Operations
 
@@ -476,7 +469,7 @@ Create an instance: `const similar = client.Similar()`
 #### Example: Load
 
 ```ts
-const similar = await client.Similar().load({ id: 'similar_id' })
+const similar = await client.similar.load({ id: 'similar_id' })
 ```
 
 
@@ -551,11 +544,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local all = client:all()
+all:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- all:data_get() now returns the loaded all data
+-- all:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

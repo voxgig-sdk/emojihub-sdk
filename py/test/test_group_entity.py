@@ -50,14 +50,12 @@ class TestGroupEntity:
         group_ref01_ent = client.Group(None)
         group_ref01_match = {}
 
-        group_ref01_list_result, err = group_ref01_ent.list(group_ref01_match, None)
-        assert err is None
+        group_ref01_list_result = group_ref01_ent.list(group_ref01_match, None)
         assert isinstance(group_ref01_list_result, list)
 
         # LOAD
         group_ref01_match_dt0 = {}
-        group_ref01_data_dt0_loaded, err = group_ref01_ent.load(group_ref01_match_dt0, None)
-        assert err is None
+        group_ref01_data_dt0_loaded = group_ref01_ent.load(group_ref01_match_dt0, None)
         assert group_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _group_basic_setup(extra):
         "EMOJIHUB_TEST_GROUP_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _group_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

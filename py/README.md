@@ -9,11 +9,9 @@ The Python SDK for the Emojihub API — an entity-oriented client following Pyth
 
 
 ## Install
-```bash
-pip install voxgig-sdk-emojihub
-```
-
-Or install from source:
+This package is not yet published to PyPI. Install it from the GitHub
+release tag (`py/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/emojihub-sdk/releases)) or
+from a source checkout:
 
 ```bash
 pip install -e .
@@ -28,25 +26,21 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from emojihub_sdk import EmojihubSDK
 
-client = EmojihubSDK({
-    "apikey": os.environ.get("EMOJIHUB_APIKEY"),
-})
+client = EmojihubSDK()
 ```
 
 ### 2. List alls
 
 ```python
-result, err = client.All().list()
-if err:
-    raise Exception(err)
-
-if isinstance(result, list):
+try:
+    result = client.all.list()
     for item in result:
         d = item.data_get()
         print(d["id"], d["name"])
+except Exception as err:
+    print(f"list failed: {err}")
 ```
 
 
@@ -57,29 +51,28 @@ if isinstance(result, list):
 For endpoints not covered by entity methods:
 
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
+else:
+    print(result["err"])     # error value
 ```
 
 ### Prepare a request without sending it
 
 ```python
-fetchdef, err = client.prepare({
+# prepare() returns the fetch definition and raises on error.
+fetchdef = client.prepare({
     "path": "/api/resource/{id}",
     "method": "DELETE",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 print(fetchdef["url"])
 print(fetchdef["method"])
@@ -93,7 +86,7 @@ Create a mock client for unit testing — no server required:
 ```python
 client = EmojihubSDK.test()
 
-result, err = client.Emojihub().load({"id": "test01"})
+result = client.all.load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -124,7 +117,6 @@ Create a `.env.local` file at the project root:
 
 ```
 EMOJIHUB_TEST_LIVE=TRUE
-EMOJIHUB_APIKEY=<your-key>
 ```
 
 Then run:
@@ -148,7 +140,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |
@@ -170,8 +161,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | --- | --- | --- |
 | `options_map` | `() -> dict` | Deep copy of current SDK options. |
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
-| `prepare` | `(fetchargs) -> (dict, err)` | Build an HTTP request definition without sending. |
-| `direct` | `(fetchargs) -> (dict, err)` | Build and send an HTTP request. |
+| `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
+| `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `All` | `(data) -> AllEntity` | Create a All entity instance. |
 | `Category` | `(data) -> CategoryEntity` | Create a Category entity instance. |
 | `Group` | `(data) -> GroupEntity` | Create a Group entity instance. |
@@ -185,11 +176,11 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> (any, err)` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> (any, err)` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> (any, err)` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> (any, err)` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> (any, err)` | Remove an entity. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
+| `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
+| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -199,8 +190,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`dict` with these keys:
+Entity operations return the bare result data (a `dict` for single-entity
+ops, a `list` for `list`) and raise on error. Wrap calls in
+`try`/`except` to handle failures.
+
+The `direct()` escape hatch never raises — it returns a result `dict`
+you branch on via `result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -304,7 +299,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.All()`
+Create an instance: `const all = client.all`
 
 #### Operations
 
@@ -325,13 +320,13 @@ Create an instance: `const all = client.All()`
 #### Example: List
 
 ```ts
-const alls = await client.All().list()
+const alls = await client.all.list()
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.Category()`
+Create an instance: `const category = client.category`
 
 #### Operations
 
@@ -353,19 +348,19 @@ Create an instance: `const category = client.Category()`
 #### Example: Load
 
 ```ts
-const category = await client.Category().load({ id: 'category_id' })
+const category = await client.category.load({ id: 'category_id' })
 ```
 
 #### Example: List
 
 ```ts
-const categorys = await client.Category().list()
+const categorys = await client.category.list()
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.Group()`
+Create an instance: `const group = client.group`
 
 #### Operations
 
@@ -387,19 +382,19 @@ Create an instance: `const group = client.Group()`
 #### Example: Load
 
 ```ts
-const group = await client.Group().load({ id: 'group_id' })
+const group = await client.group.load({ id: 'group_id' })
 ```
 
 #### Example: List
 
 ```ts
-const groups = await client.Group().list()
+const groups = await client.group.list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.Random()`
+Create an instance: `const random = client.random`
 
 #### Operations
 
@@ -420,13 +415,13 @@ Create an instance: `const random = client.Random()`
 #### Example: List
 
 ```ts
-const randoms = await client.Random().list()
+const randoms = await client.random.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -447,13 +442,13 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.Similar()`
+Create an instance: `const similar = client.similar`
 
 #### Operations
 
@@ -474,7 +469,7 @@ Create an instance: `const similar = client.Similar()`
 #### Example: Load
 
 ```ts
-const similar = await client.Similar().load({ id: 'similar_id' })
+const similar = await client.similar.load({ id: 'similar_id' })
 ```
 
 
@@ -548,11 +543,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-moon = client.Moon()
-moon.load({"planet_id": "earth", "id": "luna"})
+all = client.all
+all.load({"id": "example_id"})
 
-# moon.data_get() now returns the loaded moon data
-# moon.match_get() returns the last match criteria
+# all.data_get() now returns the loaded all data
+# all.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

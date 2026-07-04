@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -104,7 +103,7 @@ same parameters as `direct()`.
 ## AllEntity
 
 ```lua
-local all = client:All(nil)
+local all = client:all(nil)
 ```
 
 ### Fields
@@ -124,7 +123,7 @@ local all = client:All(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:All():list()
+local results, err = client:all():list()
 ```
 
 ### Common Methods
@@ -160,7 +159,7 @@ Return the entity name.
 ## CategoryEntity
 
 ```lua
-local category = client:Category(nil)
+local category = client:category(nil)
 ```
 
 ### Fields
@@ -180,7 +179,7 @@ local category = client:Category(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Category():list()
+local results, err = client:category():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -188,7 +187,7 @@ local results, err = client:Category():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Category():load({ id = "category_id" })
+local result, err = client:category():load({ id = "category_id" })
 ```
 
 ### Common Methods
@@ -224,7 +223,7 @@ Return the entity name.
 ## GroupEntity
 
 ```lua
-local group = client:Group(nil)
+local group = client:group(nil)
 ```
 
 ### Fields
@@ -244,7 +243,7 @@ local group = client:Group(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Group():list()
+local results, err = client:group():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -252,7 +251,7 @@ local results, err = client:Group():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Group():load({ id = "group_id" })
+local result, err = client:group():load({ id = "group_id" })
 ```
 
 ### Common Methods
@@ -288,7 +287,7 @@ Return the entity name.
 ## RandomEntity
 
 ```lua
-local random = client:Random(nil)
+local random = client:random(nil)
 ```
 
 ### Fields
@@ -308,7 +307,7 @@ local random = client:Random(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Random():list()
+local results, err = client:random():list()
 ```
 
 ### Common Methods
@@ -344,7 +343,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:Search(nil)
+local search = client:search(nil)
 ```
 
 ### Fields
@@ -364,7 +363,7 @@ local search = client:Search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Search():list()
+local results, err = client:search():list()
 ```
 
 ### Common Methods
@@ -400,7 +399,7 @@ Return the entity name.
 ## SimilarEntity
 
 ```lua
-local similar = client:Similar(nil)
+local similar = client:similar(nil)
 ```
 
 ### Fields
@@ -420,7 +419,7 @@ local similar = client:Similar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Similar():load({ id = "similar_id" })
+local result, err = client:similar():load({ id = "similar_id" })
 ```
 
 ### Common Methods

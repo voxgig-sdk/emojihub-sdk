@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -170,7 +169,7 @@ Alias for `EmojihubSDK.test()`.
 ## AllEntity
 
 ```ts
-const all = client.All()
+const all = client.all
 ```
 
 ### Fields
@@ -190,7 +189,7 @@ const all = client.All()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.All().list()
+const results = await client.all.list()
 ```
 
 ### Common Methods
@@ -224,7 +223,7 @@ Return a copy of the entity options.
 ## CategoryEntity
 
 ```ts
-const category = client.Category()
+const category = client.category
 ```
 
 ### Fields
@@ -244,7 +243,7 @@ const category = client.Category()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Category().list()
+const results = await client.category.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -252,7 +251,7 @@ const results = await client.Category().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Category().load({ id: 'category_id' })
+const result = await client.category.load({ id: 'category_id' })
 ```
 
 ### Common Methods
@@ -286,7 +285,7 @@ Return a copy of the entity options.
 ## GroupEntity
 
 ```ts
-const group = client.Group()
+const group = client.group
 ```
 
 ### Fields
@@ -306,7 +305,7 @@ const group = client.Group()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Group().list()
+const results = await client.group.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -314,7 +313,7 @@ const results = await client.Group().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Group().load({ id: 'group_id' })
+const result = await client.group.load({ id: 'group_id' })
 ```
 
 ### Common Methods
@@ -348,7 +347,7 @@ Return a copy of the entity options.
 ## RandomEntity
 
 ```ts
-const random = client.Random()
+const random = client.random
 ```
 
 ### Fields
@@ -368,7 +367,7 @@ const random = client.Random()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Random().list()
+const results = await client.random.list()
 ```
 
 ### Common Methods
@@ -402,7 +401,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.Search()
+const search = client.search
 ```
 
 ### Fields
@@ -422,7 +421,7 @@ const search = client.Search()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Search().list()
+const results = await client.search.list()
 ```
 
 ### Common Methods
@@ -456,7 +455,7 @@ Return a copy of the entity options.
 ## SimilarEntity
 
 ```ts
-const similar = client.Similar()
+const similar = client.similar
 ```
 
 ### Fields
@@ -476,7 +475,7 @@ const similar = client.Similar()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Similar().load({ id: 'similar_id' })
+const result = await client.similar.load({ id: 'similar_id' })
 ```
 
 ### Common Methods

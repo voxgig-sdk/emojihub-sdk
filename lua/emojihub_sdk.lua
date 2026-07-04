@@ -244,36 +244,114 @@ end
 
 
 
+-- Idiomatic facade: client:all():list() / client:all():load({ id = ... })
+function EmojihubSDK:all(data)
+  local EntityMod = require("entity.all_entity")
+  if data == nil then
+    if self._all == nil then
+      self._all = EntityMod.new(self, nil)
+    end
+    return self._all
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:all() instead.
 function EmojihubSDK:All(data)
   local EntityMod = require("entity.all_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:category():list() / client:category():load({ id = ... })
+function EmojihubSDK:category(data)
+  local EntityMod = require("entity.category_entity")
+  if data == nil then
+    if self._category == nil then
+      self._category = EntityMod.new(self, nil)
+    end
+    return self._category
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:category() instead.
 function EmojihubSDK:Category(data)
   local EntityMod = require("entity.category_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:group():list() / client:group():load({ id = ... })
+function EmojihubSDK:group(data)
+  local EntityMod = require("entity.group_entity")
+  if data == nil then
+    if self._group == nil then
+      self._group = EntityMod.new(self, nil)
+    end
+    return self._group
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:group() instead.
 function EmojihubSDK:Group(data)
   local EntityMod = require("entity.group_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
+function EmojihubSDK:random(data)
+  local EntityMod = require("entity.random_entity")
+  if data == nil then
+    if self._random == nil then
+      self._random = EntityMod.new(self, nil)
+    end
+    return self._random
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:random() instead.
 function EmojihubSDK:Random(data)
   local EntityMod = require("entity.random_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
+function EmojihubSDK:search(data)
+  local EntityMod = require("entity.search_entity")
+  if data == nil then
+    if self._search == nil then
+      self._search = EntityMod.new(self, nil)
+    end
+    return self._search
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:search() instead.
 function EmojihubSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:similar():list() / client:similar():load({ id = ... })
+function EmojihubSDK:similar(data)
+  local EntityMod = require("entity.similar_entity")
+  if data == nil then
+    if self._similar == nil then
+      self._similar = EntityMod.new(self, nil)
+    end
+    return self._similar
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:similar() instead.
 function EmojihubSDK:Similar(data)
   local EntityMod = require("entity.similar_entity")
   return EntityMod.new(self, data)

@@ -50,8 +50,7 @@ class TestRandomEntity:
         random_ref01_ent = client.Random(None)
         random_ref01_match = {}
 
-        random_ref01_list_result, err = random_ref01_ent.list(random_ref01_match, None)
-        assert err is None
+        random_ref01_list_result = random_ref01_ent.list(random_ref01_match, None)
         assert isinstance(random_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _random_basic_setup(extra):
         "EMOJIHUB_TEST_RANDOM_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _random_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

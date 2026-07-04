@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Similar,
+  SimilarLoadMatch,
+} from '../EmojihubTypes'
 
 // TODO: needs Entity superclass
-class SimilarEntity extends EmojihubEntityBase {
+class SimilarEntity extends EmojihubEntityBase<Similar> {
 
   constructor(client: EmojihubSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class SimilarEntity extends EmojihubEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: SimilarLoadMatch, ctrl?: Control): Promise<Similar> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class SimilarEntity extends EmojihubEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Similar> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

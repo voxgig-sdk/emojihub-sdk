@@ -245,31 +245,49 @@ func (sdk *EmojihubSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// All returns a All entity bound to this client.
+// Idiomatic usage: client.All(nil).List(nil, nil) or
+// client.All(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) All(data map[string]any) EmojihubEntity {
 	return NewAllEntityFunc(sdk, data)
 }
 
 
+// Category returns a Category entity bound to this client.
+// Idiomatic usage: client.Category(nil).List(nil, nil) or
+// client.Category(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) Category(data map[string]any) EmojihubEntity {
 	return NewCategoryEntityFunc(sdk, data)
 }
 
 
+// Group returns a Group entity bound to this client.
+// Idiomatic usage: client.Group(nil).List(nil, nil) or
+// client.Group(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) Group(data map[string]any) EmojihubEntity {
 	return NewGroupEntityFunc(sdk, data)
 }
 
 
+// Random returns a Random entity bound to this client.
+// Idiomatic usage: client.Random(nil).List(nil, nil) or
+// client.Random(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) Random(data map[string]any) EmojihubEntity {
 	return NewRandomEntityFunc(sdk, data)
 }
 
 
+// Search returns a Search entity bound to this client.
+// Idiomatic usage: client.Search(nil).List(nil, nil) or
+// client.Search(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) Search(data map[string]any) EmojihubEntity {
 	return NewSearchEntityFunc(sdk, data)
 }
 
 
+// Similar returns a Similar entity bound to this client.
+// Idiomatic usage: client.Similar(nil).List(nil, nil) or
+// client.Similar(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EmojihubSDK) Similar(data map[string]any) EmojihubEntity {
 	return NewSimilarEntityFunc(sdk, data)
 }

@@ -50,8 +50,7 @@ class TestAllEntity:
         all_ref01_ent = client.All(None)
         all_ref01_match = {}
 
-        all_ref01_list_result, err = all_ref01_ent.list(all_ref01_match, None)
-        assert err is None
+        all_ref01_list_result = all_ref01_ent.list(all_ref01_match, None)
         assert isinstance(all_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _all_basic_setup(extra):
         "EMOJIHUB_TEST_ALL_ENTID": idmap,
         "EMOJIHUB_TEST_LIVE": "FALSE",
         "EMOJIHUB_TEST_EXPLAIN": "FALSE",
-        "EMOJIHUB_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _all_basic_setup(extra):
     if env.get("EMOJIHUB_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EMOJIHUB_APIKEY"),
             },
             extra or {},
         ])

@@ -49,8 +49,7 @@ class SimilarEntityTest extends TestCase
         // LOAD
         $similar_ref01_ent = $client->Similar(null);
         $similar_ref01_match_dt0 = [];
-        [$similar_ref01_data_dt0_loaded, $err] = $similar_ref01_ent->load($similar_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $similar_ref01_data_dt0_loaded = $similar_ref01_ent->load($similar_ref01_match_dt0, null);
         $this->assertNotNull($similar_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function similar_basic_setup($extra)
         "EMOJIHUB_TEST_SIMILAR_ENTID" => $idmap,
         "EMOJIHUB_TEST_LIVE" => "FALSE",
         "EMOJIHUB_TEST_EXPLAIN" => "FALSE",
-        "EMOJIHUB_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function similar_basic_setup($extra)
     if ($env["EMOJIHUB_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["EMOJIHUB_APIKEY"],
             ],
             $extra ?? [],
         ]);

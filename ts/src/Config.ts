@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://emojihub.yurace.pro/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -214,7 +210,8 @@ class Config {
                     "name": "id",
                     "orig": "category_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -251,7 +248,8 @@ class Config {
                     "name": "id",
                     "orig": "category_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -362,7 +360,8 @@ class Config {
                     "name": "id",
                     "orig": "group_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -399,7 +398,8 @@ class Config {
                     "name": "id",
                     "orig": "group_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -639,7 +639,8 @@ class Config {
                     "name": "id",
                     "orig": "name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
