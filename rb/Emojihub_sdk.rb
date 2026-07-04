@@ -208,78 +208,42 @@ class EmojihubSDK
   end
 
 
-  # Idiomatic facade: client.all.list / client.all.load({ "id" => ... })
-  def all
-    require_relative 'entity/all_entity'
-    @all ||= AllEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.all instead.
+  # Canonical facade: client.All.list / client.All.load({ "id" => ... })
   def All(data = nil)
     require_relative 'entity/all_entity'
     AllEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.category.list / client.category.load({ "id" => ... })
-  def category
-    require_relative 'entity/category_entity'
-    @category ||= CategoryEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.category instead.
+  # Canonical facade: client.Category.list / client.Category.load({ "id" => ... })
   def Category(data = nil)
     require_relative 'entity/category_entity'
     CategoryEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.group.list / client.group.load({ "id" => ... })
-  def group
-    require_relative 'entity/group_entity'
-    @group ||= GroupEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.group instead.
+  # Canonical facade: client.Group.list / client.Group.load({ "id" => ... })
   def Group(data = nil)
     require_relative 'entity/group_entity'
     GroupEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.random.list / client.random.load({ "id" => ... })
-  def random
-    require_relative 'entity/random_entity'
-    @random ||= RandomEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.random instead.
+  # Canonical facade: client.Random.list / client.Random.load({ "id" => ... })
   def Random(data = nil)
     require_relative 'entity/random_entity'
     RandomEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.search.list / client.search.load({ "id" => ... })
-  def search
-    require_relative 'entity/search_entity'
-    @search ||= SearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search instead.
+  # Canonical facade: client.Search.list / client.Search.load({ "id" => ... })
   def Search(data = nil)
     require_relative 'entity/search_entity'
     SearchEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.similar.list / client.similar.load({ "id" => ... })
-  def similar
-    require_relative 'entity/similar_entity'
-    @similar ||= SimilarEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.similar instead.
+  # Canonical facade: client.Similar.list / client.Similar.load({ "id" => ... })
   def Similar(data = nil)
     require_relative 'entity/similar_entity'
     SimilarEntity.new(self, data)

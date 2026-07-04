@@ -103,7 +103,7 @@ same parameters as `direct()`.
 ## AllEntity
 
 ```lua
-local all = client:all(nil)
+local all = client:All(nil)
 ```
 
 ### Fields
@@ -123,7 +123,7 @@ local all = client:all(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:all():list()
+local results, err = client:All():list()
 ```
 
 ### Common Methods
@@ -159,7 +159,7 @@ Return the entity name.
 ## CategoryEntity
 
 ```lua
-local category = client:category(nil)
+local category = client:Category(nil)
 ```
 
 ### Fields
@@ -179,7 +179,7 @@ local category = client:category(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:category():list()
+local results, err = client:Category():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -187,7 +187,7 @@ local results, err = client:category():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:category():load({ id = "category_id" })
+local result, err = client:Category():load({ id = "category_id" })
 ```
 
 ### Common Methods
@@ -223,7 +223,7 @@ Return the entity name.
 ## GroupEntity
 
 ```lua
-local group = client:group(nil)
+local group = client:Group(nil)
 ```
 
 ### Fields
@@ -243,7 +243,7 @@ local group = client:group(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:group():list()
+local results, err = client:Group():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -251,7 +251,7 @@ local results, err = client:group():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:group():load({ id = "group_id" })
+local result, err = client:Group():load({ id = "group_id" })
 ```
 
 ### Common Methods
@@ -287,7 +287,7 @@ Return the entity name.
 ## RandomEntity
 
 ```lua
-local random = client:random(nil)
+local random = client:Random(nil)
 ```
 
 ### Fields
@@ -307,7 +307,7 @@ local random = client:random(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:random():list()
+local results, err = client:Random():list()
 ```
 
 ### Common Methods
@@ -343,7 +343,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:search(nil)
+local search = client:Search(nil)
 ```
 
 ### Fields
@@ -363,7 +363,7 @@ local search = client:search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:search():list()
+local results, err = client:Search():list()
 ```
 
 ### Common Methods
@@ -399,7 +399,7 @@ Return the entity name.
 ## SimilarEntity
 
 ```lua
-local similar = client:similar(nil)
+local similar = client:Similar(nil)
 ```
 
 ### Fields
@@ -419,7 +419,7 @@ local similar = client:similar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:similar():load({ id = "similar_id" })
+local result, err = client:Similar():load({ id = "similar_id" })
 ```
 
 ### Common Methods

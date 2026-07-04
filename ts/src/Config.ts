@@ -272,7 +272,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body.category`"
+                "res": "`body`"
               },
               "index$": 1
             }
@@ -422,7 +422,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body.group`"
+                "res": "`body`"
               },
               "index$": 1
             }

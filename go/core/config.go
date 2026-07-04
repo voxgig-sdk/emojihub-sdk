@@ -232,7 +232,7 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body.category`",
+									"res": "`body`",
 								},
 								"index$": 1,
 							},
@@ -382,7 +382,7 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body.group`",
+									"res": "`body`",
 								},
 								"index$": 1,
 							},

@@ -218,7 +218,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body.category`"
+                    "res": "`body`"
                   }
                 }
               ]
@@ -360,7 +360,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body.group`"
+                    "res": "`body`"
                   }
                 }
               ]

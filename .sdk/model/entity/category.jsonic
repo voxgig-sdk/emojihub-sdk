@@ -118,7 +118,7 @@ main: kit: entity: category: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body.category`"
+            res: "`body`"
           }
         }
       ]

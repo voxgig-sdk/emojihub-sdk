@@ -31,14 +31,16 @@ from emojihub_sdk import EmojihubSDK
 client = EmojihubSDK()
 ```
 
-### 2. List alls
+### 2. List all records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.all.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    alls = client.All().list({})
+    for all in alls:
+        print(all)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = EmojihubSDK.test()
 
-result = client.all.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+all = client.All().load({"id": "test01"})
+# all contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -163,7 +166,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `All` | `(data) -> AllEntity` | Create a All entity instance. |
+| `All` | `(data) -> AllEntity` | Create an All entity instance. |
 | `Category` | `(data) -> CategoryEntity` | Create a Category entity instance. |
 | `Group` | `(data) -> GroupEntity` | Create a Group entity instance. |
 | `Random` | `(data) -> RandomEntity` | Create a Random entity instance. |
@@ -299,7 +302,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.all`
+Create an instance: `all = client.All()`
 
 #### Operations
 
@@ -319,14 +322,14 @@ Create an instance: `const all = client.all`
 
 #### Example: List
 
-```ts
-const alls = await client.all.list()
+```python
+alls = client.All().list({})
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `category = client.Category()`
 
 #### Operations
 
@@ -347,20 +350,20 @@ Create an instance: `const category = client.category`
 
 #### Example: Load
 
-```ts
-const category = await client.category.load({ id: 'category_id' })
+```python
+category = client.Category().load({"id": "category_id"})
 ```
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```python
+categorys = client.Category().list({})
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `group = client.Group()`
 
 #### Operations
 
@@ -381,20 +384,20 @@ Create an instance: `const group = client.group`
 
 #### Example: Load
 
-```ts
-const group = await client.group.load({ id: 'group_id' })
+```python
+group = client.Group().load({"id": "group_id"})
 ```
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```python
+groups = client.Group().list({})
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `random = client.Random()`
 
 #### Operations
 
@@ -414,14 +417,14 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```python
+randoms = client.Random().list({})
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -441,14 +444,14 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.similar`
+Create an instance: `similar = client.Similar()`
 
 #### Operations
 
@@ -468,8 +471,8 @@ Create an instance: `const similar = client.similar`
 
 #### Example: Load
 
-```ts
-const similar = await client.similar.load({ id: 'similar_id' })
+```python
+similar = client.Similar().load({"id": "similar_id"})
 ```
 
 
@@ -543,7 +546,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-all = client.all
+all = client.All()
 all.load({"id": "example_id"})
 
 # all.data_get() now returns the loaded all data

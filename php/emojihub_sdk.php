@@ -233,10 +233,10 @@ class EmojihubSDK
 
     private $_all = null;
 
-    // Idiomatic facade: $client->all()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias All() (PHP method
-    // names are case-insensitive).
-    public function all($data = null)
+    // Canonical facade: $client->All()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->all()
+    // resolves here too.
+    public function All($data = null)
     {
         require_once __DIR__ . '/entity/all_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class EmojihubSDK
 
     private $_category = null;
 
-    // Idiomatic facade: $client->category()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Category() (PHP method
-    // names are case-insensitive).
-    public function category($data = null)
+    // Canonical facade: $client->Category()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->category()
+    // resolves here too.
+    public function Category($data = null)
     {
         require_once __DIR__ . '/entity/category_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class EmojihubSDK
 
     private $_group = null;
 
-    // Idiomatic facade: $client->group()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Group() (PHP method
-    // names are case-insensitive).
-    public function group($data = null)
+    // Canonical facade: $client->Group()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->group()
+    // resolves here too.
+    public function Group($data = null)
     {
         require_once __DIR__ . '/entity/group_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class EmojihubSDK
 
     private $_random = null;
 
-    // Idiomatic facade: $client->random()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Random() (PHP method
-    // names are case-insensitive).
-    public function random($data = null)
+    // Canonical facade: $client->Random()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->random()
+    // resolves here too.
+    public function Random($data = null)
     {
         require_once __DIR__ . '/entity/random_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class EmojihubSDK
 
     private $_search = null;
 
-    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Search() (PHP method
-    // names are case-insensitive).
-    public function search($data = null)
+    // Canonical facade: $client->Search()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search()
+    // resolves here too.
+    public function Search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class EmojihubSDK
 
     private $_similar = null;
 
-    // Idiomatic facade: $client->similar()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Similar() (PHP method
-    // names are case-insensitive).
-    public function similar($data = null)
+    // Canonical facade: $client->Similar()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->similar()
+    // resolves here too.
+    public function Similar($data = null)
     {
         require_once __DIR__ . '/entity/similar_entity.php';
         if ($data === null) {

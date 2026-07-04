@@ -28,16 +28,14 @@ require_relative "Emojihub_sdk"
 client = EmojihubSDK.new
 ```
 
-### 2. List alls
+### 2. List all records
 
 ```ruby
 begin
-  result = client.all.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of All records — iterate directly.
+  alls = client.All.list
+  alls.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = EmojihubSDK.test
+client = EmojihubSDK.test({
+  "entity" => { "all" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.all.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+all = client.All.load({ "id" => "test01" })
+puts all
 ```
 
 ### Use a custom fetch function
@@ -167,7 +169,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `All` | `(data) -> AllEntity` | Create a All entity instance. |
+| `All` | `(data) -> AllEntity` | Create an All entity instance. |
 | `Category` | `(data) -> CategoryEntity` | Create a Category entity instance. |
 | `Group` | `(data) -> GroupEntity` | Create a Group entity instance. |
 | `Random` | `(data) -> RandomEntity` | Create a Random entity instance. |
@@ -302,7 +304,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.all`
+Create an instance: `all = client.All`
 
 #### Operations
 
@@ -322,14 +324,15 @@ Create an instance: `const all = client.all`
 
 #### Example: List
 
-```ts
-const alls = await client.all.list()
+```ruby
+# list returns an Array of All records (raises on error).
+alls = client.All.list
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `category = client.Category`
 
 #### Operations
 
@@ -350,20 +353,22 @@ Create an instance: `const category = client.category`
 
 #### Example: Load
 
-```ts
-const category = await client.category.load({ id: 'category_id' })
+```ruby
+# load returns the bare Category record (raises on error).
+category = client.Category.load({ "id" => "category_id" })
 ```
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```ruby
+# list returns an Array of Category records (raises on error).
+categorys = client.Category.list
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `group = client.Group`
 
 #### Operations
 
@@ -384,20 +389,22 @@ Create an instance: `const group = client.group`
 
 #### Example: Load
 
-```ts
-const group = await client.group.load({ id: 'group_id' })
+```ruby
+# load returns the bare Group record (raises on error).
+group = client.Group.load({ "id" => "group_id" })
 ```
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```ruby
+# list returns an Array of Group records (raises on error).
+groups = client.Group.list
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `random = client.Random`
 
 #### Operations
 
@@ -417,14 +424,15 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```ruby
+# list returns an Array of Random records (raises on error).
+randoms = client.Random.list
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search`
 
 #### Operations
 
@@ -444,14 +452,15 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```ruby
+# list returns an Array of Search records (raises on error).
+searchs = client.Search.list
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.similar`
+Create an instance: `similar = client.Similar`
 
 #### Operations
 
@@ -471,8 +480,9 @@ Create an instance: `const similar = client.similar`
 
 #### Example: Load
 
-```ts
-const similar = await client.similar.load({ id: 'similar_id' })
+```ruby
+# load returns the bare Similar record (raises on error).
+similar = client.Similar.load({ "id" => "similar_id" })
 ```
 
 
@@ -547,7 +557,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-all = client.all
+all = client.All
 all.load({ "id" => "example_id" })
 
 # all.data_get now returns the loaded all data

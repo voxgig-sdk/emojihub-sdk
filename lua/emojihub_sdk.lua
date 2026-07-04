@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:all():list() / client:all():load({ id = ... })
-function EmojihubSDK:all(data)
+-- Idiomatic facade: client:All():list() / client:All():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:All(data)
   local EntityMod = require("entity.all_entity")
   if data == nil then
     if self._all == nil then
@@ -256,15 +257,10 @@ function EmojihubSDK:all(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:all() instead.
-function EmojihubSDK:All(data)
-  local EntityMod = require("entity.all_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:category():list() / client:category():load({ id = ... })
-function EmojihubSDK:category(data)
+-- Idiomatic facade: client:Category():list() / client:Category():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:Category(data)
   local EntityMod = require("entity.category_entity")
   if data == nil then
     if self._category == nil then
@@ -275,15 +271,10 @@ function EmojihubSDK:category(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:category() instead.
-function EmojihubSDK:Category(data)
-  local EntityMod = require("entity.category_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:group():list() / client:group():load({ id = ... })
-function EmojihubSDK:group(data)
+-- Idiomatic facade: client:Group():list() / client:Group():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:Group(data)
   local EntityMod = require("entity.group_entity")
   if data == nil then
     if self._group == nil then
@@ -294,15 +285,10 @@ function EmojihubSDK:group(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:group() instead.
-function EmojihubSDK:Group(data)
-  local EntityMod = require("entity.group_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
-function EmojihubSDK:random(data)
+-- Idiomatic facade: client:Random():list() / client:Random():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:Random(data)
   local EntityMod = require("entity.random_entity")
   if data == nil then
     if self._random == nil then
@@ -313,15 +299,10 @@ function EmojihubSDK:random(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:random() instead.
-function EmojihubSDK:Random(data)
-  local EntityMod = require("entity.random_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
-function EmojihubSDK:search(data)
+-- Idiomatic facade: client:Search():list() / client:Search():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   if data == nil then
     if self._search == nil then
@@ -332,15 +313,10 @@ function EmojihubSDK:search(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:search() instead.
-function EmojihubSDK:Search(data)
-  local EntityMod = require("entity.search_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:similar():list() / client:similar():load({ id = ... })
-function EmojihubSDK:similar(data)
+-- Idiomatic facade: client:Similar():list() / client:Similar():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EmojihubSDK:Similar(data)
   local EntityMod = require("entity.similar_entity")
   if data == nil then
     if self._similar == nil then
@@ -348,12 +324,6 @@ function EmojihubSDK:similar(data)
     end
     return self._similar
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:similar() instead.
-function EmojihubSDK:Similar(data)
-  local EntityMod = require("entity.similar_entity")
   return EntityMod.new(self, data)
 end
 

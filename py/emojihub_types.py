@@ -4,15 +4,19 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class All:
+class All(TypedDict):
     category: str
     group: str
     html_code: list
@@ -20,17 +24,7 @@ class All:
     unicode: list
 
 
-@dataclass
-class AllListMatch:
-    category: Optional[str] = None
-    group: Optional[str] = None
-    html_code: Optional[list] = None
-    name: Optional[str] = None
-    unicode: Optional[list] = None
-
-
-@dataclass
-class Category:
+class AllListMatch(TypedDict, total=False):
     category: str
     group: str
     html_code: list
@@ -38,22 +32,19 @@ class Category:
     unicode: list
 
 
-@dataclass
-class CategoryLoadMatch:
+class Category(TypedDict):
+    category: str
+    group: str
+    html_code: list
+    name: str
+    unicode: list
+
+
+class CategoryLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class CategoryListMatch:
-    category: Optional[str] = None
-    group: Optional[str] = None
-    html_code: Optional[list] = None
-    name: Optional[str] = None
-    unicode: Optional[list] = None
-
-
-@dataclass
-class Group:
+class CategoryListMatch(TypedDict, total=False):
     category: str
     group: str
     html_code: list
@@ -61,22 +52,19 @@ class Group:
     unicode: list
 
 
-@dataclass
-class GroupLoadMatch:
+class Group(TypedDict):
+    category: str
+    group: str
+    html_code: list
+    name: str
+    unicode: list
+
+
+class GroupLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class GroupListMatch:
-    category: Optional[str] = None
-    group: Optional[str] = None
-    html_code: Optional[list] = None
-    name: Optional[str] = None
-    unicode: Optional[list] = None
-
-
-@dataclass
-class Random:
+class GroupListMatch(TypedDict, total=False):
     category: str
     group: str
     html_code: list
@@ -84,17 +72,7 @@ class Random:
     unicode: list
 
 
-@dataclass
-class RandomListMatch:
-    category: Optional[str] = None
-    group: Optional[str] = None
-    html_code: Optional[list] = None
-    name: Optional[str] = None
-    unicode: Optional[list] = None
-
-
-@dataclass
-class Search:
+class Random(TypedDict):
     category: str
     group: str
     html_code: list
@@ -102,17 +80,7 @@ class Search:
     unicode: list
 
 
-@dataclass
-class SearchListMatch:
-    category: Optional[str] = None
-    group: Optional[str] = None
-    html_code: Optional[list] = None
-    name: Optional[str] = None
-    unicode: Optional[list] = None
-
-
-@dataclass
-class Similar:
+class RandomListMatch(TypedDict, total=False):
     category: str
     group: str
     html_code: list
@@ -120,7 +88,29 @@ class Similar:
     unicode: list
 
 
-@dataclass
-class SimilarLoadMatch:
+class Search(TypedDict):
+    category: str
+    group: str
+    html_code: list
+    name: str
+    unicode: list
+
+
+class SearchListMatch(TypedDict, total=False):
+    category: str
+    group: str
+    html_code: list
+    name: str
+    unicode: list
+
+
+class Similar(TypedDict):
+    category: str
+    group: str
+    html_code: list
+    name: str
+    unicode: list
+
+
+class SimilarLoadMatch(TypedDict):
     id: str
-

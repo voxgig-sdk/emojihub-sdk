@@ -209,84 +209,42 @@ class EmojihubSDK {
 
 
 
-  _all?: AllEntity
-
-  // Idiomatic facade: `client.all.list()` / `client.all.load({ id })`.
-  get all(): AllEntity {
-    return (this._all ??= new AllEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.all` instead. */
+  // Entity access: `client.All().list()` / `client.All().load({ id })`.
   All(data?: any) {
     const self = this
     return new AllEntity(self,data)
   }
 
 
-  _category?: CategoryEntity
-
-  // Idiomatic facade: `client.category.list()` / `client.category.load({ id })`.
-  get category(): CategoryEntity {
-    return (this._category ??= new CategoryEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.category` instead. */
+  // Entity access: `client.Category().list()` / `client.Category().load({ id })`.
   Category(data?: any) {
     const self = this
     return new CategoryEntity(self,data)
   }
 
 
-  _group?: GroupEntity
-
-  // Idiomatic facade: `client.group.list()` / `client.group.load({ id })`.
-  get group(): GroupEntity {
-    return (this._group ??= new GroupEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.group` instead. */
+  // Entity access: `client.Group().list()` / `client.Group().load({ id })`.
   Group(data?: any) {
     const self = this
     return new GroupEntity(self,data)
   }
 
 
-  _random?: RandomEntity
-
-  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
-  get random(): RandomEntity {
-    return (this._random ??= new RandomEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.random` instead. */
+  // Entity access: `client.Random().list()` / `client.Random().load({ id })`.
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)
   }
 
 
-  _search?: SearchEntity
-
-  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
-  get search(): SearchEntity {
-    return (this._search ??= new SearchEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.search` instead. */
+  // Entity access: `client.Search().list()` / `client.Search().load({ id })`.
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)
   }
 
 
-  _similar?: SimilarEntity
-
-  // Idiomatic facade: `client.similar.list()` / `client.similar.load({ id })`.
-  get similar(): SimilarEntity {
-    return (this._similar ??= new SimilarEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.similar` instead. */
+  // Entity access: `client.Similar().list()` / `client.Similar().load({ id })`.
   Similar(data?: any) {
     const self = this
     return new SimilarEntity(self,data)

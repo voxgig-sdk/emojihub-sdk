@@ -22,7 +22,6 @@ guide: {
     path: "/random/category/{category-name}": {
       rename: param: "category-name": *"id"
       op: load: method: *GET
-      op: load: transform: res: *("`body.category`")|top
     }
   }
 
@@ -37,7 +36,6 @@ guide: {
     path: "/random/group/{group-name}": {
       rename: param: "group-name": *"id"
       op: load: method: *GET
-      op: load: transform: res: *("`body.group`")|top
     }
   }
 

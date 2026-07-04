@@ -220,105 +220,45 @@ class EmojihubSDK:
         }
 
 
-    @property
-    def all(self):
-        """Idiomatic facade: client.all.list() / client.all.load({"id": ...})."""
-        from entity.all_entity import AllEntity
-        cached = getattr(self, "_all", None)
-        if cached is None:
-            cached = AllEntity(self, None)
-            self._all = cached
-        return cached
-
-    def All(self, data=None):
-        # Deprecated: use client.all instead.
+    def All(self, data=None) -> "AllEntity":
+        """Entity factory: client.All().list({}) / client.All().load({"id": ...})."""
         from entity.all_entity import AllEntity
         return AllEntity(self, data)
 
 
-    @property
-    def category(self):
-        """Idiomatic facade: client.category.list() / client.category.load({"id": ...})."""
-        from entity.category_entity import CategoryEntity
-        cached = getattr(self, "_category", None)
-        if cached is None:
-            cached = CategoryEntity(self, None)
-            self._category = cached
-        return cached
-
-    def Category(self, data=None):
-        # Deprecated: use client.category instead.
+    def Category(self, data=None) -> "CategoryEntity":
+        """Entity factory: client.Category().list({}) / client.Category().load({"id": ...})."""
         from entity.category_entity import CategoryEntity
         return CategoryEntity(self, data)
 
 
-    @property
-    def group(self):
-        """Idiomatic facade: client.group.list() / client.group.load({"id": ...})."""
-        from entity.group_entity import GroupEntity
-        cached = getattr(self, "_group", None)
-        if cached is None:
-            cached = GroupEntity(self, None)
-            self._group = cached
-        return cached
-
-    def Group(self, data=None):
-        # Deprecated: use client.group instead.
+    def Group(self, data=None) -> "GroupEntity":
+        """Entity factory: client.Group().list({}) / client.Group().load({"id": ...})."""
         from entity.group_entity import GroupEntity
         return GroupEntity(self, data)
 
 
-    @property
-    def random(self):
-        """Idiomatic facade: client.random.list() / client.random.load({"id": ...})."""
-        from entity.random_entity import RandomEntity
-        cached = getattr(self, "_random", None)
-        if cached is None:
-            cached = RandomEntity(self, None)
-            self._random = cached
-        return cached
-
-    def Random(self, data=None):
-        # Deprecated: use client.random instead.
+    def Random(self, data=None) -> "RandomEntity":
+        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
-    @property
-    def search(self):
-        """Idiomatic facade: client.search.list() / client.search.load({"id": ...})."""
-        from entity.search_entity import SearchEntity
-        cached = getattr(self, "_search", None)
-        if cached is None:
-            cached = SearchEntity(self, None)
-            self._search = cached
-        return cached
-
-    def Search(self, data=None):
-        # Deprecated: use client.search instead.
+    def Search(self, data=None) -> "SearchEntity":
+        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
-    @property
-    def similar(self):
-        """Idiomatic facade: client.similar.list() / client.similar.load({"id": ...})."""
-        from entity.similar_entity import SimilarEntity
-        cached = getattr(self, "_similar", None)
-        if cached is None:
-            cached = SimilarEntity(self, None)
-            self._similar = cached
-        return cached
-
-    def Similar(self, data=None):
-        # Deprecated: use client.similar instead.
+    def Similar(self, data=None) -> "SimilarEntity":
+        """Entity factory: client.Similar().list({}) / client.Similar().load({"id": ...})."""
         from entity.similar_entity import SimilarEntity
         return SimilarEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "EmojihubSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -338,3 +278,14 @@ class EmojihubSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.all_entity import AllEntity
+    from entity.category_entity import CategoryEntity
+    from entity.group_entity import GroupEntity
+    from entity.random_entity import RandomEntity
+    from entity.search_entity import SearchEntity
+    from entity.similar_entity import SimilarEntity

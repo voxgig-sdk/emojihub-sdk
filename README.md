@@ -26,9 +26,11 @@ import { EmojihubSDK } from '@voxgig-sdk/emojihub'
 
 const client = new EmojihubSDK()
 
-// List all alls
-const alls = await client.all.list()
-console.log(alls.data)
+// List all alls (returns All[])
+const alls = await client.All().list()
+for (const all of alls) {
+  console.log(all)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -88,9 +90,10 @@ from emojihub_sdk import EmojihubSDK
 
 client = EmojihubSDK()
 
-# List all alls
-alls = client.all.list()
-print(alls)
+# List all alls (returns a list, raises on error)
+alls = client.All().list({})
+for all in alls:
+    print(all)
 ```
 
 ### PHP
@@ -101,8 +104,8 @@ require_once 'emojihub_sdk.php';
 
 $client = new EmojihubSDK();
 
-// List all alls (throws on error)
-$alls = $client->all()->list();
+// List all alls (returns an array; throws on error)
+$alls = $client->All()->list();
 print_r($alls);
 ```
 
@@ -125,8 +128,8 @@ require_relative "Emojihub_sdk"
 
 client = EmojihubSDK.new
 
-# List all alls
-alls = client.all.list
+# List all alls (returns an Array; raises on error)
+alls = client.All.list
 puts alls
 ```
 
@@ -138,7 +141,7 @@ local sdk = require("emojihub_sdk")
 local client = sdk.new()
 
 -- List all alls
-local alls, err = client:all():list()
+local alls, err = client:All():list()
 print(alls)
 ```
 
@@ -151,22 +154,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = EmojihubSDK.test()
-const result = await client.all.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const all = await client.All().load({ id: 'test01' })
+// all is a bare All populated with mock data
+console.log(all)
 ```
 
 ### Python
 
 ```python
 client = EmojihubSDK.test()
-result = client.all.load({"id": "test01"})
+all = client.All().load({"id": "test01"})
+print(all)
 ```
 
 ### PHP
 
 ```php
-$client = EmojihubSDK::test();
-$result = $client->all()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = EmojihubSDK::test([
+    "entity" => ["all" => ["test01" => ["id" => "test01"]]],
+]);
+$all = $client->All()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -181,15 +189,18 @@ result, err := client.All(nil).Load(
 ### Ruby
 
 ```ruby
-client = EmojihubSDK.test
-result = client.all.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = EmojihubSDK.test({
+  "entity" => { "all" => { "test01" => { "id" => "test01" } } },
+})
+all = client.All.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:all():load({ id = "test01" })
+local result, err = client:All():load({ id = "test01" })
 ```
 
 ## How it works
@@ -237,6 +248,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

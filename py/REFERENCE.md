@@ -100,7 +100,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AllEntity
 
 ```python
-all = client.all
+all = client.All()
 ```
 
 ### Fields
@@ -120,7 +120,9 @@ all = client.all
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.all.list({})
+results = client.All().list({})
+for all in results:
+    print(all)
 ```
 
 ### Common Methods
@@ -155,7 +157,7 @@ Return the entity name.
 ## CategoryEntity
 
 ```python
-category = client.category
+category = client.Category()
 ```
 
 ### Fields
@@ -175,7 +177,9 @@ category = client.category
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.category.list({})
+results = client.Category().list({})
+for category in results:
+    print(category)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -183,7 +187,7 @@ results = client.category.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.category.load({"id": "category_id"})
+result = client.Category().load({"id": "category_id"})
 ```
 
 ### Common Methods
@@ -218,7 +222,7 @@ Return the entity name.
 ## GroupEntity
 
 ```python
-group = client.group
+group = client.Group()
 ```
 
 ### Fields
@@ -238,7 +242,9 @@ group = client.group
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.group.list({})
+results = client.Group().list({})
+for group in results:
+    print(group)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -246,7 +252,7 @@ results = client.group.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.group.load({"id": "group_id"})
+result = client.Group().load({"id": "group_id"})
 ```
 
 ### Common Methods
@@ -281,7 +287,7 @@ Return the entity name.
 ## RandomEntity
 
 ```python
-random = client.random
+random = client.Random()
 ```
 
 ### Fields
@@ -301,7 +307,9 @@ random = client.random
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.random.list({})
+results = client.Random().list({})
+for random in results:
+    print(random)
 ```
 
 ### Common Methods
@@ -336,7 +344,7 @@ Return the entity name.
 ## SearchEntity
 
 ```python
-search = client.search
+search = client.Search()
 ```
 
 ### Fields
@@ -356,7 +364,9 @@ search = client.search
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.search.list({})
+results = client.Search().list({})
+for search in results:
+    print(search)
 ```
 
 ### Common Methods
@@ -391,7 +401,7 @@ Return the entity name.
 ## SimilarEntity
 
 ```python
-similar = client.similar
+similar = client.Similar()
 ```
 
 ### Fields
@@ -411,7 +421,7 @@ similar = client.similar
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.similar.load({"id": "similar_id"})
+result = client.Similar().load({"id": "similar_id"})
 ```
 
 ### Common Methods

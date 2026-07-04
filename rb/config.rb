@@ -233,7 +233,7 @@ module EmojihubConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body.category`",
+                    "res" => "`body`",
                   },
                   "index$" => 1,
                 },
@@ -383,7 +383,7 @@ module EmojihubConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body.group`",
+                    "res" => "`body`",
                   },
                   "index$" => 1,
                 },

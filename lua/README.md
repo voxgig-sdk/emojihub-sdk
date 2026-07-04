@@ -31,17 +31,17 @@ local sdk = require("emojihub_sdk")
 local client = sdk.new()
 ```
 
-### 2. List alls
+### 2. List all records
+
+Entity operations return `(value, err)`. For `list`, `value` is the
+array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local result, err = client:all():list()
+local alls, err = client:All():list()
 if err then error(err) end
 
-if type(result) == "table" then
-  for _, item in ipairs(result) do
-    local d = item:data_get()
-    print(d["id"], d["name"])
-  end
+for _, item in ipairs(alls) do
+  print(item["id"], item["name"])
 end
 ```
 
@@ -88,8 +88,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:all():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:All():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -167,7 +167,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> table, err` | Build an HTTP request definition without sending. |
 | `direct` | `(fetchargs) -> table, err` | Build and send an HTTP request. |
-| `All` | `(data) -> AllEntity` | Create a All entity instance. |
+| `All` | `(data) -> AllEntity` | Create an All entity instance. |
 | `Category` | `(data) -> CategoryEntity` | Create a Category entity instance. |
 | `Group` | `(data) -> GroupEntity` | Create a Group entity instance. |
 | `Random` | `(data) -> RandomEntity` | Create a Random entity instance. |
@@ -194,17 +194,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local all, err = client:All():load({ id = "example_id" })
+    if err then error(err) end
+    -- all is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -299,7 +304,7 @@ API path: `/similar/{name}`
 
 ### All
 
-Create an instance: `const all = client.all`
+Create an instance: `local all = client:All(nil)`
 
 #### Operations
 
@@ -319,14 +324,14 @@ Create an instance: `const all = client.all`
 
 #### Example: List
 
-```ts
-const alls = await client.all.list()
+```lua
+local alls, err = client:All():list()
 ```
 
 
 ### Category
 
-Create an instance: `const category = client.category`
+Create an instance: `local category = client:Category(nil)`
 
 #### Operations
 
@@ -347,20 +352,20 @@ Create an instance: `const category = client.category`
 
 #### Example: Load
 
-```ts
-const category = await client.category.load({ id: 'category_id' })
+```lua
+local category, err = client:Category():load({ id = "category_id" })
 ```
 
 #### Example: List
 
-```ts
-const categorys = await client.category.list()
+```lua
+local categorys, err = client:Category():list()
 ```
 
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `local group = client:Group(nil)`
 
 #### Operations
 
@@ -381,20 +386,20 @@ Create an instance: `const group = client.group`
 
 #### Example: Load
 
-```ts
-const group = await client.group.load({ id: 'group_id' })
+```lua
+local group, err = client:Group():load({ id = "group_id" })
 ```
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```lua
+local groups, err = client:Group():list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `local random = client:Random(nil)`
 
 #### Operations
 
@@ -414,14 +419,14 @@ Create an instance: `const random = client.random`
 
 #### Example: List
 
-```ts
-const randoms = await client.random.list()
+```lua
+local randoms, err = client:Random():list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `local search = client:Search(nil)`
 
 #### Operations
 
@@ -441,14 +446,14 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```lua
+local searchs, err = client:Search():list()
 ```
 
 
 ### Similar
 
-Create an instance: `const similar = client.similar`
+Create an instance: `local similar = client:Similar(nil)`
 
 #### Operations
 
@@ -468,8 +473,8 @@ Create an instance: `const similar = client.similar`
 
 #### Example: Load
 
-```ts
-const similar = await client.similar.load({ id: 'similar_id' })
+```lua
+local similar, err = client:Similar():load({ id = "similar_id" })
 ```
 
 
@@ -544,7 +549,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local all = client:all()
+local all = client:All()
 all:load({ id = "example_id" })
 
 -- all:data_get() now returns the loaded all data

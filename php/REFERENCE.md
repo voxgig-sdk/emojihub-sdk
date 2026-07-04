@@ -105,7 +105,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## AllEntity
 
 ```php
-$all = $client->all();
+$all = $client->All();
 ```
 
 ### Fields
@@ -125,7 +125,7 @@ $all = $client->all();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->all()->list([]);
+$results = $client->All()->list([]);
 ```
 
 ### Common Methods
@@ -161,7 +161,7 @@ Return the entity name.
 ## CategoryEntity
 
 ```php
-$category = $client->category();
+$category = $client->Category();
 ```
 
 ### Fields
@@ -181,7 +181,7 @@ $category = $client->category();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->category()->list([]);
+$results = $client->Category()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -189,7 +189,7 @@ $results = $client->category()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->category()->load(["id" => "category_id"]);
+$result = $client->Category()->load(["id" => "category_id"]);
 ```
 
 ### Common Methods
@@ -225,7 +225,7 @@ Return the entity name.
 ## GroupEntity
 
 ```php
-$group = $client->group();
+$group = $client->Group();
 ```
 
 ### Fields
@@ -245,7 +245,7 @@ $group = $client->group();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->group()->list([]);
+$results = $client->Group()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -253,7 +253,7 @@ $results = $client->group()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->group()->load(["id" => "group_id"]);
+$result = $client->Group()->load(["id" => "group_id"]);
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ Return the entity name.
 ## RandomEntity
 
 ```php
-$random = $client->random();
+$random = $client->Random();
 ```
 
 ### Fields
@@ -309,7 +309,7 @@ $random = $client->random();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->random()->list([]);
+$results = $client->Random()->list([]);
 ```
 
 ### Common Methods
@@ -345,7 +345,7 @@ Return the entity name.
 ## SearchEntity
 
 ```php
-$search = $client->search();
+$search = $client->Search();
 ```
 
 ### Fields
@@ -365,7 +365,7 @@ $search = $client->search();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->search()->list([]);
+$results = $client->Search()->list([]);
 ```
 
 ### Common Methods
@@ -401,7 +401,7 @@ Return the entity name.
 ## SimilarEntity
 
 ```php
-$similar = $client->similar();
+$similar = $client->Similar();
 ```
 
 ### Fields
@@ -421,7 +421,7 @@ $similar = $client->similar();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->similar()->load(["id" => "similar_id"]);
+$result = $client->Similar()->load(["id" => "similar_id"]);
 ```
 
 ### Common Methods

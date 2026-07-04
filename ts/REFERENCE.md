@@ -169,7 +169,7 @@ Alias for `EmojihubSDK.test()`.
 ## AllEntity
 
 ```ts
-const all = client.all
+const all = client.All()
 ```
 
 ### Fields
@@ -189,7 +189,7 @@ const all = client.all
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.all.list()
+const results = await client.All().list()
 ```
 
 ### Common Methods
@@ -223,7 +223,7 @@ Return a copy of the entity options.
 ## CategoryEntity
 
 ```ts
-const category = client.category
+const category = client.Category()
 ```
 
 ### Fields
@@ -243,7 +243,7 @@ const category = client.category
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.category.list()
+const results = await client.Category().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -251,7 +251,7 @@ const results = await client.category.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.category.load({ id: 'category_id' })
+const result = await client.Category().load({ id: 'category_id' })
 ```
 
 ### Common Methods
@@ -285,7 +285,7 @@ Return a copy of the entity options.
 ## GroupEntity
 
 ```ts
-const group = client.group
+const group = client.Group()
 ```
 
 ### Fields
@@ -305,7 +305,7 @@ const group = client.group
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.group.list()
+const results = await client.Group().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -313,7 +313,7 @@ const results = await client.group.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.group.load({ id: 'group_id' })
+const result = await client.Group().load({ id: 'group_id' })
 ```
 
 ### Common Methods
@@ -347,7 +347,7 @@ Return a copy of the entity options.
 ## RandomEntity
 
 ```ts
-const random = client.random
+const random = client.Random()
 ```
 
 ### Fields
@@ -367,7 +367,7 @@ const random = client.random
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.random.list()
+const results = await client.Random().list()
 ```
 
 ### Common Methods
@@ -401,7 +401,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.search
+const search = client.Search()
 ```
 
 ### Fields
@@ -421,7 +421,7 @@ const search = client.search
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search.list()
+const results = await client.Search().list()
 ```
 
 ### Common Methods
@@ -455,7 +455,7 @@ Return a copy of the entity options.
 ## SimilarEntity
 
 ```ts
-const similar = client.similar
+const similar = client.Similar()
 ```
 
 ### Fields
@@ -475,7 +475,7 @@ const similar = client.similar
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.similar.load({ id: 'similar_id' })
+const result = await client.Similar().load({ id: 'similar_id' })
 ```
 
 ### Common Methods
