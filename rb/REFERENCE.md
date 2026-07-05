@@ -8,7 +8,7 @@ Complete API reference for the Emojihub Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'emojihub_sdk'
+require_relative 'Emojihub_sdk'
 
 client = EmojihubSDK.new(options)
 ```
@@ -113,20 +113,20 @@ all = client.All
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.All.list(nil)
+results = client.All.list
 ```
 
 ### Common Methods
@@ -169,20 +169,20 @@ category = client.Category
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Category.list(nil)
+results = client.Category.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -233,20 +233,20 @@ group = client.Group
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Group.list(nil)
+results = client.Group.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -297,20 +297,20 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Random.list(nil)
+results = client.Random.list
 ```
 
 ### Common Methods
@@ -353,20 +353,20 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Search.list(nil)
+results = client.Search.list
 ```
 
 ### Common Methods
@@ -409,11 +409,11 @@ similar = client.Similar
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `String` | Yes |  |
+| `group` | `String` | Yes |  |
+| `html_code` | `Array` | Yes |  |
+| `name` | `String` | Yes |  |
+| `unicode` | `Array` | Yes |  |
 
 ### Operations
 

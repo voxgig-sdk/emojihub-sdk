@@ -17,8 +17,7 @@ type All struct {
 	Unicode []any `json:"unicode"`
 }
 
-// AllListMatch mirrors the all fields as an all-optional match
-// filter (Go analog of Partial<All>).
+// AllListMatch is the typed request payload for All.ListTyped.
 type AllListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
@@ -41,8 +40,7 @@ type CategoryLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// CategoryListMatch mirrors the category fields as an all-optional match
-// filter (Go analog of Partial<Category>).
+// CategoryListMatch is the typed request payload for Category.ListTyped.
 type CategoryListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
@@ -65,8 +63,7 @@ type GroupLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// GroupListMatch mirrors the group fields as an all-optional match
-// filter (Go analog of Partial<Group>).
+// GroupListMatch is the typed request payload for Group.ListTyped.
 type GroupListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
@@ -84,8 +81,7 @@ type Random struct {
 	Unicode []any `json:"unicode"`
 }
 
-// RandomListMatch mirrors the random fields as an all-optional match
-// filter (Go analog of Partial<Random>).
+// RandomListMatch is the typed request payload for Random.ListTyped.
 type RandomListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
@@ -103,8 +99,7 @@ type Search struct {
 	Unicode []any `json:"unicode"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`

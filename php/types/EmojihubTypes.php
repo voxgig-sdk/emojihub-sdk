@@ -22,7 +22,7 @@ class All
     public array $unicode;
 }
 
-/** Match filter for All#list (any subset of All fields). */
+/** Request payload for All#list. */
 class AllListMatch
 {
     public ?string $category = null;
@@ -48,7 +48,7 @@ class CategoryLoadMatch
     public string $id;
 }
 
-/** Match filter for Category#list (any subset of Category fields). */
+/** Request payload for Category#list. */
 class CategoryListMatch
 {
     public ?string $category = null;
@@ -74,7 +74,7 @@ class GroupLoadMatch
     public string $id;
 }
 
-/** Match filter for Group#list (any subset of Group fields). */
+/** Request payload for Group#list. */
 class GroupListMatch
 {
     public ?string $category = null;
@@ -94,7 +94,7 @@ class Random
     public array $unicode;
 }
 
-/** Match filter for Random#list (any subset of Random fields). */
+/** Request payload for Random#list. */
 class RandomListMatch
 {
     public ?string $category = null;
@@ -114,7 +114,7 @@ class Search
     public array $unicode;
 }
 
-/** Match filter for Search#list (any subset of Search fields). */
+/** Request payload for Search#list. */
 class SearchListMatch
 {
     public ?string $category = null;

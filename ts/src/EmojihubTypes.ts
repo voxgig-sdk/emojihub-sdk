@@ -13,7 +13,13 @@ export interface All {
   unicode: any[]
 }
 
-export type AllListMatch = Partial<All>
+export interface AllListMatch {
+  category?: string
+  group?: string
+  html_code?: any[]
+  name?: string
+  unicode?: any[]
+}
 
 export interface Category {
   category: string
@@ -27,7 +33,13 @@ export interface CategoryLoadMatch {
   id: string
 }
 
-export type CategoryListMatch = Partial<Category>
+export interface CategoryListMatch {
+  category?: string
+  group?: string
+  html_code?: any[]
+  name?: string
+  unicode?: any[]
+}
 
 export interface Group {
   category: string
@@ -41,7 +53,13 @@ export interface GroupLoadMatch {
   id: string
 }
 
-export type GroupListMatch = Partial<Group>
+export interface GroupListMatch {
+  category?: string
+  group?: string
+  html_code?: any[]
+  name?: string
+  unicode?: any[]
+}
 
 export interface Random {
   category: string
@@ -51,7 +69,13 @@ export interface Random {
   unicode: any[]
 }
 
-export type RandomListMatch = Partial<Random>
+export interface RandomListMatch {
+  category?: string
+  group?: string
+  html_code?: any[]
+  name?: string
+  unicode?: any[]
+}
 
 export interface Search {
   category: string
@@ -61,7 +85,13 @@ export interface Search {
   unicode: any[]
 }
 
-export type SearchListMatch = Partial<Search>
+export interface SearchListMatch {
+  category?: string
+  group?: string
+  html_code?: any[]
+  name?: string
+  unicode?: any[]
+}
 
 export interface Similar {
   category: string

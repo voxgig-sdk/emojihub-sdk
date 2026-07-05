@@ -176,11 +176,11 @@ const all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -230,11 +230,11 @@ const category = client.Category()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -292,11 +292,11 @@ const group = client.Group()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -354,11 +354,11 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -408,11 +408,11 @@ const search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -462,11 +462,11 @@ const similar = client.Similar()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `any[]` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `any[]` | Yes |  |
 
 ### Operations
 

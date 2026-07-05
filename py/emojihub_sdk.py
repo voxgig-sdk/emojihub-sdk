@@ -221,37 +221,37 @@ class EmojihubSDK:
 
 
     def All(self, data=None) -> "AllEntity":
-        """Entity factory: client.All().list({}) / client.All().load({"id": ...})."""
+        """Entity factory: client.All().list() / client.All().load({"id": ...})."""
         from entity.all_entity import AllEntity
         return AllEntity(self, data)
 
 
     def Category(self, data=None) -> "CategoryEntity":
-        """Entity factory: client.Category().list({}) / client.Category().load({"id": ...})."""
+        """Entity factory: client.Category().list() / client.Category().load({"id": ...})."""
         from entity.category_entity import CategoryEntity
         return CategoryEntity(self, data)
 
 
     def Group(self, data=None) -> "GroupEntity":
-        """Entity factory: client.Group().list({}) / client.Group().load({"id": ...})."""
+        """Entity factory: client.Group().list() / client.Group().load({"id": ...})."""
         from entity.group_entity import GroupEntity
         return GroupEntity(self, data)
 
 
     def Random(self, data=None) -> "RandomEntity":
-        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
+        """Entity factory: client.Random().list() / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
     def Search(self, data=None) -> "SearchEntity":
-        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
+        """Entity factory: client.Search().list() / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
     def Similar(self, data=None) -> "SimilarEntity":
-        """Entity factory: client.Similar().list({}) / client.Similar().load({"id": ...})."""
+        """Entity factory: client.Similar().list() / client.Similar().load({"id": ...})."""
         from entity.similar_entity import SimilarEntity
         return SimilarEntity(self, data)
 

@@ -110,11 +110,11 @@ local all = client:All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 
@@ -166,11 +166,11 @@ local category = client:Category(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 
@@ -230,11 +230,11 @@ local group = client:Group(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 
@@ -294,11 +294,11 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 
@@ -350,11 +350,11 @@ local search = client:Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 
@@ -406,11 +406,11 @@ local similar = client:Similar(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `table` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `table` | Yes |  |
 
 ### Operations
 

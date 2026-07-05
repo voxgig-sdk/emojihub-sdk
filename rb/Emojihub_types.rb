@@ -33,7 +33,7 @@ All = Struct.new(
   keyword_init: true
 )
 
-# Match filter for All#list (any subset of All fields).
+# Request payload for All#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]
@@ -92,7 +92,7 @@ CategoryLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Category#list (any subset of Category fields).
+# Request payload for Category#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]
@@ -151,7 +151,7 @@ GroupLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Group#list (any subset of Group fields).
+# Request payload for Group#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]
@@ -201,7 +201,7 @@ Random = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Random#list (any subset of Random fields).
+# Request payload for Random#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]
@@ -251,7 +251,7 @@ Search = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Search#list (any subset of Search fields).
+# Request payload for Search#list.
 #
 # @!attribute [rw] category
 #   @return [String, nil]

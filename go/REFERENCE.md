@@ -117,11 +117,11 @@ all := client.All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -167,11 +167,11 @@ category := client.Category(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -225,11 +225,11 @@ group := client.Group(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -283,11 +283,11 @@ random := client.Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -333,11 +333,11 @@ search := client.Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -383,11 +383,11 @@ similar := client.Similar(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | Yes |  |
-| `group` | ``$STRING`` | Yes |  |
-| `html_code` | ``$ARRAY`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `unicode` | ``$ARRAY`` | Yes |  |
+| `category` | `string` | Yes |  |
+| `group` | `string` | Yes |  |
+| `html_code` | `[]any` | Yes |  |
+| `name` | `string` | Yes |  |
+| `unicode` | `[]any` | Yes |  |
 
 ### Operations
 
