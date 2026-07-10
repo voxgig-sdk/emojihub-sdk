@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -912,14 +909,17 @@
           "name": "MIT",
           "url": "https://github.com/cheatsnake/emojihub/blob/master/LICENSE"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://emojihub.yurace.pro/api"
           }
         ],
+        "summary": "Get random emojis or access the entire emoji database by category or group.",
         "title": "EmojiHub",
-        "version": "2.1.0"
+        "version": "2.1.0",
+        "website": "https://emojihub.yurace.pro"
       },
       "option": {},
       "target": {
@@ -972,6 +972,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1022,6 +1025,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

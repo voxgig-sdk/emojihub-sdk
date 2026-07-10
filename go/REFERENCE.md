@@ -111,6 +111,7 @@ same parameters as `Direct()`.
 
 ```go
 all := client.All(nil)
+fmt.Println(all.GetName()) // "all"
 ```
 
 ### Fields
@@ -131,6 +132,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.All(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -161,6 +166,7 @@ Return the entity name.
 
 ```go
 category := client.Category(nil)
+fmt.Println(category.GetName()) // "category"
 ```
 
 ### Fields
@@ -181,6 +187,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Category(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -189,6 +199,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Category(nil).Load(map[string]any{"id": "category_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -219,6 +233,7 @@ Return the entity name.
 
 ```go
 group := client.Group(nil)
+fmt.Println(group.GetName()) // "group"
 ```
 
 ### Fields
@@ -239,6 +254,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Group(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -247,6 +266,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Group(nil).Load(map[string]any{"id": "group_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -277,6 +300,7 @@ Return the entity name.
 
 ```go
 random := client.Random(nil)
+fmt.Println(random.GetName()) // "random"
 ```
 
 ### Fields
@@ -297,6 +321,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Random(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -327,6 +355,7 @@ Return the entity name.
 
 ```go
 search := client.Search(nil)
+fmt.Println(search.GetName()) // "search"
 ```
 
 ### Fields
@@ -347,6 +376,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Search(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -377,6 +410,7 @@ Return the entity name.
 
 ```go
 similar := client.Similar(nil)
+fmt.Println(similar.GetName()) // "similar"
 ```
 
 ### Fields
@@ -397,6 +431,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Similar(nil).Load(map[string]any{"id": "similar_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

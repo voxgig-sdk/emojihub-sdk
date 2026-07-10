@@ -19,9 +19,9 @@ main: {
           url: "https://emojihub.yurace.pro/api"
         }
       ]
+      summary: "Get random emojis or access the entire emoji database by category or group."
       title: "EmojiHub"
       version: "2.1.0"
+      website: "https://emojihub.yurace.pro"
     }
   }
-}
-
