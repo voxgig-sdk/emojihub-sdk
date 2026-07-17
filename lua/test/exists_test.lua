@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Emojihub SDK exists test
 
 local sdk = require("emojihub_sdk")
 
