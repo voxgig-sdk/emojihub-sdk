@@ -54,7 +54,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local alls, err = client:All():list()
+local randoms, err = client:Random():list()
 if err then error(err) end
 ```
 
@@ -112,7 +112,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:All():list()
+local result, err = client:Random():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -225,9 +225,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local all, err = client:All():load()
+    local category, err = client:Category():load({ id = "example_id" })
     if err then error(err) end
-    -- all is the loaded record
+    -- category is the loaded record
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -240,7 +240,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -254,7 +254,7 @@ API path: `/all`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -268,7 +268,7 @@ API path: `/categories`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -282,7 +282,7 @@ API path: `/groups`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -296,7 +296,7 @@ API path: `/random`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -310,7 +310,7 @@ API path: `/search`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -339,7 +339,7 @@ Create an instance: `local all = client:All(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -367,7 +367,7 @@ Create an instance: `local category = client:Category(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -401,7 +401,7 @@ Create an instance: `local group = client:Group(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -434,7 +434,7 @@ Create an instance: `local random = client:Random(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -461,7 +461,7 @@ Create an instance: `local search = client:Search(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -488,7 +488,7 @@ Create an instance: `local similar = client:Similar(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `table` |  |
+| `htmlCode` | `table` |  |
 | `name` | `string` |  |
 | `unicode` | `table` |  |
 
@@ -575,11 +575,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local all = client:All()
-all:list()
+local random = client:Random()
+random:list()
 
--- all:data_get() now returns the all data from the last list
--- all:match_get() returns the last match criteria
+-- random:data_get() now returns the random data from the last list
+-- random:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = EmojihubSDK.test()
-const alls = await client.All().list()
-// alls is an array of bare All records populated with mock data
-console.log(alls)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = EmojihubSDK.test({
+  entity: {
+    random: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const randoms = await client.Random().list()
+// randoms is an array of Random entities, populated with mock data
+// — call randoms[0].data() for the record itself
+console.log(randoms)
 ```
 
 ### Python
 
 ```python
 client = EmojihubSDK.test()
-alls = client.All().list()
-print(alls)
+randoms = client.Random().list()
+print(randoms)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(alls)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = EmojihubSDK::test([
-    "entity" => ["all" => ["test01" => []]],
+    "entity" => ["random" => ["test01" => []]],
 ]);
-$alls = $client->All()->list();
+$randoms = $client->Random()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.All(nil).List(
+result, err := client.Random(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.All(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = EmojihubSDK.test({
-  "entity" => { "all" => { "test01" => {} } },
+  "entity" => { "random" => { "test01" => {} } },
 })
-alls = client.All.list()
+randoms = client.Random.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:All():list()
+local results, err = client:Random():list()
 ```
 
 ## Packages
@@ -110,7 +119,7 @@ import { EmojihubSDK } from '@voxgig-sdk/emojihub'
 
 const client = new EmojihubSDK()
 
-// List all alls (returns All[])
+// List all alls (returns AllEntity[] — .data() for the record)
 const alls = await client.All().list()
 for (const all of alls) {
   console.log(all)
@@ -348,6 +357,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/cheatsnake/emojihub](https://github.com/cheatsnake/emojihub)
 

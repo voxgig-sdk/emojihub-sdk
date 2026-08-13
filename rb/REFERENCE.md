@@ -115,7 +115,7 @@ all = client.All
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 
@@ -171,7 +171,7 @@ category = client.Category
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 
@@ -235,7 +235,7 @@ group = client.Group
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 
@@ -299,7 +299,7 @@ random = client.Random
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 
@@ -355,7 +355,7 @@ search = client.Search
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 
@@ -411,7 +411,7 @@ similar = client.Similar
 | --- | --- | --- | --- |
 | `category` | `String` | Yes |  |
 | `group` | `String` | Yes |  |
-| `html_code` | `Array` | Yes |  |
+| `htmlCode` | `Array` | Yes |  |
 | `name` | `String` | Yes |  |
 | `unicode` | `Array` | Yes |  |
 

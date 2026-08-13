@@ -46,7 +46,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -75,6 +75,7 @@ module EmojihubConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/all",
                   "parts" => [
@@ -113,7 +114,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -142,6 +143,7 @@ module EmojihubConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/categories",
                   "parts" => [
@@ -176,6 +178,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/all/category/{category-name}",
                   "parts" => [
@@ -214,6 +217,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random/category/{category-name}",
                   "parts" => [
@@ -263,7 +267,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -292,6 +296,7 @@ module EmojihubConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/groups",
                   "parts" => [
@@ -326,6 +331,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/all/group/{group-name}",
                   "parts" => [
@@ -364,6 +370,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random/group/{group-name}",
                   "parts" => [
@@ -413,7 +420,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -442,6 +449,7 @@ module EmojihubConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
                   "parts" => [
@@ -480,7 +488,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -521,6 +529,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/search",
                   "parts" => [
@@ -563,7 +572,7 @@ module EmojihubConfig
             },
             {
               "active" => true,
-              "name" => "html_code",
+              "name" => "htmlCode",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 2,
@@ -605,6 +614,7 @@ module EmojihubConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/similar/{name}",
                   "parts" => [

@@ -63,7 +63,7 @@ describe('RandomEntity', async () => {
     const random_ref01_ent = client.Random()
     const random_ref01_match: any = {}
 
-    const random_ref01_list = await random_ref01_ent.list(random_ref01_match)
+    const random_ref01_list = (await random_ref01_ent.list(random_ref01_match)).map((e: any) => e.data())
 
 
   })

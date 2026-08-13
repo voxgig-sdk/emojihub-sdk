@@ -35,7 +35,9 @@ const client = new EmojihubSDK()
 
 ### 2. List all records
 
-`list()` resolves to an array of All objects — iterate it directly:
+`list()` resolves to an array of All ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const alls = await client.All().list()
@@ -52,8 +54,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const alls = await client.All().list()
-  console.log(alls)
+  const randoms = await client.Random().list()
+  console.log(randoms)
 } catch (err) {
   console.error('list failed:', err)
 }
@@ -119,9 +121,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = EmojihubSDK.test()
 
-const all = await client.All().list()
-// all is a bare entity populated with mock response data
-console.log(all)
+const random = await client.Random().list()
+// random is the entity, populated with mock response data
+// — call random.data() for the record itself
+console.log(random)
 ```
 
 You can also use the instance method:
@@ -136,7 +139,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.All()
+const entity = client.Random()
 
 // First call runs the operation and stores its result
 await entity.list()
@@ -293,7 +296,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -307,7 +310,7 @@ API path: `/all`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -321,7 +324,7 @@ API path: `/categories`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -335,7 +338,7 @@ API path: `/groups`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -349,7 +352,7 @@ API path: `/random`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -363,7 +366,7 @@ API path: `/search`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -392,7 +395,7 @@ Create an instance: `const all = client.All()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -420,7 +423,7 @@ Create an instance: `const category = client.Category()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -454,7 +457,7 @@ Create an instance: `const group = client.Group()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -487,7 +490,7 @@ Create an instance: `const random = client.Random()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -514,7 +517,7 @@ Create an instance: `const search = client.Search()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -541,7 +544,7 @@ Create an instance: `const similar = client.Similar()`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `any[]` |  |
+| `htmlCode` | `any[]` |  |
 | `name` | `string` |  |
 | `unicode` | `any[]` |  |
 
@@ -621,11 +624,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const all = client.All()
-await all.list()
+const random = client.Random()
+await random.list()
 
-// all.data() now returns the all data from the last `list`
-// all.match() returns the last match criteria
+// random.data() now returns the random data from the last `list`
+// random.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

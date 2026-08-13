@@ -112,7 +112,7 @@ local all = client:All(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 
@@ -168,7 +168,7 @@ local category = client:Category(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 
@@ -232,7 +232,7 @@ local group = client:Group(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 
@@ -296,7 +296,7 @@ local random = client:Random(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 
@@ -352,7 +352,7 @@ local search = client:Search(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 
@@ -408,7 +408,7 @@ local similar = client:Similar(nil)
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `table` | Yes |  |
+| `htmlCode` | `table` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `table` | Yes |  |
 

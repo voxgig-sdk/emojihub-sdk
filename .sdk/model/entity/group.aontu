@@ -16,7 +16,7 @@ main: kit: entity: group: {
       type: "`$STRING`"
     }
     {
-      name: "html_code"
+      name: "htmlCode"
       req: true
       type: "`$ARRAY`"
     }

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ EmojihubUtility.registrar = ->(u) {
   u.prepare_params = EmojihubUtilities::PrepareParams
   u.prepare_path = EmojihubUtilities::PreparePath
   u.prepare_query = EmojihubUtilities::PrepareQuery
+  u.graphql_body = EmojihubUtilities::GraphqlBody
+  u.graphql_errors = EmojihubUtilities::GraphqlErrors
   u.result_basic = EmojihubUtilities::ResultBasic
   u.result_body = EmojihubUtilities::ResultBody
   u.result_headers = EmojihubUtilities::ResultHeaders

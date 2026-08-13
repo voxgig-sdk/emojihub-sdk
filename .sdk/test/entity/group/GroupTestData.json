@@ -4,7 +4,7 @@
       "GROUP00": {
         "category": "s32",
         "group": "s33",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s35",
         "unicode": [],
         "id": "GROUP00"
@@ -12,7 +12,7 @@
       "GROUP01": {
         "category": "s64",
         "group": "s65",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s67",
         "unicode": [],
         "id": "GROUP01"
@@ -20,7 +20,7 @@
       "GROUP02": {
         "category": "s96",
         "group": "s97",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s99",
         "unicode": [],
         "id": "GROUP02"
@@ -32,7 +32,7 @@
       "group_ref01": {
         "category": "sc8",
         "group": "sc9",
-        "html_code": [],
+        "htmlCode": [],
         "name": "scb",
         "unicode": []
       }

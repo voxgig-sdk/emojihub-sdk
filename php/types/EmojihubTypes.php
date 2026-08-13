@@ -17,7 +17,7 @@ class All
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }
@@ -27,7 +27,7 @@ class AllListMatch
 {
     public ?string $category = null;
     public ?string $group = null;
-    public ?array $html_code = null;
+    public ?array $htmlCode = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -37,7 +37,7 @@ class Category
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }
@@ -53,7 +53,7 @@ class CategoryListMatch
 {
     public ?string $category = null;
     public ?string $group = null;
-    public ?array $html_code = null;
+    public ?array $htmlCode = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -63,7 +63,7 @@ class Group
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }
@@ -79,7 +79,7 @@ class GroupListMatch
 {
     public ?string $category = null;
     public ?string $group = null;
-    public ?array $html_code = null;
+    public ?array $htmlCode = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -89,7 +89,7 @@ class Random
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }
@@ -99,7 +99,7 @@ class RandomListMatch
 {
     public ?string $category = null;
     public ?string $group = null;
-    public ?array $html_code = null;
+    public ?array $htmlCode = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -109,7 +109,7 @@ class Search
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }
@@ -119,7 +119,7 @@ class SearchListMatch
 {
     public ?string $category = null;
     public ?string $group = null;
-    public ?array $html_code = null;
+    public ?array $htmlCode = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -129,7 +129,7 @@ class Similar
 {
     public string $category;
     public string $group;
-    public array $html_code;
+    public array $htmlCode;
     public string $name;
     public array $unicode;
 }

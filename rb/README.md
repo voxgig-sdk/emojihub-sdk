@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  alls = client.All.list()
+  randoms = client.Random.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -119,9 +119,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = EmojihubSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-all = client.All.list()
-puts all
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+random = client.Random.list()
+puts random
 ```
 
 ### Use a custom fetch function
@@ -244,7 +245,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -258,7 +259,7 @@ API path: `/all`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -272,7 +273,7 @@ API path: `/categories`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -286,7 +287,7 @@ API path: `/groups`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -300,7 +301,7 @@ API path: `/random`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -314,7 +315,7 @@ API path: `/search`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -343,7 +344,7 @@ Create an instance: `all = client.All`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
@@ -372,14 +373,14 @@ Create an instance: `category = client.Category`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Category record (raises on error).
+# load returns the ENTITY — call data_get for the Category record (raises on error).
 category = client.Category.load({ "id" => "category_id" })
 ```
 
@@ -408,14 +409,14 @@ Create an instance: `group = client.Group`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Group record (raises on error).
+# load returns the ENTITY — call data_get for the Group record (raises on error).
 group = client.Group.load({ "id" => "group_id" })
 ```
 
@@ -443,7 +444,7 @@ Create an instance: `random = client.Random`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
@@ -471,7 +472,7 @@ Create an instance: `search = client.Search`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
@@ -499,14 +500,14 @@ Create an instance: `similar = client.Similar`
 | --- | --- | --- |
 | `category` | `String` |  |
 | `group` | `String` |  |
-| `html_code` | `Array` |  |
+| `htmlCode` | `Array` |  |
 | `name` | `String` |  |
 | `unicode` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Similar record (raises on error).
+# load returns the ENTITY — call data_get for the Similar record (raises on error).
 similar = client.Similar.load({ "id" => "similar_id" })
 ```
 
@@ -587,11 +588,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-all = client.All
-all.list()
+random = client.Random
+random.list()
 
-# all.data_get now returns the all data from the last list
-# all.match_get returns the last match criteria
+# random.data_get now returns the random data from the last list
+# random.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

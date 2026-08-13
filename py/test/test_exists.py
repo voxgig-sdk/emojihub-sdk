@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Emojihub SDK exists test
 
 import pytest
 from emojihub_sdk import EmojihubSDK

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import EmojihubControl
-from core.error import EmojihubError
-from core.result import EmojihubResult
-from core.spec import EmojihubSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import EmojihubControl
+from projectname_sdk.core.error import EmojihubError
+from projectname_sdk.core.result import EmojihubResult
+from projectname_sdk.core.spec import EmojihubSpec
 
 
 # True when this SDK was generated with the named feature.

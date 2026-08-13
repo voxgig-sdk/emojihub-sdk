@@ -109,7 +109,7 @@ all = client.All()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 
@@ -166,7 +166,7 @@ category = client.Category()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 
@@ -231,7 +231,7 @@ group = client.Group()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 
@@ -296,7 +296,7 @@ random = client.Random()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 
@@ -353,7 +353,7 @@ search = client.Search()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 
@@ -410,7 +410,7 @@ similar = client.Similar()
 | --- | --- | --- | --- |
 | `category` | `str` | Yes |  |
 | `group` | `str` | Yes |  |
-| `html_code` | `list` | Yes |  |
+| `htmlCode` | `list` | Yes |  |
 | `name` | `str` | Yes |  |
 | `unicode` | `list` | Yes |  |
 

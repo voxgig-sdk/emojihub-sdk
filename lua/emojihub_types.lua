@@ -9,21 +9,21 @@
 ---@class All
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 
 ---@class AllListMatch
 ---@field category? string
 ---@field group? string
----@field html_code? table
+---@field htmlCode? table
 ---@field name? string
 ---@field unicode? table
 
 ---@class Category
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 
@@ -33,14 +33,14 @@
 ---@class CategoryListMatch
 ---@field category? string
 ---@field group? string
----@field html_code? table
+---@field htmlCode? table
 ---@field name? string
 ---@field unicode? table
 
 ---@class Group
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 
@@ -50,42 +50,42 @@
 ---@class GroupListMatch
 ---@field category? string
 ---@field group? string
----@field html_code? table
+---@field htmlCode? table
 ---@field name? string
 ---@field unicode? table
 
 ---@class Random
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 
 ---@class RandomListMatch
 ---@field category? string
 ---@field group? string
----@field html_code? table
+---@field htmlCode? table
 ---@field name? string
 ---@field unicode? table
 
 ---@class Search
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 
 ---@class SearchListMatch
 ---@field category? string
 ---@field group? string
----@field html_code? table
+---@field htmlCode? table
 ---@field name? string
 ---@field unicode? table
 
 ---@class Similar
 ---@field category string
 ---@field group string
----@field html_code table
+---@field htmlCode table
 ---@field name string
 ---@field unicode table
 

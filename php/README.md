@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $alls = $client->All()->list();
+    $randoms = $client->Random()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,9 +125,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = EmojihubSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$all = $client->All()->list();
-print_r($all);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$random = $client->Random()->list();
+print_r($random);
 ```
 
 ### Use a custom fetch function
@@ -230,7 +231,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -254,7 +255,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -268,7 +269,7 @@ API path: `/all`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -282,7 +283,7 @@ API path: `/categories`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -296,7 +297,7 @@ API path: `/groups`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -310,7 +311,7 @@ API path: `/random`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -324,7 +325,7 @@ API path: `/search`
 | --- | --- |
 | `category` |  |
 | `group` |  |
-| `html_code` |  |
+| `htmlCode` |  |
 | `name` |  |
 | `unicode` |  |
 
@@ -353,7 +354,7 @@ Create an instance: `$all = $client->All();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
@@ -382,14 +383,14 @@ Create an instance: `$category = $client->Category();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Category record (throws on error).
+// load() returns the ENTITY — call data_get() for the Category record (throws on error).
 $category = $client->Category()->load(["id" => "category_id"]);
 ```
 
@@ -418,14 +419,14 @@ Create an instance: `$group = $client->Group();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Group record (throws on error).
+// load() returns the ENTITY — call data_get() for the Group record (throws on error).
 $group = $client->Group()->load(["id" => "group_id"]);
 ```
 
@@ -453,7 +454,7 @@ Create an instance: `$random = $client->Random();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
@@ -481,7 +482,7 @@ Create an instance: `$search = $client->Search();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
@@ -509,14 +510,14 @@ Create an instance: `$similar = $client->Similar();`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `array` |  |
+| `htmlCode` | `array` |  |
 | `name` | `string` |  |
 | `unicode` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Similar record (throws on error).
+// load() returns the ENTITY — call data_get() for the Similar record (throws on error).
 $similar = $client->Similar()->load(["id" => "similar_id"]);
 ```
 
@@ -597,11 +598,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$all = $client->All();
-$all->list();
+$random = $client->Random();
+$random->list();
 
-// $all->data_get() now returns the all data from the last list
-// $all->match_get() returns the last match criteria
+// $random->data_get() now returns the random data from the last list
+// $random->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -120,7 +120,7 @@ fmt.Println(all.GetName()) // "all"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 
@@ -175,7 +175,7 @@ fmt.Println(category.GetName()) // "category"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 
@@ -242,7 +242,7 @@ fmt.Println(group.GetName()) // "group"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 
@@ -309,7 +309,7 @@ fmt.Println(random.GetName()) // "random"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 
@@ -364,7 +364,7 @@ fmt.Println(search.GetName()) // "search"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 
@@ -419,7 +419,7 @@ fmt.Println(similar.GetName()) // "similar"
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `[]any` | Yes |  |
+| `htmlCode` | `[]any` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `[]any` | Yes |  |
 

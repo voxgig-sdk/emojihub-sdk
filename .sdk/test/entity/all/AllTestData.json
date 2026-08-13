@@ -4,21 +4,21 @@
       "ALL00": {
         "category": "s32",
         "group": "s33",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s35",
         "unicode": []
       },
       "ALL01": {
         "category": "s64",
         "group": "s65",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s67",
         "unicode": []
       },
       "ALL02": {
         "category": "s96",
         "group": "s97",
-        "html_code": [],
+        "htmlCode": [],
         "name": "s99",
         "unicode": []
       }
@@ -29,7 +29,7 @@
       "all_ref01": {
         "category": "sc8",
         "group": "sc9",
-        "html_code": [],
+        "htmlCode": [],
         "name": "scb",
         "unicode": []
       }

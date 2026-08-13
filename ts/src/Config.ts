@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Emojihub',
   }
 
 
@@ -85,7 +85,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -114,6 +114,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/all",
               "parts": [
@@ -152,7 +153,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -181,6 +182,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/categories",
               "parts": [
@@ -215,6 +217,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/all/category/{category-name}",
               "parts": [
@@ -253,6 +256,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/random/category/{category-name}",
               "parts": [
@@ -302,7 +306,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -331,6 +335,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/groups",
               "parts": [
@@ -365,6 +370,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/all/group/{group-name}",
               "parts": [
@@ -403,6 +409,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/random/group/{group-name}",
               "parts": [
@@ -452,7 +459,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -481,6 +488,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random",
               "parts": [
@@ -519,7 +527,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -560,6 +568,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/search",
               "parts": [
@@ -602,7 +611,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "html_code",
+          "name": "htmlCode",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 2
@@ -644,6 +653,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/similar/{name}",
               "parts": [

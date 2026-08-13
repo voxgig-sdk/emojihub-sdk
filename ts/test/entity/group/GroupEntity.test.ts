@@ -63,7 +63,7 @@ describe('GroupEntity', async () => {
     const group_ref01_ent = client.Group()
     const group_ref01_match: any = {}
 
-    const group_ref01_list = await group_ref01_ent.list(group_ref01_match)
+    const group_ref01_list = (await group_ref01_ent.list(group_ref01_match)).map((e: any) => e.data())
 
 
 

@@ -8,7 +8,7 @@
 export interface All {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }
@@ -16,7 +16,7 @@ export interface All {
 export interface AllListMatch {
   category?: string
   group?: string
-  html_code?: any[]
+  htmlCode?: any[]
   name?: string
   unicode?: any[]
 }
@@ -24,7 +24,7 @@ export interface AllListMatch {
 export interface Category {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }
@@ -36,7 +36,7 @@ export interface CategoryLoadMatch {
 export interface CategoryListMatch {
   category?: string
   group?: string
-  html_code?: any[]
+  htmlCode?: any[]
   name?: string
   unicode?: any[]
 }
@@ -44,7 +44,7 @@ export interface CategoryListMatch {
 export interface Group {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }
@@ -56,7 +56,7 @@ export interface GroupLoadMatch {
 export interface GroupListMatch {
   category?: string
   group?: string
-  html_code?: any[]
+  htmlCode?: any[]
   name?: string
   unicode?: any[]
 }
@@ -64,7 +64,7 @@ export interface GroupListMatch {
 export interface Random {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }
@@ -72,7 +72,7 @@ export interface Random {
 export interface RandomListMatch {
   category?: string
   group?: string
-  html_code?: any[]
+  htmlCode?: any[]
   name?: string
   unicode?: any[]
 }
@@ -80,7 +80,7 @@ export interface RandomListMatch {
 export interface Search {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }
@@ -88,7 +88,7 @@ export interface Search {
 export interface SearchListMatch {
   category?: string
   group?: string
-  html_code?: any[]
+  htmlCode?: any[]
   name?: string
   unicode?: any[]
 }
@@ -96,7 +96,7 @@ export interface SearchListMatch {
 export interface Similar {
   category: string
   group: string
-  html_code: any[]
+  htmlCode: any[]
   name: string
   unicode: any[]
 }

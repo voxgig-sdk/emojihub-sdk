@@ -178,7 +178,7 @@ const all = client.All()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 
@@ -232,7 +232,7 @@ const category = client.Category()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 
@@ -294,7 +294,7 @@ const group = client.Group()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 
@@ -356,7 +356,7 @@ const random = client.Random()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 
@@ -410,7 +410,7 @@ const search = client.Search()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 
@@ -464,7 +464,7 @@ const similar = client.Similar()
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `any[]` | Yes |  |
+| `htmlCode` | `any[]` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `any[]` | Yes |  |
 

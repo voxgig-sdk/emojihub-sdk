@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import EmojihubSDK
-from core.error import EmojihubError
-from core.result import EmojihubResult
-from core.response import EmojihubResponse
-from core.spec import EmojihubSpec
-from feature.base_feature import EmojihubBaseFeature
+from projectname_sdk.core.error import EmojihubError
+from projectname_sdk.core.result import EmojihubResult
+from projectname_sdk.core.response import EmojihubResponse
+from projectname_sdk.core.spec import EmojihubSpec
+from projectname_sdk.feature.base_feature import EmojihubBaseFeature
 
 
 def _client():

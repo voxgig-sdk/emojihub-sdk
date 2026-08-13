@@ -68,12 +68,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-alls, err := client.All(nil).List(nil, nil)
+randoms, err := client.Random(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = alls
+_ = randoms
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-all, err := client.All(nil).List(
+random, err := client.Random(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(all) // the returned mock data
+fmt.Println(random) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -269,7 +269,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -283,7 +283,7 @@ API path: `/all`
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -297,7 +297,7 @@ API path: `/categories`
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -311,7 +311,7 @@ API path: `/groups`
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -325,7 +325,7 @@ API path: `/random`
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -339,7 +339,7 @@ API path: `/search`
 | --- | --- |
 | `"category"` |  |
 | `"group"` |  |
-| `"html_code"` |  |
+| `"htmlCode"` |  |
 | `"name"` |  |
 | `"unicode"` |  |
 
@@ -368,7 +368,7 @@ Create an instance: `all := client.All(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -400,7 +400,7 @@ Create an instance: `category := client.Category(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -442,7 +442,7 @@ Create an instance: `group := client.Group(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -483,7 +483,7 @@ Create an instance: `random := client.Random(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -514,7 +514,7 @@ Create an instance: `search := client.Search(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -545,7 +545,7 @@ Create an instance: `similar := client.Similar(nil)`
 | --- | --- | --- |
 | `category` | `string` |  |
 | `group` | `string` |  |
-| `html_code` | `[]any` |  |
+| `htmlCode` | `[]any` |  |
 | `name` | `string` |  |
 | `unicode` | `[]any` |  |
 
@@ -633,11 +633,11 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-all := client.All(nil)
-all.List(nil, nil)
+random := client.Random(nil)
+random.List(nil, nil)
 
-// all.Data() now returns the all data from the last list
-// all.Match() returns the last match criteria
+// random.Data() now returns the random data from the last list
+// random.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

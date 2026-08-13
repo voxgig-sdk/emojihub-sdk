@@ -114,7 +114,7 @@ $all = $client->All();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
@@ -170,7 +170,7 @@ $category = $client->Category();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
@@ -234,7 +234,7 @@ $group = $client->Group();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
@@ -298,7 +298,7 @@ $random = $client->Random();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
@@ -354,7 +354,7 @@ $search = $client->Search();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
@@ -410,7 +410,7 @@ $similar = $client->Similar();
 | --- | --- | --- | --- |
 | `category` | `string` | Yes |  |
 | `group` | `string` | Yes |  |
-| `html_code` | `array` | Yes |  |
+| `htmlCode` | `array` | Yes |  |
 | `name` | `string` | Yes |  |
 | `unicode` | `array` | Yes |  |
 
