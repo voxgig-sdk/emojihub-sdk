@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://emojihub.yurace.pro/api',
+    base: "https://emojihub.yurace.pro/api",
 
     headers: {
       "content-type": "application/json"
@@ -70,39 +70,29 @@ class Config {
     "all": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "all",
@@ -112,7 +102,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -124,11 +113,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -138,39 +125,29 @@ class Config {
     "category": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "category",
@@ -180,7 +157,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -192,28 +168,23 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         },
         "load": {
           "input": "data",
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "kind": "param",
                     "name": "id",
                     "orig": "category_name",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -238,21 +209,17 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             },
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "kind": "param",
                     "name": "id",
                     "orig": "category_name",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -277,11 +244,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 1
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
@@ -291,39 +256,29 @@ class Config {
     "group": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "group",
@@ -333,7 +288,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -345,28 +299,23 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         },
         "load": {
           "input": "data",
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "kind": "param",
                     "name": "id",
                     "orig": "group_name",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -391,21 +340,17 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             },
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "kind": "param",
                     "name": "id",
                     "orig": "group_name",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -430,11 +375,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 1
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
@@ -444,39 +387,29 @@ class Config {
     "random": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "random",
@@ -486,7 +419,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -498,11 +430,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -512,39 +442,29 @@ class Config {
     "search": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "search",
@@ -554,11 +474,9 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "smile",
                     "kind": "query",
                     "name": "q",
@@ -582,11 +500,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -596,39 +512,29 @@ class Config {
     "similar": {
       "fields": [
         {
-          "active": true,
           "name": "category",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "group",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "htmlCode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 2
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "name",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "unicode",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         }
       ],
       "name": "similar",
@@ -638,18 +544,15 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "example": "cat",
                     "kind": "param",
                     "name": "id",
                     "orig": "name",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -673,11 +576,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

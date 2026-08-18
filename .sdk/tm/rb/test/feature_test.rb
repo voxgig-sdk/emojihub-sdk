@@ -15,7 +15,7 @@ require_relative "../Emojihub_sdk"
 module EmojihubFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = EmojihubConfig.make_config["feature"]
+    f = EmojihubConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -5,6 +5,29 @@ declare(strict_types=1);
 
 class EmojihubConfig
 {
+    /** @var array<string,mixed>|null */
+    private static ?array $shared_config = null;
+
+    /**
+     * Return the process-wide config, built once on first use. The SDK reads
+     * the config on every request and never writes to it, so one instance is
+     * shared by every client rather than rebuilt per client.
+     *
+     * PHP arrays are copy-on-write, so callers that do mutate the result get
+     * their own copy and cannot disturb the shared one.
+     */
+    public static function shared_config(): array
+    {
+        if (self::$shared_config === null) {
+            self::$shared_config = self::make_config();
+        }
+        return self::$shared_config;
+    }
+
+    /**
+     * Build a fresh, fully materialised config array. Every call rebuilds the
+     * whole structure, so prefer shared_config unless you need a private copy.
+     */
     public static function make_config(): array
     {
         return [
@@ -36,39 +59,29 @@ class EmojihubConfig
         'all' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'all',
@@ -78,7 +91,6 @@ class EmojihubConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
@@ -91,10 +103,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [
@@ -104,39 +114,29 @@ class EmojihubConfig
         'category' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'category',
@@ -146,7 +146,6 @@ class EmojihubConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
@@ -159,27 +158,22 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
             'load' => [
               'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'category_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -205,20 +199,16 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'category_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -244,10 +234,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 1,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [
@@ -257,39 +245,29 @@ class EmojihubConfig
         'group' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'group',
@@ -299,7 +277,6 @@ class EmojihubConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
@@ -312,27 +289,22 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
             'load' => [
               'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'group_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -358,20 +330,16 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'group_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -397,10 +365,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 1,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [
@@ -410,39 +376,29 @@ class EmojihubConfig
         'random' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'random',
@@ -452,7 +408,6 @@ class EmojihubConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
@@ -465,10 +420,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [
@@ -478,39 +431,29 @@ class EmojihubConfig
         'search' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'search',
@@ -520,11 +463,9 @@ class EmojihubConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'example' => 'smile',
                         'kind' => 'query',
                         'name' => 'q',
@@ -549,10 +490,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [
@@ -562,39 +501,29 @@ class EmojihubConfig
         'similar' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'category',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'group',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'htmlCode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'name',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'unicode',
               'req' => true,
               'type' => '`$ARRAY`',
-              'index$' => 4,
             ],
           ],
           'name' => 'similar',
@@ -604,18 +533,15 @@ class EmojihubConfig
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'params' => [
                       [
-                        'active' => true,
                         'example' => 'cat',
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -640,10 +566,8 @@ class EmojihubConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [

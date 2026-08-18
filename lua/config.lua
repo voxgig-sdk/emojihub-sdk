@@ -1,5 +1,8 @@
 -- Emojihub SDK configuration
 
+-- Build a fresh, fully materialised config table. Every call rebuilds the
+-- whole structure, so prefer require("config_shared") unless you need a
+-- private copy you intend to mutate.
 local function make_config()
   return {
     main = {
@@ -30,39 +33,29 @@ local function make_config()
       ["all"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "all",
@@ -72,7 +65,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
@@ -85,10 +77,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
         },
         ["relations"] = {
@@ -98,39 +88,29 @@ local function make_config()
       ["category"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "category",
@@ -140,7 +120,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
@@ -153,27 +132,22 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
           ["load"] = {
             ["input"] = "data",
             ["name"] = "load",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["kind"] = "param",
                       ["name"] = "id",
                       ["orig"] = "category_name",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
-                      ["index$"] = 0,
                     },
                   },
                 },
@@ -199,20 +173,16 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["kind"] = "param",
                       ["name"] = "id",
                       ["orig"] = "category_name",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
-                      ["index$"] = 0,
                     },
                   },
                 },
@@ -238,10 +208,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 1,
               },
             },
-            ["key$"] = "load",
           },
         },
         ["relations"] = {
@@ -251,39 +219,29 @@ local function make_config()
       ["group"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "group",
@@ -293,7 +251,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
@@ -306,27 +263,22 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
           ["load"] = {
             ["input"] = "data",
             ["name"] = "load",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["kind"] = "param",
                       ["name"] = "id",
                       ["orig"] = "group_name",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
-                      ["index$"] = 0,
                     },
                   },
                 },
@@ -352,20 +304,16 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["kind"] = "param",
                       ["name"] = "id",
                       ["orig"] = "group_name",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
-                      ["index$"] = 0,
                     },
                   },
                 },
@@ -391,10 +339,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 1,
               },
             },
-            ["key$"] = "load",
           },
         },
         ["relations"] = {
@@ -404,39 +350,29 @@ local function make_config()
       ["random"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "random",
@@ -446,7 +382,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
@@ -459,10 +394,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
         },
         ["relations"] = {
@@ -472,39 +405,29 @@ local function make_config()
       ["search"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "search",
@@ -514,11 +437,9 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
-                      ["active"] = true,
                       ["example"] = "smile",
                       ["kind"] = "query",
                       ["name"] = "q",
@@ -543,10 +464,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
         },
         ["relations"] = {
@@ -556,39 +475,29 @@ local function make_config()
       ["similar"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "group",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "htmlCode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "unicode",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 4,
           },
         },
         ["name"] = "similar",
@@ -598,18 +507,15 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["example"] = "cat",
                       ["kind"] = "param",
                       ["name"] = "id",
                       ["orig"] = "name",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
-                      ["index$"] = 0,
                     },
                   },
                 },
@@ -634,10 +540,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "load",
           },
         },
         ["relations"] = {

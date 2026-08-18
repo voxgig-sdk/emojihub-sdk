@@ -28,7 +28,7 @@ class EmojihubSDK
     utility = EmojihubUtility.new
     @_utility = utility
 
-    config = EmojihubConfig.make_config
+    config = EmojihubConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

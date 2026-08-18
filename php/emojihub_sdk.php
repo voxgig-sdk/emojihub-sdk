@@ -40,7 +40,7 @@ class EmojihubSDK
         $utility = new EmojihubUtility();
         $this->_utility = $utility;
 
-        $config = EmojihubConfig::make_config();
+        $config = EmojihubConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
