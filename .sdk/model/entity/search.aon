@@ -1,0 +1,79 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "category"
+      req: true
+      short: "The category the emoji belongs to"
+      type: "`$STRING`"
+    }
+    {
+      name: "group"
+      req: true
+      short: "The group the emoji belongs to"
+      type: "`$STRING`"
+    }
+    {
+      name: "htmlCode"
+      req: true
+      short: "Array of HTML entity codes for the emoji"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: true
+      short: "The name of the emoji"
+      type: "`$STRING`"
+    }
+    {
+      name: "unicode"
+      req: true
+      short: "Array of Unicode code points for the emoji"
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "smile"
+                kind: "query"
+                name: "q"
+                orig: "q"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/search"
+          parts: [
+            "search"
+          ]
+          select: {
+            exist: [
+              "q"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -107,11 +107,11 @@ all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -164,11 +164,11 @@ category = client.Category()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -229,11 +229,11 @@ group = client.Group()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -294,11 +294,11 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -351,11 +351,11 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -408,11 +408,11 @@ similar = client.Similar()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | Yes |  |
-| `group` | `str` | Yes |  |
-| `htmlCode` | `list` | Yes |  |
-| `name` | `str` | Yes |  |
-| `unicode` | `list` | Yes |  |
+| `category` | `str` | Yes | The category the emoji belongs to |
+| `group` | `str` | Yes | The group the emoji belongs to |
+| `htmlCode` | `list` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `str` | Yes | The name of the emoji |
+| `unicode` | `list` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 

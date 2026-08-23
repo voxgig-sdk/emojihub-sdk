@@ -110,11 +110,11 @@ local all = client:All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -166,11 +166,11 @@ local category = client:Category(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -230,11 +230,11 @@ local group = client:Group(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -294,11 +294,11 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -350,11 +350,11 @@ local search = client:Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -406,11 +406,11 @@ local similar = client:Similar(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `table` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `table` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 

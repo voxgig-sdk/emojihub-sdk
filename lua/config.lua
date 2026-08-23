@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Emojihub",
+      slug = "emojihub",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -35,26 +38,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },
@@ -90,26 +98,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },
@@ -221,26 +234,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },
@@ -352,26 +370,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },
@@ -407,26 +430,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },
@@ -477,26 +505,31 @@ local function make_config()
           {
             ["name"] = "category",
             ["req"] = true,
+            ["short"] = "The category the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "group",
             ["req"] = true,
+            ["short"] = "The group the emoji belongs to",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "htmlCode",
             ["req"] = true,
+            ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "name",
             ["req"] = true,
+            ["short"] = "The name of the emoji",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "unicode",
             ["req"] = true,
+            ["short"] = "Array of Unicode code points for the emoji",
             ["type"] = "`$ARRAY`",
           },
         },

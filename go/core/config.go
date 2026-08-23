@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Emojihub",
+			"slug": "emojihub",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -39,26 +42,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -94,26 +102,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -225,26 +238,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -356,26 +374,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -411,26 +434,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -481,26 +509,31 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "category",
 						"req": true,
+						"short": "The category the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "group",
 						"req": true,
+						"short": "The group the emoji belongs to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "htmlCode",
 						"req": true,
+						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "The name of the emoji",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "unicode",
 						"req": true,
+						"short": "Array of Unicode code points for the emoji",
 						"type": "`$ARRAY`",
 					},
 				},

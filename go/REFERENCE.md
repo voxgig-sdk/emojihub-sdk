@@ -118,11 +118,11 @@ fmt.Println(all.GetName()) // "all"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -173,11 +173,11 @@ fmt.Println(category.GetName()) // "category"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -240,11 +240,11 @@ fmt.Println(group.GetName()) // "group"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -307,11 +307,11 @@ fmt.Println(random.GetName()) // "random"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -362,11 +362,11 @@ fmt.Println(search.GetName()) // "search"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -417,11 +417,11 @@ fmt.Println(similar.GetName()) // "similar"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | Yes |  |
-| `group` | `string` | Yes |  |
-| `htmlCode` | `[]any` | Yes |  |
-| `name` | `string` | Yes |  |
-| `unicode` | `[]any` | Yes |  |
+| `category` | `string` | Yes | The category the emoji belongs to |
+| `group` | `string` | Yes | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `string` | Yes | The name of the emoji |
+| `unicode` | `[]any` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 

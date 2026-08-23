@@ -113,11 +113,11 @@ all = client.All
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -169,11 +169,11 @@ category = client.Category
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -233,11 +233,11 @@ group = client.Group
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -297,11 +297,11 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -353,11 +353,11 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 
@@ -409,11 +409,11 @@ similar = client.Similar
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `String` | Yes |  |
-| `group` | `String` | Yes |  |
-| `htmlCode` | `Array` | Yes |  |
-| `name` | `String` | Yes |  |
-| `unicode` | `Array` | Yes |  |
+| `category` | `String` | Yes | The category the emoji belongs to |
+| `group` | `String` | Yes | The group the emoji belongs to |
+| `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `name` | `String` | Yes | The name of the emoji |
+| `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
 ### Operations
 

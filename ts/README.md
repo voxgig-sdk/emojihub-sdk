@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -294,11 +294,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: list.
 
@@ -308,11 +308,11 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: list, load.
 
@@ -322,11 +322,11 @@ API path: `/categories`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: list, load.
 
@@ -336,11 +336,11 @@ API path: `/groups`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: list.
 
@@ -350,11 +350,11 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: list.
 
@@ -364,11 +364,11 @@ API path: `/search`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: load.
 
@@ -393,11 +393,11 @@ Create an instance: `const all = client.All()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -421,11 +421,11 @@ Create an instance: `const category = client.Category()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -455,11 +455,11 @@ Create an instance: `const group = client.Group()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -488,11 +488,11 @@ Create an instance: `const random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -515,11 +515,11 @@ Create an instance: `const search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -542,11 +542,11 @@ Create an instance: `const similar = client.Similar()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `any[]` |  |
-| `name` | `string` |  |
-| `unicode` | `any[]` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `any[]` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `any[]` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 

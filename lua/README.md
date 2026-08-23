@@ -238,11 +238,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -252,11 +252,11 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: List, Load.
 
@@ -266,11 +266,11 @@ API path: `/categories`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: List, Load.
 
@@ -280,11 +280,11 @@ API path: `/groups`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -294,11 +294,11 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -308,11 +308,11 @@ API path: `/search`
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `group` |  |
-| `htmlCode` |  |
-| `name` |  |
-| `unicode` |  |
+| `category` | The category the emoji belongs to |
+| `group` | The group the emoji belongs to |
+| `htmlCode` | Array of HTML entity codes for the emoji |
+| `name` | The name of the emoji |
+| `unicode` | Array of Unicode code points for the emoji |
 
 Operations: Load.
 
@@ -337,11 +337,11 @@ Create an instance: `local all = client:All(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -365,11 +365,11 @@ Create an instance: `local category = client:Category(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -399,11 +399,11 @@ Create an instance: `local group = client:Group(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -432,11 +432,11 @@ Create an instance: `local random = client:Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -459,11 +459,11 @@ Create an instance: `local search = client:Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -486,11 +486,11 @@ Create an instance: `local similar = client:Similar(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `table` |  |
-| `name` | `string` |  |
-| `unicode` | `table` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `table` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `table` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 

@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Emojihub',
+        slug: "emojihub",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -72,26 +83,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],
@@ -127,26 +143,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],
@@ -258,26 +279,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],
@@ -389,26 +415,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],
@@ -444,26 +475,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],
@@ -514,26 +550,31 @@ class Config {
         {
           "name": "category",
           "req": true,
+          "short": "The category the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "group",
           "req": true,
+          "short": "The group the emoji belongs to",
           "type": "`$STRING`"
         },
         {
           "name": "htmlCode",
           "req": true,
+          "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "The name of the emoji",
           "type": "`$STRING`"
         },
         {
           "name": "unicode",
           "req": true,
+          "short": "Array of Unicode code points for the emoji",
           "type": "`$ARRAY`"
         }
       ],

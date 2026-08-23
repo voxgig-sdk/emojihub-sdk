@@ -36,30 +36,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],
@@ -101,30 +106,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],
@@ -246,30 +256,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],
@@ -391,30 +406,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],
@@ -456,30 +476,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],
@@ -537,30 +562,35 @@
               "active": true,
               "name": "category",
               "req": true,
+              "short": "The category the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "group",
               "req": true,
+              "short": "The group the emoji belongs to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "htmlCode",
               "req": true,
+              "short": "Array of HTML entity codes for the emoji",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "The name of the emoji",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "unicode",
               "req": true,
+              "short": "Array of Unicode code points for the emoji",
               "type": "`$ARRAY`"
             }
           ],

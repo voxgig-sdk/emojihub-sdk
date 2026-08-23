@@ -6,7 +6,7 @@ The Golang SDK for the Emojihub API — an entity-oriented client using standard
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.All(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -267,11 +267,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -281,11 +281,11 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: List, Load.
 
@@ -295,11 +295,11 @@ API path: `/categories`
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: List, Load.
 
@@ -309,11 +309,11 @@ API path: `/groups`
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -323,11 +323,11 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: List.
 
@@ -337,11 +337,11 @@ API path: `/search`
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"group"` |  |
-| `"htmlCode"` |  |
-| `"name"` |  |
-| `"unicode"` |  |
+| `"category"` | The category the emoji belongs to |
+| `"group"` | The group the emoji belongs to |
+| `"htmlCode"` | Array of HTML entity codes for the emoji |
+| `"name"` | The name of the emoji |
+| `"unicode"` | Array of Unicode code points for the emoji |
 
 Operations: Load.
 
@@ -366,11 +366,11 @@ Create an instance: `all := client.All(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -398,11 +398,11 @@ Create an instance: `category := client.Category(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -440,11 +440,11 @@ Create an instance: `group := client.Group(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
@@ -481,11 +481,11 @@ Create an instance: `random := client.Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -512,11 +512,11 @@ Create an instance: `search := client.Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: List
 
@@ -543,11 +543,11 @@ Create an instance: `similar := client.Similar(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `group` | `string` |  |
-| `htmlCode` | `[]any` |  |
-| `name` | `string` |  |
-| `unicode` | `[]any` |  |
+| `category` | `string` | The category the emoji belongs to |
+| `group` | `string` | The group the emoji belongs to |
+| `htmlCode` | `[]any` | Array of HTML entity codes for the emoji |
+| `name` | `string` | The name of the emoji |
+| `unicode` | `[]any` | Array of Unicode code points for the emoji |
 
 #### Example: Load
 
