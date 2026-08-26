@@ -66,6 +66,12 @@ describe('CategoryEntity', async () => {
     const category_ref01_list = (await category_ref01_ent.list(category_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const category_ref01_match_dt0: any = {}
+    category_ref01_match_dt0.id = category_ref01_data.id
+    const category_ref01_data_dt0 = (await category_ref01_ent.load(category_ref01_match_dt0)).data()
+    assert(category_ref01_data_dt0.id === category_ref01_data.id)
+
 
   })
 })

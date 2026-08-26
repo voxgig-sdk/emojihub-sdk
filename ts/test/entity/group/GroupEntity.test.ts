@@ -66,6 +66,12 @@ describe('GroupEntity', async () => {
     const group_ref01_list = (await group_ref01_ent.list(group_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const group_ref01_match_dt0: any = {}
+    group_ref01_match_dt0.id = group_ref01_data.id
+    const group_ref01_data_dt0 = (await group_ref01_ent.load(group_ref01_match_dt0)).data()
+    assert(group_ref01_data_dt0.id === group_ref01_data.id)
+
 
   })
 })

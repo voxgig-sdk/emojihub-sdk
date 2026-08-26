@@ -25,6 +25,7 @@ export interface Category {
   category: string
   group: string
   htmlCode: any[]
+  id?: string
   name: string
   unicode: any[]
 }
@@ -37,6 +38,7 @@ export interface CategoryListMatch {
   category?: string
   group?: string
   htmlCode?: any[]
+  id?: string
   name?: string
   unicode?: any[]
 }
@@ -45,6 +47,7 @@ export interface Group {
   category: string
   group: string
   htmlCode: any[]
+  id?: string
   name: string
   unicode: any[]
 }
@@ -57,6 +60,7 @@ export interface GroupListMatch {
   category?: string
   group?: string
   htmlCode?: any[]
+  id?: string
   name?: string
   unicode?: any[]
 }
@@ -97,6 +101,7 @@ export interface Similar {
   category: string
   group: string
   htmlCode: any[]
+  id?: string
   name: string
   unicode: any[]
 }

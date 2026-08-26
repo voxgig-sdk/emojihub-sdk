@@ -93,9 +93,13 @@ class GroupEntityTest extends TestCase
         $this->assertIsArray($group_ref01_list_result);
 
         // LOAD
-        $group_ref01_match_dt0 = [];
+        $group_ref01_match_dt0 = [
+            "id" => $group_ref01_data["id"],
+        ];
         $group_ref01_data_dt0_loaded = $group_ref01_ent->load($group_ref01_match_dt0, null);
-        $this->assertNotNull($group_ref01_data_dt0_loaded);
+        $group_ref01_data_dt0_load_result = Helpers::to_map(is_object($group_ref01_data_dt0_loaded) && method_exists($group_ref01_data_dt0_loaded, 'data_get') ? $group_ref01_data_dt0_loaded->data_get() : $group_ref01_data_dt0_loaded);
+        $this->assertNotNull($group_ref01_data_dt0_load_result);
+        $this->assertEquals($group_ref01_data_dt0_load_result["id"], $group_ref01_data["id"]);
 
     }
 }

@@ -69,6 +69,9 @@ AllListMatch = Struct.new(
 # @!attribute [rw] htmlCode
 #   @return [Array]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] name
 #   @return [String]
 #
@@ -78,6 +81,7 @@ Category = Struct.new(
   :category,
   :group,
   :htmlCode,
+  :id,
   :name,
   :unicode,
   keyword_init: true
@@ -103,6 +107,9 @@ CategoryLoadMatch = Struct.new(
 # @!attribute [rw] htmlCode
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] name
 #   @return [String, nil]
 #
@@ -112,6 +119,7 @@ CategoryListMatch = Struct.new(
   :category,
   :group,
   :htmlCode,
+  :id,
   :name,
   :unicode,
   keyword_init: true
@@ -128,6 +136,9 @@ CategoryListMatch = Struct.new(
 # @!attribute [rw] htmlCode
 #   @return [Array]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] name
 #   @return [String]
 #
@@ -137,6 +148,7 @@ Group = Struct.new(
   :category,
   :group,
   :htmlCode,
+  :id,
   :name,
   :unicode,
   keyword_init: true
@@ -162,6 +174,9 @@ GroupLoadMatch = Struct.new(
 # @!attribute [rw] htmlCode
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] name
 #   @return [String, nil]
 #
@@ -171,6 +186,7 @@ GroupListMatch = Struct.new(
   :category,
   :group,
   :htmlCode,
+  :id,
   :name,
   :unicode,
   keyword_init: true
@@ -287,6 +303,9 @@ SearchListMatch = Struct.new(
 # @!attribute [rw] htmlCode
 #   @return [Array]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] name
 #   @return [String]
 #
@@ -296,6 +315,7 @@ Similar = Struct.new(
   :category,
   :group,
   :htmlCode,
+  :id,
   :name,
   :unicode,
   keyword_init: true

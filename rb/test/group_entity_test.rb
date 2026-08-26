@@ -83,9 +83,13 @@ class GroupEntityTest < Minitest::Test
     assert group_ref01_list_result.is_a?(Array)
 
     # LOAD
-    group_ref01_match_dt0 = {}
+    group_ref01_match_dt0 = {
+      "id" => group_ref01_data["id"],
+    }
     group_ref01_data_dt0_loaded = group_ref01_ent.load(group_ref01_match_dt0, nil)
-    assert !group_ref01_data_dt0_loaded.nil?
+    group_ref01_data_dt0_load_result = Helpers.to_map(group_ref01_data_dt0_loaded.respond_to?(:data_get) ? group_ref01_data_dt0_loaded.data_get : group_ref01_data_dt0_loaded)
+    assert !group_ref01_data_dt0_load_result.nil?
+    assert_equal group_ref01_data_dt0_load_result["id"], group_ref01_data["id"]
 
   end
 end

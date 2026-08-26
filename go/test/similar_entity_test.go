@@ -61,13 +61,19 @@ func TestSimilarEntity(t *testing.T) {
 
 		// LOAD
 		similarRef01Ent := client.Similar(nil)
-		similarRef01MatchDt0 := map[string]any{}
+		similarRef01MatchDt0 := map[string]any{
+			"id": similarRef01Data["id"],
+		}
 		similarRef01DataDt0Loaded, err := similarRef01Ent.Load(similarRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if similarRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		similarRef01DataDt0LoadResult := core.ToMapAny(entityData(similarRef01DataDt0Loaded))
+		if similarRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if similarRef01DataDt0LoadResult["id"] != similarRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

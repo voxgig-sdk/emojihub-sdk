@@ -48,9 +48,13 @@ class SimilarEntityTest extends TestCase
 
         // LOAD
         $similar_ref01_ent = $client->Similar(null);
-        $similar_ref01_match_dt0 = [];
+        $similar_ref01_match_dt0 = [
+            "id" => $similar_ref01_data["id"],
+        ];
         $similar_ref01_data_dt0_loaded = $similar_ref01_ent->load($similar_ref01_match_dt0, null);
-        $this->assertNotNull($similar_ref01_data_dt0_loaded);
+        $similar_ref01_data_dt0_load_result = Helpers::to_map(is_object($similar_ref01_data_dt0_loaded) && method_exists($similar_ref01_data_dt0_loaded, 'data_get') ? $similar_ref01_data_dt0_loaded->data_get() : $similar_ref01_data_dt0_loaded);
+        $this->assertNotNull($similar_ref01_data_dt0_load_result);
+        $this->assertEquals($similar_ref01_data_dt0_load_result["id"], $similar_ref01_data["id"]);
 
     }
 }

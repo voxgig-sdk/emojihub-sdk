@@ -171,6 +171,7 @@ $category = $client->Category();
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `array` | Yes | Array of Unicode code points for the emoji |
 
@@ -235,6 +236,7 @@ $group = $client->Group();
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `array` | Yes | Array of Unicode code points for the emoji |
 
@@ -411,6 +413,7 @@ $similar = $client->Similar();
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `array` | Yes | Array of Unicode code points for the emoji |
 

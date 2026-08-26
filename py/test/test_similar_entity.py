@@ -48,9 +48,13 @@ class TestSimilarEntity:
 
         # LOAD
         similar_ref01_ent = client.Similar(None)
-        similar_ref01_match_dt0 = {}
+        similar_ref01_match_dt0 = {
+            "id": similar_ref01_data["id"],
+        }
         similar_ref01_data_dt0_loaded = similar_ref01_ent.load(similar_ref01_match_dt0, None)
-        assert similar_ref01_data_dt0_loaded is not None
+        similar_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(similar_ref01_data_dt0_loaded))
+        assert similar_ref01_data_dt0_load_result is not None
+        assert similar_ref01_data_dt0_load_result["id"] == similar_ref01_data["id"]
 
 
 

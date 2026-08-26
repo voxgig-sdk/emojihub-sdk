@@ -233,6 +233,7 @@ const category = client.Category()
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `any[]` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `any[]` | Yes | Array of Unicode code points for the emoji |
 
@@ -295,6 +296,7 @@ const group = client.Group()
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `any[]` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `any[]` | Yes | Array of Unicode code points for the emoji |
 
@@ -465,6 +467,7 @@ const similar = client.Similar()
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `any[]` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `any[]` | Yes | Array of Unicode code points for the emoji |
 

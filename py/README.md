@@ -266,6 +266,7 @@ API path: `/all`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -280,6 +281,7 @@ API path: `/categories`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -322,6 +324,7 @@ API path: `/search`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -379,6 +382,7 @@ Create an instance: `category = client.Category()`
 | `category` | `str` | The category the emoji belongs to |
 | `group` | `str` | The group the emoji belongs to |
 | `htmlCode` | `list` | Array of HTML entity codes for the emoji |
+| `id` | `str` |  |
 | `name` | `str` | The name of the emoji |
 | `unicode` | `list` | Array of Unicode code points for the emoji |
 
@@ -413,6 +417,7 @@ Create an instance: `group = client.Group()`
 | `category` | `str` | The category the emoji belongs to |
 | `group` | `str` | The group the emoji belongs to |
 | `htmlCode` | `list` | Array of HTML entity codes for the emoji |
+| `id` | `str` |  |
 | `name` | `str` | The name of the emoji |
 | `unicode` | `list` | Array of Unicode code points for the emoji |
 
@@ -500,6 +505,7 @@ Create an instance: `similar = client.Similar()`
 | `category` | `str` | The category the emoji belongs to |
 | `group` | `str` | The group the emoji belongs to |
 | `htmlCode` | `list` | Array of HTML entity codes for the emoji |
+| `id` | `str` |  |
 | `name` | `str` | The name of the emoji |
 | `unicode` | `list` | Array of Unicode code points for the emoji |
 

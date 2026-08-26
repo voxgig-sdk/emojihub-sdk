@@ -41,9 +41,13 @@ class SimilarEntityTest < Minitest::Test
 
     # LOAD
     similar_ref01_ent = client.Similar(nil)
-    similar_ref01_match_dt0 = {}
+    similar_ref01_match_dt0 = {
+      "id" => similar_ref01_data["id"],
+    }
     similar_ref01_data_dt0_loaded = similar_ref01_ent.load(similar_ref01_match_dt0, nil)
-    assert !similar_ref01_data_dt0_loaded.nil?
+    similar_ref01_data_dt0_load_result = Helpers.to_map(similar_ref01_data_dt0_loaded.respond_to?(:data_get) ? similar_ref01_data_dt0_loaded.data_get : similar_ref01_data_dt0_loaded)
+    assert !similar_ref01_data_dt0_load_result.nil?
+    assert_equal similar_ref01_data_dt0_load_result["id"], similar_ref01_data["id"]
 
   end
 end

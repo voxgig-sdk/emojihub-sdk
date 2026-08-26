@@ -169,6 +169,7 @@ local category = client:Category(nil)
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
@@ -233,6 +234,7 @@ local group = client:Group(nil)
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 
@@ -409,6 +411,7 @@ local similar = client:Similar(nil)
 | `category` | `string` | Yes | The category the emoji belongs to |
 | `group` | `string` | Yes | The group the emoji belongs to |
 | `htmlCode` | `table` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `string` | No |  |
 | `name` | `string` | Yes | The name of the emoji |
 | `unicode` | `table` | Yes | Array of Unicode code points for the emoji |
 

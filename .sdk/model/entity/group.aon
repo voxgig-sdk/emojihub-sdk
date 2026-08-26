@@ -24,6 +24,11 @@ main: kit: entity: group: {
       type: "`$ARRAY`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "name"
       req: true
       short: "The name of the emoji"
@@ -36,6 +41,11 @@ main: kit: entity: group: {
       type: "`$ARRAY`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "group"
   op: {

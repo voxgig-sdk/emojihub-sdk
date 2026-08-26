@@ -59,9 +59,12 @@ describe('SimilarEntity', async () => {
 
     let similar_ref01_data = Object.values(setup.data.existing.similar)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const similar_ref01_ent = client.Similar()
+    const similar_ref01_match_dt0: any = {}
+    similar_ref01_match_dt0.id = similar_ref01_data.id
+    const similar_ref01_data_dt0 = (await similar_ref01_ent.load(similar_ref01_match_dt0)).data()
+    assert(similar_ref01_data_dt0.id === similar_ref01_data.id)
 
 
   })

@@ -32,12 +32,16 @@ class AllListMatch(TypedDict, total=False):
     unicode: list
 
 
-class Category(TypedDict):
+class CategoryRequired(TypedDict):
     category: str
     group: str
     htmlCode: list
     name: str
     unicode: list
+
+
+class Category(CategoryRequired, total=False):
+    id: str
 
 
 class CategoryLoadMatch(TypedDict):
@@ -48,16 +52,21 @@ class CategoryListMatch(TypedDict, total=False):
     category: str
     group: str
     htmlCode: list
+    id: str
     name: str
     unicode: list
 
 
-class Group(TypedDict):
+class GroupRequired(TypedDict):
     category: str
     group: str
     htmlCode: list
     name: str
     unicode: list
+
+
+class Group(GroupRequired, total=False):
+    id: str
 
 
 class GroupLoadMatch(TypedDict):
@@ -68,6 +77,7 @@ class GroupListMatch(TypedDict, total=False):
     category: str
     group: str
     htmlCode: list
+    id: str
     name: str
     unicode: list
 
@@ -104,12 +114,16 @@ class SearchListMatch(TypedDict, total=False):
     unicode: list
 
 
-class Similar(TypedDict):
+class SimilarRequired(TypedDict):
     category: str
     group: str
     htmlCode: list
     name: str
     unicode: list
+
+
+class Similar(SimilarRequired, total=False):
+    id: str
 
 
 class SimilarLoadMatch(TypedDict):

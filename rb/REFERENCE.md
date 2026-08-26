@@ -172,6 +172,7 @@ category = client.Category
 | `category` | `String` | Yes | The category the emoji belongs to |
 | `group` | `String` | Yes | The group the emoji belongs to |
 | `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `String` | No |  |
 | `name` | `String` | Yes | The name of the emoji |
 | `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
@@ -236,6 +237,7 @@ group = client.Group
 | `category` | `String` | Yes | The category the emoji belongs to |
 | `group` | `String` | Yes | The group the emoji belongs to |
 | `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `String` | No |  |
 | `name` | `String` | Yes | The name of the emoji |
 | `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 
@@ -412,6 +414,7 @@ similar = client.Similar
 | `category` | `String` | Yes | The category the emoji belongs to |
 | `group` | `String` | Yes | The group the emoji belongs to |
 | `htmlCode` | `Array` | Yes | Array of HTML entity codes for the emoji |
+| `id` | `String` | No |  |
 | `name` | `String` | Yes | The name of the emoji |
 | `unicode` | `Array` | Yes | Array of Unicode code points for the emoji |
 

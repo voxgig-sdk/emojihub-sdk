@@ -35,6 +35,7 @@ type Category struct {
 	Category string `json:"category"`
 	Group string `json:"group"`
 	HtmlCode []any `json:"htmlCode"`
+	Id *string `json:"id,omitempty"`
 	Name string `json:"name"`
 	Unicode []any `json:"unicode"`
 }
@@ -49,6 +50,7 @@ type CategoryListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
 	HtmlCode *[]any `json:"htmlCode,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Unicode *[]any `json:"unicode,omitempty"`
 }
@@ -58,6 +60,7 @@ type Group struct {
 	Category string `json:"category"`
 	Group string `json:"group"`
 	HtmlCode []any `json:"htmlCode"`
+	Id *string `json:"id,omitempty"`
 	Name string `json:"name"`
 	Unicode []any `json:"unicode"`
 }
@@ -72,6 +75,7 @@ type GroupListMatch struct {
 	Category *string `json:"category,omitempty"`
 	Group *string `json:"group,omitempty"`
 	HtmlCode *[]any `json:"htmlCode,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Unicode *[]any `json:"unicode,omitempty"`
 }
@@ -117,6 +121,7 @@ type Similar struct {
 	Category string `json:"category"`
 	Group string `json:"group"`
 	HtmlCode []any `json:"htmlCode"`
+	Id *string `json:"id,omitempty"`
 	Name string `json:"name"`
 	Unicode []any `json:"unicode"`
 }

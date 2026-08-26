@@ -42,6 +42,7 @@ class EmojihubConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -138,6 +139,10 @@ class EmojihubConfig
               'req' => true,
               'short' => 'Array of HTML entity codes for the emoji',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'name',
@@ -274,6 +279,10 @@ class EmojihubConfig
               'req' => true,
               'short' => 'Array of HTML entity codes for the emoji',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'name',
@@ -545,6 +554,10 @@ class EmojihubConfig
               'req' => true,
               'short' => 'Array of HTML entity codes for the emoji',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'name',

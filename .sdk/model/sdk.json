@@ -125,6 +125,12 @@
             },
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "name",
               "req": true,
               "short": "The name of the emoji",
@@ -138,6 +144,10 @@
               "type": "`$ARRAY`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "category",
           "op": {
             "list": {
@@ -275,6 +285,12 @@
             },
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "name",
               "req": true,
               "short": "The name of the emoji",
@@ -288,6 +304,10 @@
               "type": "`$ARRAY`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "group",
           "op": {
             "list": {
@@ -581,6 +601,12 @@
             },
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "name",
               "req": true,
               "short": "The name of the emoji",
@@ -594,6 +620,10 @@
               "type": "`$ARRAY`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "similar",
           "op": {
             "load": {
@@ -738,6 +768,7 @@
             }
           },
           "title": "In-memory mock transport for testing without a live server",
+          "transport": "base",
           "version": "0.0.1"
         }
       },
@@ -1005,6 +1036,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1063,6 +1095,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1137,6 +1170,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1217,6 +1251,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1275,6 +1310,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1339,6 +1375,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1408,6 +1445,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""
@@ -1482,6 +1520,7 @@
           "origname": "",
           "output": {
             "adopt": false,
+            "create": true,
             "path": "",
             "repo": "",
             "sdkrel": ""

@@ -2,38 +2,38 @@
   "existing": {
     "category": {
       "CATEGORY00": {
-        "category": "s32",
-        "group": "s33",
+        "category": "s3c",
+        "group": "s3d",
         "htmlCode": [],
-        "name": "s35",
-        "unicode": [],
-        "id": "CATEGORY00"
+        "id": "CATEGORY00",
+        "name": "s40",
+        "unicode": []
       },
       "CATEGORY01": {
-        "category": "s64",
-        "group": "s65",
+        "category": "s78",
+        "group": "s79",
         "htmlCode": [],
-        "name": "s67",
-        "unicode": [],
-        "id": "CATEGORY01"
+        "id": "CATEGORY01",
+        "name": "s7c",
+        "unicode": []
       },
       "CATEGORY02": {
-        "category": "s96",
-        "group": "s97",
+        "category": "sb4",
+        "group": "sb5",
         "htmlCode": [],
-        "name": "s99",
-        "unicode": [],
-        "id": "CATEGORY02"
+        "id": "CATEGORY02",
+        "name": "sb8",
+        "unicode": []
       }
     }
   },
   "new": {
     "category": {
       "category_ref01": {
-        "category": "sc8",
-        "group": "sc9",
+        "category": "sf0",
+        "group": "sf1",
         "htmlCode": [],
-        "name": "scb",
+        "name": "sf4",
         "unicode": []
       }
     }

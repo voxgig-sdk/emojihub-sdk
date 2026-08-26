@@ -40,7 +40,8 @@ class Config {
      test:     {
       "options": {
         "active": false
-      }
+      },
+      "transport": "base"
     },
 
   }
@@ -157,6 +158,10 @@ class Config {
           "req": true,
           "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "name",
@@ -293,6 +298,10 @@ class Config {
           "req": true,
           "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "name",
@@ -564,6 +573,10 @@ class Config {
           "req": true,
           "short": "Array of HTML entity codes for the emoji",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "name",

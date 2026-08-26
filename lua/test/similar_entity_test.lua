@@ -44,10 +44,14 @@ describe("SimilarEntity", function()
 
     -- LOAD
     local similar_ref01_ent = client:Similar(nil)
-    local similar_ref01_match_dt0 = {}
+    local similar_ref01_match_dt0 = {
+      id = similar_ref01_data["id"],
+    }
     local similar_ref01_data_dt0_loaded, err = similar_ref01_ent:load(similar_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(similar_ref01_data_dt0_loaded)
+    local similar_ref01_data_dt0_load_result = helpers.to_map(type(similar_ref01_data_dt0_loaded) == 'table' and similar_ref01_data_dt0_loaded.data_get and similar_ref01_data_dt0_loaded:data_get() or similar_ref01_data_dt0_loaded)
+    assert.is_not_nil(similar_ref01_data_dt0_load_result)
+    assert.are.equal(similar_ref01_data_dt0_load_result["id"], similar_ref01_data["id"])
 
   end)
 end)

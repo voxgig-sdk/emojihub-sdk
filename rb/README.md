@@ -260,6 +260,7 @@ API path: `/all`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -274,6 +275,7 @@ API path: `/categories`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -316,6 +318,7 @@ API path: `/search`
 | `category` | The category the emoji belongs to |
 | `group` | The group the emoji belongs to |
 | `htmlCode` | Array of HTML entity codes for the emoji |
+| `id` |  |
 | `name` | The name of the emoji |
 | `unicode` | Array of Unicode code points for the emoji |
 
@@ -374,6 +377,7 @@ Create an instance: `category = client.Category`
 | `category` | `String` | The category the emoji belongs to |
 | `group` | `String` | The group the emoji belongs to |
 | `htmlCode` | `Array` | Array of HTML entity codes for the emoji |
+| `id` | `String` |  |
 | `name` | `String` | The name of the emoji |
 | `unicode` | `Array` | Array of Unicode code points for the emoji |
 
@@ -410,6 +414,7 @@ Create an instance: `group = client.Group`
 | `category` | `String` | The category the emoji belongs to |
 | `group` | `String` | The group the emoji belongs to |
 | `htmlCode` | `Array` | Array of HTML entity codes for the emoji |
+| `id` | `String` |  |
 | `name` | `String` | The name of the emoji |
 | `unicode` | `Array` | Array of Unicode code points for the emoji |
 
@@ -501,6 +506,7 @@ Create an instance: `similar = client.Similar`
 | `category` | `String` | The category the emoji belongs to |
 | `group` | `String` | The group the emoji belongs to |
 | `htmlCode` | `Array` | Array of HTML entity codes for the emoji |
+| `id` | `String` |  |
 | `name` | `String` | The name of the emoji |
 | `unicode` | `Array` | Array of Unicode code points for the emoji |
 

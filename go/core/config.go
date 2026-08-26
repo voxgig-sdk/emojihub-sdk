@@ -20,6 +20,7 @@ func MakeConfig() map[string]any {
 				"options": map[string]any{
 					"active": false,
 				},
+				"transport": "base",
 			},
 		},
 		"options": map[string]any{
@@ -116,6 +117,10 @@ func MakeConfig() map[string]any {
 						"req": true,
 						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
@@ -252,6 +257,10 @@ func MakeConfig() map[string]any {
 						"req": true,
 						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
@@ -523,6 +532,10 @@ func MakeConfig() map[string]any {
 						"req": true,
 						"short": "Array of HTML entity codes for the emoji",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",

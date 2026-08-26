@@ -38,6 +38,7 @@ class Category
     public string $category;
     public string $group;
     public array $htmlCode;
+    public ?string $id = null;
     public string $name;
     public array $unicode;
 }
@@ -54,6 +55,7 @@ class CategoryListMatch
     public ?string $category = null;
     public ?string $group = null;
     public ?array $htmlCode = null;
+    public ?string $id = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -64,6 +66,7 @@ class Group
     public string $category;
     public string $group;
     public array $htmlCode;
+    public ?string $id = null;
     public string $name;
     public array $unicode;
 }
@@ -80,6 +83,7 @@ class GroupListMatch
     public ?string $category = null;
     public ?string $group = null;
     public ?array $htmlCode = null;
+    public ?string $id = null;
     public ?string $name = null;
     public ?array $unicode = null;
 }
@@ -130,6 +134,7 @@ class Similar
     public string $category;
     public string $group;
     public array $htmlCode;
+    public ?string $id = null;
     public string $name;
     public array $unicode;
 }

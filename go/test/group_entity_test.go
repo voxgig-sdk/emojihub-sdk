@@ -121,13 +121,19 @@ func TestGroupEntity(t *testing.T) {
 		}
 
 		// LOAD
-		groupRef01MatchDt0 := map[string]any{}
+		groupRef01MatchDt0 := map[string]any{
+			"id": groupRef01Data["id"],
+		}
 		groupRef01DataDt0Loaded, err := groupRef01Ent.Load(groupRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if groupRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		groupRef01DataDt0LoadResult := core.ToMapAny(entityData(groupRef01DataDt0Loaded))
+		if groupRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if groupRef01DataDt0LoadResult["id"] != groupRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

@@ -16,6 +16,7 @@ local function make_config()
         ["options"] = {
           ["active"] = false,
         },
+        ["transport"] = "base",
       },
     },
     options = {
@@ -112,6 +113,10 @@ local function make_config()
             ["req"] = true,
             ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
@@ -248,6 +253,10 @@ local function make_config()
             ["req"] = true,
             ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
@@ -519,6 +528,10 @@ local function make_config()
             ["req"] = true,
             ["short"] = "Array of HTML entity codes for the emoji",
             ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",

@@ -37,6 +37,7 @@ def make_config():
         "options": {
           "active": False,
         },
+        "transport": "base",
       },
         },
         "options": {
@@ -133,6 +134,10 @@ def make_config():
             "req": True,
             "short": "Array of HTML entity codes for the emoji",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "name",
@@ -269,6 +274,10 @@ def make_config():
             "req": True,
             "short": "Array of HTML entity codes for the emoji",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "name",
@@ -540,6 +549,10 @@ def make_config():
             "req": True,
             "short": "Array of HTML entity codes for the emoji",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "name",

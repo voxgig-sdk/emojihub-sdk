@@ -28,6 +28,7 @@ module EmojihubConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -124,6 +125,10 @@ module EmojihubConfig
               "req" => true,
               "short" => "Array of HTML entity codes for the emoji",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "name",
@@ -260,6 +265,10 @@ module EmojihubConfig
               "req" => true,
               "short" => "Array of HTML entity codes for the emoji",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "name",
@@ -531,6 +540,10 @@ module EmojihubConfig
               "req" => true,
               "short" => "Array of HTML entity codes for the emoji",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "name",

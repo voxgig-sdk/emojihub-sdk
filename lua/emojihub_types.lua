@@ -24,6 +24,7 @@
 ---@field category string
 ---@field group string
 ---@field htmlCode table
+---@field id? string
 ---@field name string
 ---@field unicode table
 
@@ -34,6 +35,7 @@
 ---@field category? string
 ---@field group? string
 ---@field htmlCode? table
+---@field id? string
 ---@field name? string
 ---@field unicode? table
 
@@ -41,6 +43,7 @@
 ---@field category string
 ---@field group string
 ---@field htmlCode table
+---@field id? string
 ---@field name string
 ---@field unicode table
 
@@ -51,6 +54,7 @@
 ---@field category? string
 ---@field group? string
 ---@field htmlCode? table
+---@field id? string
 ---@field name? string
 ---@field unicode? table
 
@@ -86,6 +90,7 @@
 ---@field category string
 ---@field group string
 ---@field htmlCode table
+---@field id? string
 ---@field name string
 ---@field unicode table
 
