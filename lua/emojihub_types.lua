@@ -80,11 +80,7 @@
 ---@field unicode table
 
 ---@class SearchListMatch
----@field category? string
----@field group? string
----@field htmlCode? table
----@field name? string
----@field unicode? table
+---@field q string
 
 ---@class Similar
 ---@field category string

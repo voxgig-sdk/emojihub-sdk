@@ -109,11 +109,7 @@ type Search struct {
 
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
-	Category *string `json:"category,omitempty"`
-	Group *string `json:"group,omitempty"`
-	HtmlCode *[]any `json:"htmlCode,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Unicode *[]any `json:"unicode,omitempty"`
+	Q string `json:"q"`
 }
 
 // Similar is the typed data model for the similar entity.

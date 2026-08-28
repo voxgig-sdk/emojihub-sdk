@@ -90,11 +90,7 @@ export interface Search {
 }
 
 export interface SearchListMatch {
-  category?: string
-  group?: string
-  htmlCode?: any[]
-  name?: string
-  unicode?: any[]
+  q: string
 }
 
 export interface Similar {

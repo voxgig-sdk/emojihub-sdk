@@ -106,12 +106,8 @@ class Search(TypedDict):
     unicode: list
 
 
-class SearchListMatch(TypedDict, total=False):
-    category: str
-    group: str
-    htmlCode: list
-    name: str
-    unicode: list
+class SearchListMatch(TypedDict):
+    q: str
 
 
 class SimilarRequired(TypedDict):

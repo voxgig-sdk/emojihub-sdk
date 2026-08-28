@@ -121,11 +121,7 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?string $category = null;
-    public ?string $group = null;
-    public ?array $htmlCode = null;
-    public ?string $name = null;
-    public ?array $unicode = null;
+    public string $q;
 }
 
 /** Similar entity data model. */

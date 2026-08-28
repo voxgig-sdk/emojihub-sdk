@@ -269,26 +269,10 @@ Search = Struct.new(
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] category
-#   @return [String, nil]
-#
-# @!attribute [rw] group
-#   @return [String, nil]
-#
-# @!attribute [rw] htmlCode
-#   @return [Array, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] unicode
-#   @return [Array, nil]
+# @!attribute [rw] q
+#   @return [String]
 SearchListMatch = Struct.new(
-  :category,
-  :group,
-  :htmlCode,
-  :name,
-  :unicode,
+  :q,
   keyword_init: true
 )
 
