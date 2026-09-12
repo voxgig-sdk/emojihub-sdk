@@ -104,13 +104,18 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/all',
-                  'parts' => [
-                    'all',
+                  'segments' => [
+                    [
+                      'lit' => 'all',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'all',
                   ],
                 ],
               ],
@@ -157,6 +162,10 @@ class EmojihubConfig
               'type' => '`$ARRAY`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'category',
           'op' => [
             'list' => [
@@ -168,13 +177,18 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/categories',
-                  'parts' => [
-                    'categories',
+                  'segments' => [
+                    [
+                      'lit' => 'categories',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'categories',
                   ],
                 ],
               ],
@@ -198,14 +212,20 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/all/category/{category-name}',
-                  'parts' => [
-                    'all',
-                    'category',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'category-name' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'all',
+                    ],
+                    [
+                      'lit' => 'category',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -216,6 +236,11 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'all',
+                    'category',
+                    '{id}',
                   ],
                 ],
                 [
@@ -233,14 +258,20 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/category/{category-name}',
-                  'parts' => [
-                    'random',
-                    'category',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'category-name' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
+                    [
+                      'lit' => 'category',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -251,6 +282,11 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
+                    'category',
+                    '{id}',
                   ],
                 ],
               ],
@@ -297,6 +333,10 @@ class EmojihubConfig
               'type' => '`$ARRAY`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'group',
           'op' => [
             'list' => [
@@ -308,13 +348,18 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/groups',
-                  'parts' => [
-                    'groups',
+                  'segments' => [
+                    [
+                      'lit' => 'groups',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'groups',
                   ],
                 ],
               ],
@@ -338,14 +383,20 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/all/group/{group-name}',
-                  'parts' => [
-                    'all',
-                    'group',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'group-name' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'all',
+                    ],
+                    [
+                      'lit' => 'group',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -356,6 +407,11 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'all',
+                    'group',
+                    '{id}',
                   ],
                 ],
                 [
@@ -373,14 +429,20 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/group/{group-name}',
-                  'parts' => [
-                    'random',
-                    'group',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'group-name' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
+                    [
+                      'lit' => 'group',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -391,6 +453,11 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
+                    'group',
+                    '{id}',
                   ],
                 ],
               ],
@@ -444,13 +511,18 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
-                  'parts' => [
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
                   ],
                 ],
               ],
@@ -515,8 +587,10 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/search',
-                  'parts' => [
-                    'search',
+                  'segments' => [
+                    [
+                      'lit' => 'search',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -526,6 +600,9 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'search',
                   ],
                 ],
               ],
@@ -572,6 +649,10 @@ class EmojihubConfig
               'type' => '`$ARRAY`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'similar',
           'op' => [
             'load' => [
@@ -594,13 +675,17 @@ class EmojihubConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/similar/{name}',
-                  'parts' => [
-                    'similar',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'name' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'similar',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -611,6 +696,10 @@ class EmojihubConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'similar',
+                    '{id}',
                   ],
                 ],
               ],

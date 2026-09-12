@@ -55,8 +55,10 @@ main: kit: entity: group: {
         {
           method: "GET"
           orig: "/groups"
-          parts: [
-            "groups"
+          segments: [
+            {
+              lit: "groups"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -82,16 +84,22 @@ main: kit: entity: group: {
           }
           method: "GET"
           orig: "/all/group/{group-name}"
-          parts: [
-            "all"
-            "group"
-            "{id}"
-          ]
           rename: {
             param: {
               "group-name": "id"
             }
           }
+          segments: [
+            {
+              lit: "all"
+            }
+            {
+              lit: "group"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -116,16 +124,22 @@ main: kit: entity: group: {
           }
           method: "GET"
           orig: "/random/group/{group-name}"
-          parts: [
-            "random"
-            "group"
-            "{id}"
-          ]
           rename: {
             param: {
               "group-name": "id"
             }
           }
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "group"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

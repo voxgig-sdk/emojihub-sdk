@@ -55,8 +55,10 @@ main: kit: entity: category: {
         {
           method: "GET"
           orig: "/categories"
-          parts: [
-            "categories"
+          segments: [
+            {
+              lit: "categories"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -82,16 +84,22 @@ main: kit: entity: category: {
           }
           method: "GET"
           orig: "/all/category/{category-name}"
-          parts: [
-            "all"
-            "category"
-            "{id}"
-          ]
           rename: {
             param: {
               "category-name": "id"
             }
           }
+          segments: [
+            {
+              lit: "all"
+            }
+            {
+              lit: "category"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -116,16 +124,22 @@ main: kit: entity: category: {
           }
           method: "GET"
           orig: "/random/category/{category-name}"
-          parts: [
-            "random"
-            "category"
-            "{id}"
-          ]
           rename: {
             param: {
               "category-name": "id"
             }
           }
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "category"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

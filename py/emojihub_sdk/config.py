@@ -1,6 +1,14 @@
 # Emojihub SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -99,14 +107,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/all",
-                "parts": [
-                  "all",
+                "segments": [
+                  {
+                    "lit": "all",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "all",
+                ],
               },
             ],
           },
@@ -152,6 +165,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "category",
         "op": {
           "list": {
@@ -163,14 +180,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/categories",
-                "parts": [
-                  "categories",
+                "segments": [
+                  {
+                    "lit": "categories",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "categories",
+                ],
               },
             ],
           },
@@ -193,16 +215,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/all/category/{category-name}",
-                "parts": [
-                  "all",
-                  "category",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "category-name": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "all",
+                  },
+                  {
+                    "lit": "category",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -212,6 +240,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "all",
+                  "category",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -228,16 +261,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/category/{category-name}",
-                "parts": [
-                  "random",
-                  "category",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "category-name": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "category",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -247,6 +286,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                  "category",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -292,6 +336,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "group",
         "op": {
           "list": {
@@ -303,14 +351,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/groups",
-                "parts": [
-                  "groups",
+                "segments": [
+                  {
+                    "lit": "groups",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "groups",
+                ],
               },
             ],
           },
@@ -333,16 +386,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/all/group/{group-name}",
-                "parts": [
-                  "all",
-                  "group",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "group-name": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "all",
+                  },
+                  {
+                    "lit": "group",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -352,6 +411,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "all",
+                  "group",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -368,16 +432,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/group/{group-name}",
-                "parts": [
-                  "random",
-                  "group",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "group-name": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "group",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -387,6 +457,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                  "group",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -439,14 +514,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random",
-                "parts": [
-                  "random",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                ],
               },
             ],
           },
@@ -510,8 +590,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/search",
-                "parts": [
-                  "search",
+                "segments": [
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -522,6 +604,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "search",
+                ],
               },
             ],
           },
@@ -567,6 +652,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "similar",
         "op": {
           "load": {
@@ -589,15 +678,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/similar/{name}",
-                "parts": [
-                  "similar",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "name": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "similar",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -607,6 +700,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "similar",
+                  "{id}",
+                ],
               },
             ],
           },

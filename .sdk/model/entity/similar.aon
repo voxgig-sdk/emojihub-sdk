@@ -67,15 +67,19 @@ main: kit: entity: similar: {
           }
           method: "GET"
           orig: "/similar/{name}"
-          parts: [
-            "similar"
-            "{id}"
-          ]
           rename: {
             param: {
               name: "id"
             }
           }
+          segments: [
+            {
+              lit: "similar"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
