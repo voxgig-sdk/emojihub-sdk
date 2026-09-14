@@ -105,7 +105,7 @@ local results, err = client:Random():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
+| TypeScript | `@voxgig-sdk/emojihub-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
 | Python | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
 | PHP | `voxgig-sdk/emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/emojihub-sdk/go` | `go get github.com/voxgig-sdk/emojihub-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Random():list()
 ### TypeScript
 
 ```ts
-import { EmojihubSDK } from '@voxgig-sdk/emojihub'
+import { EmojihubSDK } from '@voxgig-sdk/emojihub-sdk'
 
 const client = new EmojihubSDK()
 

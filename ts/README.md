@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { EmojihubSDK } from '@voxgig-sdk/emojihub'
+import { EmojihubSDK } from '@voxgig-sdk/emojihub-sdk'
 
 const client = new EmojihubSDK()
 ```
@@ -643,7 +643,7 @@ emojihub/
 Import the SDK from the package root:
 
 ```ts
-import { EmojihubSDK } from '@voxgig-sdk/emojihub'
+import { EmojihubSDK } from '@voxgig-sdk/emojihub-sdk'
 ```
 
 ### Entity state
