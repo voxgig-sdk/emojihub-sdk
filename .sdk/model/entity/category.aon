@@ -53,6 +53,12 @@ main: kit: entity: category: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /categories"
+            json: "{\"operationId\":\"getCategories\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":[\"smileys and people\",\"animals and nature\",\"food and drink\",\"travel and places\",\"activities\",\"objects\",\"symbols\",\"flags\"],\"schema\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/categories"
           segments: [
@@ -81,6 +87,12 @@ main: kit: entity: category: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /all/category/{category-name}"
+            json: "{\"operationId\":\"getAllEmojisByCategory\",\"parameters\":[{\"description\":\"The category name (e.g., 'food-and-drink', 'smileys-and-people')\",\"in\":\"path\",\"name\":\"category-name\",\"required\":true,\"schema\":{\"enum\":[\"smileys-and-people\",\"animals-and-nature\",\"food-and-drink\",\"travel-and-places\",\"activities\",\"objects\",\"symbols\",\"flags\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"category\":{\"description\":\"The category the emoji belongs to\",\"example\":\"smileys and people\",\"type\":\"string\"},\"group\":{\"description\":\"The group the emoji belongs to\",\"example\":\"face positive\",\"type\":\"string\"},\"htmlCode\":{\"description\":\"Array of HTML entity codes for the emoji\",\"example\":[\"&#129303;\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"name\":{\"description\":\"The name of the emoji\",\"example\":\"hugging face\",\"type\":\"string\"},\"unicode\":{\"description\":\"Array of Unicode code points for the emoji\",\"example\":[\"U+1F917\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"required\":[\"name\",\"category\",\"group\",\"htmlCode\",\"unicode\"],\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"},\"404\":{\"description\":\"Category not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/all/category/{category-name}"
@@ -121,6 +133,12 @@ main: kit: entity: category: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /random/category/{category-name}"
+            json: "{\"operationId\":\"getRandomEmojiByCategory\",\"parameters\":[{\"description\":\"The category name (e.g., 'food-and-drink', 'smileys-and-people')\",\"in\":\"path\",\"name\":\"category-name\",\"required\":true,\"schema\":{\"enum\":[\"smileys-and-people\",\"animals-and-nature\",\"food-and-drink\",\"travel-and-places\",\"activities\",\"objects\",\"symbols\",\"flags\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"category\":{\"description\":\"The category the emoji belongs to\",\"example\":\"smileys and people\",\"type\":\"string\"},\"group\":{\"description\":\"The group the emoji belongs to\",\"example\":\"face positive\",\"type\":\"string\"},\"htmlCode\":{\"description\":\"Array of HTML entity codes for the emoji\",\"example\":[\"&#129303;\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"name\":{\"description\":\"The name of the emoji\",\"example\":\"hugging face\",\"type\":\"string\"},\"unicode\":{\"description\":\"Array of Unicode code points for the emoji\",\"example\":[\"U+1F917\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"required\":[\"name\",\"category\",\"group\",\"htmlCode\",\"unicode\"],\"type\":\"object\"}}},\"description\":\"Successful response\"},\"404\":{\"description\":\"Category not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/random/category/{category-name}"

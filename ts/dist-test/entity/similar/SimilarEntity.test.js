@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.EMOJIHUB_TEST_LIVE;
         for (const op of ['load']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'similar.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'similar.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set EMOJIHUB_TEST_SIMILAR_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "category", "req": true, "short": "The category the emoji belongs to", "type": "`$STRING`", "index$": 0 }, { "active": true, "name": "group", "req": true, "short": "The group the emoji belongs to", "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "htmlCode", "req": true, "short": "Array of HTML entity codes for the emoji", "type": "`$ARRAY`", "index$": 2 }, { "active": true, "name": "id", "req": false, "type": "`$STRING`", "index$": 3 }, { "active": true, "name": "name", "req": true, "short": "The name of the emoji", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "unicode", "req": true, "short": "Array of Unicode code points for the emoji", "type": "`$ARRAY`", "index$": 5 }], "id": { "field": "id", "name": "id" }, "name": "similar", "op": { "load": { "input": "data", "name": "load", "points": [{ "active": true, "args": { "params": [{ "active": true, "example": "cat", "kind": "param", "name": "id", "orig": "name", "reqd": true, "type": "`$STRING`", "index$": 0 }] }, "contract": { "id": "GET /similar/{name}", "json": "{\"operationId\":\"getSimilarEmojis\",\"parameters\":[{\"description\":\"The emoji name to find similar emojis for\",\"example\":\"cat\",\"in\":\"path\",\"name\":\"name\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":[{\"category\":\"smileys and people\",\"group\":\"face positive\",\"htmlCode\":[\"&#128512;\"],\"name\":\"grinning face\",\"unicode\":[\"U+1F600\"]},{\"category\":\"smileys and people\",\"group\":\"face positive\",\"htmlCode\":[\"&#128513;\"],\"name\":\"smiling face with smiling eyes\",\"unicode\":[\"U+1F601\"]}],\"schema\":{\"items\":{\"properties\":{\"category\":{\"description\":\"The category the emoji belongs to\",\"example\":\"smileys and people\",\"type\":\"string\"},\"group\":{\"description\":\"The group the emoji belongs to\",\"example\":\"face positive\",\"type\":\"string\"},\"htmlCode\":{\"description\":\"Array of HTML entity codes for the emoji\",\"example\":[\"&#129303;\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"name\":{\"description\":\"The name of the emoji\",\"example\":\"hugging face\",\"type\":\"string\"},\"unicode\":{\"description\":\"Array of Unicode code points for the emoji\",\"example\":[\"U+1F917\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"required\":[\"name\",\"category\",\"group\",\"htmlCode\",\"unicode\"],\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"},\"404\":{\"description\":\"No similar emojis found\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/similar/{name}", "rename": { "param": { "name": "id" } }, "segments": [{ "lit": "similar" }, { "var": "id" }], "select": { "exist": ["id"] }, "transform": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "similar", "name__orig": "similar", "Name": "Similar", "name_": "similar", "name-": "similar", "NAME": "SIMILAR", "index$": 5 }, { "active": true, "entity": "similar", "key$": "BasicSimilarFlow", "kind": "basic", "name": "BasicSimilarFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": { "ref": "similar_ref01", "srcdatavar": "similar_ref01_data", "suffix": "_dt0" }, "match": { "id": "similar01" }, "op": "load", "spec": [], "valid": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-similar_ref01" } }], "index$": 0 }] }, 'Similar');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -103,12 +101,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['EMOJIHUB_TEST_SIMILAR_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'EMOJIHUB_TEST_SIMILAR_ENTID': idmap,
         'EMOJIHUB_TEST_LIVE': 'FALSE',
@@ -116,7 +108,13 @@ function basicSetup(extra) {
     });
     idmap = env['EMOJIHUB_TEST_SIMILAR_ENTID'];
     const live = 'TRUE' === env.EMOJIHUB_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['EMOJIHUB_TEST_SIMILAR_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.EmojihubSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -127,7 +125,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -139,7 +138,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.EMOJIHUB_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

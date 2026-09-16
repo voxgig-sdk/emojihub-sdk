@@ -1,12 +1,18 @@
 # Emojihub SDK feature factory
 
 from emojihub_sdk.feature.base_feature import EmojihubBaseFeature
+from emojihub_sdk.feature.ratelimit_feature import EmojihubRatelimitFeature
+from emojihub_sdk.feature.retry_feature import EmojihubRetryFeature
 from emojihub_sdk.feature.test_feature import EmojihubTestFeature
+from emojihub_sdk.feature.timeout_feature import EmojihubTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: EmojihubBaseFeature(),
+    "ratelimit": lambda: EmojihubRatelimitFeature(),
+    "retry": lambda: EmojihubRetryFeature(),
     "test": lambda: EmojihubTestFeature(),
+    "timeout": lambda: EmojihubTimeoutFeature(),
 }
 
 

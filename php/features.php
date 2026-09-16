@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Emojihub SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class EmojihubFeatures
@@ -14,8 +17,14 @@ class EmojihubFeatures
         switch ($name) {
             case "base":
                 return new EmojihubBaseFeature();
+            case "ratelimit":
+                return new EmojihubRatelimitFeature();
+            case "retry":
+                return new EmojihubRetryFeature();
             case "test":
                 return new EmojihubTestFeature();
+            case "timeout":
+                return new EmojihubTimeoutFeature();
             default:
                 return new EmojihubBaseFeature();
         }
@@ -31,7 +40,10 @@ class EmojihubFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

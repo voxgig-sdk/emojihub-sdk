@@ -53,6 +53,12 @@ main: kit: entity: group: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /groups"
+            json: "{\"operationId\":\"getGroups\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":[\"face positive\",\"face neutral\",\"face negative\",\"face role\",\"face sick\",\"creature face\"],\"schema\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/groups"
           segments: [
@@ -81,6 +87,12 @@ main: kit: entity: group: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /all/group/{group-name}"
+            json: "{\"operationId\":\"getAllEmojisByGroup\",\"parameters\":[{\"description\":\"The group name (e.g., 'face-positive', 'animal-bird')\",\"in\":\"path\",\"name\":\"group-name\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"category\":{\"description\":\"The category the emoji belongs to\",\"example\":\"smileys and people\",\"type\":\"string\"},\"group\":{\"description\":\"The group the emoji belongs to\",\"example\":\"face positive\",\"type\":\"string\"},\"htmlCode\":{\"description\":\"Array of HTML entity codes for the emoji\",\"example\":[\"&#129303;\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"name\":{\"description\":\"The name of the emoji\",\"example\":\"hugging face\",\"type\":\"string\"},\"unicode\":{\"description\":\"Array of Unicode code points for the emoji\",\"example\":[\"U+1F917\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"required\":[\"name\",\"category\",\"group\",\"htmlCode\",\"unicode\"],\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"},\"404\":{\"description\":\"Group not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/all/group/{group-name}"
@@ -121,6 +133,12 @@ main: kit: entity: group: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /random/group/{group-name}"
+            json: "{\"operationId\":\"getRandomEmojiByGroup\",\"parameters\":[{\"description\":\"The group name (e.g., 'face-positive', 'animal-bird')\",\"in\":\"path\",\"name\":\"group-name\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"category\":{\"description\":\"The category the emoji belongs to\",\"example\":\"smileys and people\",\"type\":\"string\"},\"group\":{\"description\":\"The group the emoji belongs to\",\"example\":\"face positive\",\"type\":\"string\"},\"htmlCode\":{\"description\":\"Array of HTML entity codes for the emoji\",\"example\":[\"&#129303;\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"name\":{\"description\":\"The name of the emoji\",\"example\":\"hugging face\",\"type\":\"string\"},\"unicode\":{\"description\":\"Array of Unicode code points for the emoji\",\"example\":[\"U+1F917\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"required\":[\"name\",\"category\",\"group\",\"htmlCode\",\"unicode\"],\"type\":\"object\"}}},\"description\":\"Successful response\"},\"404\":{\"description\":\"Group not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/random/group/{group-name}"
