@@ -105,12 +105,12 @@ local results, err = client:Random():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/emojihub-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
-| Python | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
-| PHP | `voxgig-sdk/emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
+| TypeScript | `@voxgig-sdk/emojihub-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/tags) |
+| Python | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/tags) |
+| PHP | `voxgig-sdk/emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/emojihub-sdk/go` | `go get github.com/voxgig-sdk/emojihub-sdk/go@latest` |
-| Ruby | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
-| Lua | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/releases) |
+| Ruby | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/tags) |
+| Lua | `voxgig-sdk-emojihub` | publish pending — [install from git tag](https://github.com/voxgig-sdk/emojihub-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/emojihub-sdk/go-cli` | `go install github.com/voxgig-sdk/emojihub-sdk/go-cli/cmd/emojihub@latest` |
 | Go MCP server | `github.com/voxgig-sdk/emojihub-sdk/go-mcp` | `go get github.com/voxgig-sdk/emojihub-sdk/go-mcp@latest` |
 

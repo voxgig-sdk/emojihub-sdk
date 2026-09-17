@@ -1,8 +1,8 @@
 # Flows
 
-@"BasicAllFlow.aon"
-@"BasicCategoryFlow.aon"
-@"BasicGroupFlow.aon"
-@"BasicRandomFlow.aon"
-@"BasicSearchFlow.aon"
-@"BasicSimilarFlow.aon"
+@"./BasicAllFlow.aon"
+@"./BasicCategoryFlow.aon"
+@"./BasicGroupFlow.aon"
+@"./BasicRandomFlow.aon"
+@"./BasicSearchFlow.aon"
+@"./BasicSimilarFlow.aon"

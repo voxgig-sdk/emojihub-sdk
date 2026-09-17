@@ -127,24 +127,24 @@ class Config {
 
     entity: {
       
-      all: {
-      },
-
-      category: {
-      },
-
-      group: {
-      },
-
-      random: {
-      },
-
-      search: {
-      },
-
-      similar: {
-      },
-
+        all: {
+        },
+  
+        category: {
+        },
+  
+        group: {
+        },
+  
+        random: {
+        },
+  
+        search: {
+        },
+  
+        similar: {
+        },
+  
     }
   }
 
